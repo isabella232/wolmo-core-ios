@@ -23,6 +23,10 @@
 		9D896AEC1CDE642F008B0E5F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D896AEA1CDE642F008B0E5F /* Quick.framework */; };
 		9D896AEE1CDE64FF008B0E5F /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D896AE91CDE642F008B0E5F /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D896AEF1CDE64FF008B0E5F /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D896AEA1CDE642F008B0E5F /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9D896AF41CDE6946008B0E5F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF31CDE6946008B0E5F /* UIView.swift */; };
+		9D896AF61CDE69D2008B0E5F /* CellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */; };
+		9D896AF81CDE6A07008B0E5F /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF71CDE6A07008B0E5F /* UITableView.swift */; };
+		9D896AFA1CDE6B78008B0E5F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF91CDE6B78008B0E5F /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		9D896AE71CDE62DA008B0E5F /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawRepresentable.swift; path = Extensions/Foundation/RawRepresentable.swift; sourceTree = "<group>"; };
 		9D896AE91CDE642F008B0E5F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		9D896AEA1CDE642F008B0E5F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		9D896AF31CDE6946008B0E5F /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = Extensions/UIKit/UIView.swift; sourceTree = "<group>"; };
+		9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellIdentifiable.swift; sourceTree = "<group>"; };
+		9D896AF71CDE6A07008B0E5F /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableView.swift; path = Extensions/UIKit/UITableView.swift; sourceTree = "<group>"; };
+		9D896AF91CDE6B78008B0E5F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = Extensions/UIKit/UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +141,7 @@
 			children = (
 				9D896AD81CDE5F19008B0E5F /* UIKit */,
 				9D896AD71CDE5EF6008B0E5F /* Foundation */,
+				9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -156,6 +165,9 @@
 			children = (
 				9D896AD91CDE5F35008B0E5F /* UIControl.swift */,
 				9D896ADB1CDE5FCB008B0E5F /* UIColor.swift */,
+				9D896AF31CDE6946008B0E5F /* UIView.swift */,
+				9D896AF71CDE6A07008B0E5F /* UITableView.swift */,
+				9D896AF91CDE6B78008B0E5F /* UIViewController.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -312,10 +324,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D896AF61CDE69D2008B0E5F /* CellIdentifiable.swift in Sources */,
+				9D896AF41CDE6946008B0E5F /* UIView.swift in Sources */,
 				9D896AE21CDE6211008B0E5F /* NSURL.swift in Sources */,
 				9D896ADE1CDE6071008B0E5F /* NSBundle.swift in Sources */,
 				9D896AE01CDE6129008B0E5F /* Array.swift in Sources */,
+				9D896AF81CDE6A07008B0E5F /* UITableView.swift in Sources */,
 				9D896AE81CDE62DA008B0E5F /* RawRepresentable.swift in Sources */,
+				9D896AFA1CDE6B78008B0E5F /* UIViewController.swift in Sources */,
 				9D896AD51CDE5EEB008B0E5F /* String.swift in Sources */,
 				9D896AE41CDE624D008B0E5F /* NSTimer.swift in Sources */,
 				9D896ADC1CDE5FCB008B0E5F /* UIColor.swift in Sources */,
