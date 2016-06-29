@@ -27,6 +27,7 @@
 		9D896AF61CDE69D2008B0E5F /* CellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */; };
 		9D896AF81CDE6A07008B0E5F /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF71CDE6A07008B0E5F /* UITableView.swift */; };
 		9D896AFA1CDE6B78008B0E5F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF91CDE6B78008B0E5F /* UIViewController.swift */; };
+		B988B95C1D243D9100824685 /* AVAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B95B1D243D9100824685 /* AVAsset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellIdentifiable.swift; sourceTree = "<group>"; };
 		9D896AF71CDE6A07008B0E5F /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableView.swift; path = Extensions/UIKit/UITableView.swift; sourceTree = "<group>"; };
 		9D896AF91CDE6B78008B0E5F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = Extensions/UIKit/UIViewController.swift; sourceTree = "<group>"; };
+		B988B95B1D243D9100824685 /* AVAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAsset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		9D896AD61CDE5EF0008B0E5F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B988B95A1D243D6200824685 /* AVFoundation */,
 				9D896AD81CDE5F19008B0E5F /* UIKit */,
 				9D896AD71CDE5EF6008B0E5F /* Foundation */,
 				9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */,
@@ -195,6 +198,15 @@
 				9D896AC71CDE3EC5008B0E5F /* StringSpec.swift */,
 			);
 			name = Foundation;
+			sourceTree = "<group>";
+		};
+		B988B95A1D243D6200824685 /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				B988B95B1D243D9100824685 /* AVAsset.swift */,
+			);
+			name = AVFoundation;
+			path = Extensions/AVFoundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +347,7 @@
 				9D896AD51CDE5EEB008B0E5F /* String.swift in Sources */,
 				9D896AE41CDE624D008B0E5F /* NSTimer.swift in Sources */,
 				9D896ADC1CDE5FCB008B0E5F /* UIColor.swift in Sources */,
+				B988B95C1D243D9100824685 /* AVAsset.swift in Sources */,
 				9D896AE61CDE628E008B0E5F /* NSDate.swift in Sources */,
 				9D896ADA1CDE5F35008B0E5F /* UIControl.swift in Sources */,
 			);
