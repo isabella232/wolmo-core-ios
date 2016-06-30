@@ -14,15 +14,15 @@ public func / (lhs: String, rhs: String) -> String {
 
 public extension String {
     
-    var localized: String {
+    public var localized: String {
         return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
     }
     
-    func localized(arguments: CVarArgType...) -> String {
+    public func localized(arguments: CVarArgType...) -> String {
         return String(format: NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: ""), arguments: arguments)
     }
     
-    var length: Int {
+    public var length: Int {
         return characters.count
     }
     
