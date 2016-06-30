@@ -11,7 +11,6 @@
 		9D896AC31CDE3EC5008B0E5F /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D896AB81CDE3EC5008B0E5F /* Core.framework */; };
 		9D896AC81CDE3EC5008B0E5F /* StringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AC71CDE3EC5008B0E5F /* StringSpec.swift */; };
 		9D896AD51CDE5EEB008B0E5F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AD41CDE5EEB008B0E5F /* String.swift */; };
-		9D896ADA1CDE5F35008B0E5F /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AD91CDE5F35008B0E5F /* UIControl.swift */; };
 		9D896ADC1CDE5FCB008B0E5F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896ADB1CDE5FCB008B0E5F /* UIColor.swift */; };
 		9D896ADE1CDE6071008B0E5F /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896ADD1CDE6071008B0E5F /* NSBundle.swift */; };
 		9D896AE01CDE6129008B0E5F /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896ADF1CDE6129008B0E5F /* Array.swift */; };
@@ -28,6 +27,22 @@
 		9D896AF81CDE6A07008B0E5F /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF71CDE6A07008B0E5F /* UITableView.swift */; };
 		9D896AFA1CDE6B78008B0E5F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF91CDE6B78008B0E5F /* UIViewController.swift */; };
 		B988B95C1D243D9100824685 /* AVAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B95B1D243D9100824685 /* AVAsset.swift */; };
+		B988B95E1D24432000824685 /* AVPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B95D1D24432000824685 /* AVPlayerItem.swift */; };
+		B988B9611D24437500824685 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9601D24437500824685 /* Signal.swift */; };
+		B988B9631D24437E00824685 /* SignalProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9621D24437E00824685 /* SignalProducer.swift */; };
+		B988B9681D24457D00824685 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B988B9661D24457D00824685 /* ReactiveCocoa.framework */; };
+		B988B9691D24457D00824685 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B988B9671D24457D00824685 /* Result.framework */; };
+		B988B96B1D2445B900824685 /* ReactiveCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B988B9661D24457D00824685 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B988B96C1D2445B900824685 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B988B9671D24457D00824685 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B988B96F1D24482200824685 /* ActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B96E1D24482200824685 /* ActionHandler.swift */; };
+		B988B9711D244B6700824685 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9701D244B6700824685 /* UITextField.swift */; };
+		B988B9731D244BAE00824685 /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9721D244BAE00824685 /* AssociatedObject.swift */; };
+		B988B9751D244CBC00824685 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9741D244CBC00824685 /* UIAlertController.swift */; };
+		B988B97C1D244D6300824685 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9771D244D6300824685 /* AlertPresenter.swift */; };
+		B988B97D1D244D6300824685 /* ConfirmationAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9781D244D6300824685 /* ConfirmationAlertViewModel.swift */; };
+		B988B97E1D244D6300824685 /* ErrorAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9791D244D6300824685 /* ErrorAlertViewModel.swift */; };
+		B988B97F1D244D6300824685 /* ProgressHUDDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B97B1D244D6300824685 /* ProgressHUDDelegate.swift */; };
+		B988B9811D24621000824685 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9801D24621000824685 /* DeviceType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +67,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B988B96A1D24459C00824685 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				B988B96B1D2445B900824685 /* ReactiveCocoa.framework in CopyFiles */,
+				B988B96C1D2445B900824685 /* Result.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +88,6 @@
 		9D896AC71CDE3EC5008B0E5F /* StringSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringSpec.swift; path = Extensions/Foundation/StringSpec.swift; sourceTree = "<group>"; };
 		9D896AC91CDE3EC5008B0E5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D896AD41CDE5EEB008B0E5F /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = Extensions/Foundation/String.swift; sourceTree = "<group>"; };
-		9D896AD91CDE5F35008B0E5F /* UIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIControl.swift; path = Extensions/UIKit/UIControl.swift; sourceTree = "<group>"; };
 		9D896ADB1CDE5FCB008B0E5F /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = Extensions/UIKit/UIColor.swift; sourceTree = "<group>"; };
 		9D896ADD1CDE6071008B0E5F /* NSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSBundle.swift; path = Extensions/Foundation/NSBundle.swift; sourceTree = "<group>"; };
 		9D896ADF1CDE6129008B0E5F /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.swift; path = Extensions/Foundation/Array.swift; sourceTree = "<group>"; };
@@ -77,6 +102,20 @@
 		9D896AF71CDE6A07008B0E5F /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableView.swift; path = Extensions/UIKit/UITableView.swift; sourceTree = "<group>"; };
 		9D896AF91CDE6B78008B0E5F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = Extensions/UIKit/UIViewController.swift; sourceTree = "<group>"; };
 		B988B95B1D243D9100824685 /* AVAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAsset.swift; sourceTree = "<group>"; };
+		B988B95D1D24432000824685 /* AVPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerItem.swift; sourceTree = "<group>"; };
+		B988B9601D24437500824685 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		B988B9621D24437E00824685 /* SignalProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducer.swift; sourceTree = "<group>"; };
+		B988B9661D24457D00824685 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		B988B9671D24457D00824685 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		B988B96E1D24482200824685 /* ActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionHandler.swift; sourceTree = "<group>"; };
+		B988B9701D244B6700824685 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITextField.swift; path = Extensions/UIKit/UITextField.swift; sourceTree = "<group>"; };
+		B988B9721D244BAE00824685 /* AssociatedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedObject.swift; sourceTree = "<group>"; };
+		B988B9741D244CBC00824685 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		B988B9771D244D6300824685 /* AlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
+		B988B9781D244D6300824685 /* ConfirmationAlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationAlertViewModel.swift; sourceTree = "<group>"; };
+		B988B9791D244D6300824685 /* ErrorAlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlertViewModel.swift; sourceTree = "<group>"; };
+		B988B97B1D244D6300824685 /* ProgressHUDDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUDDelegate.swift; sourceTree = "<group>"; };
+		B988B9801D24621000824685 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B988B9681D24457D00824685 /* ReactiveCocoa.framework in Frameworks */,
+				B988B9691D24457D00824685 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +163,7 @@
 		9D896ABA1CDE3EC5008B0E5F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B988B96D1D24481400824685 /* Utilities */,
 				9D896AD61CDE5EF0008B0E5F /* Extensions */,
 				9D896ABB1CDE3EC5008B0E5F /* Core.h */,
 				9D896ABD1CDE3EC5008B0E5F /* Info.plist */,
@@ -141,6 +183,7 @@
 		9D896AD61CDE5EF0008B0E5F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B988B95F1D24435700824685 /* ReactiveCocoa */,
 				B988B95A1D243D6200824685 /* AVFoundation */,
 				9D896AD81CDE5F19008B0E5F /* UIKit */,
 				9D896AD71CDE5EF6008B0E5F /* Foundation */,
@@ -166,11 +209,12 @@
 		9D896AD81CDE5F19008B0E5F /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				9D896AD91CDE5F35008B0E5F /* UIControl.swift */,
 				9D896ADB1CDE5FCB008B0E5F /* UIColor.swift */,
 				9D896AF31CDE6946008B0E5F /* UIView.swift */,
 				9D896AF71CDE6A07008B0E5F /* UITableView.swift */,
 				9D896AF91CDE6B78008B0E5F /* UIViewController.swift */,
+				B988B9701D244B6700824685 /* UITextField.swift */,
+				B988B9741D244CBC00824685 /* UIAlertController.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -178,6 +222,8 @@
 		9D896AF01CDE6504008B0E5F /* Framewokrs */ = {
 			isa = PBXGroup;
 			children = (
+				B988B9661D24457D00824685 /* ReactiveCocoa.framework */,
+				B988B9671D24457D00824685 /* Result.framework */,
 				9D896AE91CDE642F008B0E5F /* Nimble.framework */,
 				9D896AEA1CDE642F008B0E5F /* Quick.framework */,
 			);
@@ -204,9 +250,50 @@
 			isa = PBXGroup;
 			children = (
 				B988B95B1D243D9100824685 /* AVAsset.swift */,
+				B988B95D1D24432000824685 /* AVPlayerItem.swift */,
 			);
 			name = AVFoundation;
 			path = Extensions/AVFoundation;
+			sourceTree = "<group>";
+		};
+		B988B95F1D24435700824685 /* ReactiveCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				B988B9601D24437500824685 /* Signal.swift */,
+				B988B9621D24437E00824685 /* SignalProducer.swift */,
+			);
+			name = ReactiveCocoa;
+			path = Extensions/ReactiveCocoa;
+			sourceTree = "<group>";
+		};
+		B988B96D1D24481400824685 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B988B9761D244D6300824685 /* Alerts */,
+				B988B97A1D244D6300824685 /* ProgressHUD */,
+				B988B96E1D24482200824685 /* ActionHandler.swift */,
+				B988B9721D244BAE00824685 /* AssociatedObject.swift */,
+				B988B9801D24621000824685 /* DeviceType.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B988B9761D244D6300824685 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				B988B9771D244D6300824685 /* AlertPresenter.swift */,
+				B988B9781D244D6300824685 /* ConfirmationAlertViewModel.swift */,
+				B988B9791D244D6300824685 /* ErrorAlertViewModel.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		B988B97A1D244D6300824685 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B988B97B1D244D6300824685 /* ProgressHUDDelegate.swift */,
+			);
+			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +319,7 @@
 				9D896AB51CDE3EC5008B0E5F /* Headers */,
 				9D896AB61CDE3EC5008B0E5F /* Resources */,
 				9D896AD31CDE5E64008B0E5F /* Swiftlint */,
+				B988B96A1D24459C00824685 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -337,19 +425,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D896AF61CDE69D2008B0E5F /* CellIdentifiable.swift in Sources */,
+				B988B9711D244B6700824685 /* UITextField.swift in Sources */,
 				9D896AF41CDE6946008B0E5F /* UIView.swift in Sources */,
 				9D896AE21CDE6211008B0E5F /* NSURL.swift in Sources */,
+				B988B9751D244CBC00824685 /* UIAlertController.swift in Sources */,
 				9D896ADE1CDE6071008B0E5F /* NSBundle.swift in Sources */,
 				9D896AE01CDE6129008B0E5F /* Array.swift in Sources */,
+				B988B9611D24437500824685 /* Signal.swift in Sources */,
+				B988B97C1D244D6300824685 /* AlertPresenter.swift in Sources */,
+				B988B9731D244BAE00824685 /* AssociatedObject.swift in Sources */,
+				B988B97D1D244D6300824685 /* ConfirmationAlertViewModel.swift in Sources */,
+				B988B9631D24437E00824685 /* SignalProducer.swift in Sources */,
 				9D896AF81CDE6A07008B0E5F /* UITableView.swift in Sources */,
 				9D896AE81CDE62DA008B0E5F /* RawRepresentable.swift in Sources */,
+				B988B9811D24621000824685 /* DeviceType.swift in Sources */,
+				B988B95E1D24432000824685 /* AVPlayerItem.swift in Sources */,
 				9D896AFA1CDE6B78008B0E5F /* UIViewController.swift in Sources */,
+				B988B97E1D244D6300824685 /* ErrorAlertViewModel.swift in Sources */,
 				9D896AD51CDE5EEB008B0E5F /* String.swift in Sources */,
 				9D896AE41CDE624D008B0E5F /* NSTimer.swift in Sources */,
 				9D896ADC1CDE5FCB008B0E5F /* UIColor.swift in Sources */,
 				B988B95C1D243D9100824685 /* AVAsset.swift in Sources */,
+				B988B97F1D244D6300824685 /* ProgressHUDDelegate.swift in Sources */,
 				9D896AE61CDE628E008B0E5F /* NSDate.swift in Sources */,
-				9D896ADA1CDE5F35008B0E5F /* UIControl.swift in Sources */,
+				B988B96F1D24482200824685 /* ActionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +570,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -489,6 +592,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

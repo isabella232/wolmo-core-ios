@@ -8,14 +8,22 @@
 
 import Foundation
 
-public func/(lhs: String, rhs: String) -> String {
+public func / (lhs: String, rhs: String) -> String {
     return (lhs as NSString).stringByAppendingPathComponent(rhs)
 }
 
 public extension String {
     
-    public var localized: String {
+    var localized: String {
         return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
+    }
+    
+    func localized(arguments: CVarArgType...) -> String {
+        return String(format: NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: ""), arguments: arguments)
+    }
+    
+    var length: Int {
+        return characters.count
     }
     
     public var url: NSURL? {
@@ -24,12 +32,8 @@ public extension String {
     
     public var hasSpaces: Bool {
         let whitespace = NSCharacterSet.whitespaceCharacterSet()
-        let range = self.rangeOfCharacterFromSet(whitespace)
+        let range = rangeOfCharacterFromSet(whitespace)
         return range != nil
-    }
-    
-    public func localized(arguments: CVarArgType...) -> String {
-        return String(format: NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: ""), arguments: arguments)
     }
     
     public func isValidEmail() -> Bool {
@@ -47,11 +51,11 @@ public extension String {
     }
     
     public func replace(string: String, replacement: String) -> String {
-        return self.stringByReplacingOccurrencesOfString(string, withString: replacement, options: NSStringCompareOptions.LiteralSearch, range: nil)
+        return stringByReplacingOccurrencesOfString(string, withString: replacement, options: NSStringCompareOptions.LiteralSearch, range: nil)
     }
     
     public var withoutWhitespaces: String {
-        return self.replace(" ", replacement: "")
+        return replace(" ", replacement: "")
     }
     
 }

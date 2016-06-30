@@ -19,7 +19,7 @@ public func/(lhs: NSURL, rhs: Int) -> NSURL {
 public extension NSURL {
     
     public var isHTTPProtocol: Bool {
-        return self.absoluteString.lowercaseString.rangeOfString("http") != nil
+        return absoluteString.lowercaseString.rangeOfString("http") != nil
     }
     
     public func containsSubDirectory(directoryName: String) -> Bool {

@@ -39,12 +39,12 @@ public extension NSDate {
     
     public func addDays(daysToAdd: Int) -> NSDate {
         let secondsInDays: NSTimeInterval = Double(daysToAdd) * 60 * 60 * 24
-        return self.dateByAddingTimeInterval(secondsInDays)
+        return dateByAddingTimeInterval(secondsInDays)
     }
     
     public func addHours(hoursToAdd: Int) -> NSDate {
         let secondsInHours: NSTimeInterval = Double(hoursToAdd) * 60 * 60
-        return self.dateByAddingTimeInterval(secondsInHours)
+        return dateByAddingTimeInterval(secondsInHours)
     }
 }
 
