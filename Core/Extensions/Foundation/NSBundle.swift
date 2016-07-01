@@ -9,14 +9,18 @@
 import Foundation
 
 public extension NSBundle {
-
-    public func loadNib<T>(name: String) -> T {
+    
+    public func loadNib<NibType, T: RawRepresentable where T.RawValue == String>(nibName: T) -> NibType {
+        return loadNib(nibName.rawValue)
+    }
+    
+    public func loadNib<NibType>(nibName: String) -> NibType {
         // swiftlint:disable force_cast
-        return loadNibNamed(name, owner: self, options: nil)[0] as! T
+        return loadNibNamed(nibName, owner: self, options: nil)[0] as! NibType
         // swiftlint:enable force_cast
     }
     
-    public func get(key: String) -> String {
+    public subscript(key: String) -> String {
         guard let value = objectForInfoDictionaryKey(key) as? String where !value.isEmpty else {
             fatalError("Key: \"\(key)\" has not been configured in Info.plist")
         }
