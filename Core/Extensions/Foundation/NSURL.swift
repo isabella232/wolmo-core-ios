@@ -8,11 +8,11 @@
 
 import Foundation
 
-public func/(baseURL: NSURL, pathComponent: String) -> NSURL {
+public func / (baseURL: NSURL, pathComponent: String) -> NSURL {
     return baseURL.URLByAppendingPathComponent(pathComponent)
 }
 
-public func/(lhs: NSURL, rhs: Int) -> NSURL {
+public func / (lhs: NSURL, rhs: Int) -> NSURL {
     return lhs / String(rhs)
 }
 
