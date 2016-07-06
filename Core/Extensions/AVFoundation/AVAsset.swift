@@ -10,27 +10,29 @@ import AVFoundation
 import ReactiveCocoa
 import enum Result.NoError
 
+
 public extension AVAsset {
     
-    public func loadValuesAsynchronouslyForKeys(keys: [String]) -> SignalProducer<(), NSError> {
+    public func loadValuesAsynchronouslyForKeys(keys: [String]) -> SignalProducer<[String: AVKeyValueStatus], NSError> {
         return SignalProducer { observer, _ in
             self.loadValuesAsynchronouslyForKeys(keys) { _ in
                 
-                var error: NSError?
+                var keysStatus: [String: AVKeyValueStatus] = [:]
                 
-                for key in keys {
+                keys.forEach { key in
+                    var error: NSError?
                     let status = self.statusOfValueForKey(key, error: &error)
-                    // We need to ensure that the keys were loaded
-                    guard status == .Loaded else {
-                        if let error = error {
-                            // There is an error only if the status is Failed
-                            observer.sendFailed(error)
-                        }
+                    
+                    // The documentation states that if a .Failed is received, then statusOfValueForKey reports it in error parameter.
+                    if status == .Failed, let error = error {
+                        observer.sendFailed(error)
                         return
                     }
+                    
+                    keysStatus[key] = status
                 }
-                
-                observer.sendNext(())
+
+                observer.sendNext(keysStatus)
                 observer.sendCompleted()
             }
         }
