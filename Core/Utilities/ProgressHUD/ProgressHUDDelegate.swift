@@ -11,9 +11,7 @@ import MBProgressHUD
 
 public protocol ProgressHUDDelegate {
     
-    func showProgressHud()
-    
-    func showProgressHud(string: String)
+    func showProgressHud(labelText: String?)
     
     func hideProgressHud()
     
@@ -21,13 +19,17 @@ public protocol ProgressHUDDelegate {
 
 extension UIViewController: ProgressHUDDelegate {
     
-    public func showProgressHud() {
-        MBProgressHUD.showHUDAddedTo(view, animated: true)
-    }
-    
-    public func showProgressHud(string: String) {
+    /**
+     Show a progress hud attached to the viewController's view.
+     - parameter labelText: A label text to be shown under the progress hud.
+     - Warning: Showing a progress hud freezes the UI of the view it is attached to.
+     */
+    public func showProgressHud(labelText: String? = .None) {
         let progressHUD = MBProgressHUD.showHUDAddedTo(view, animated: true)
-        progressHUD.labelText = string
+        
+        if let labelText = labelText {
+            progressHUD.labelText = labelText
+        }
     }
     
     public func hideProgressHud() {
