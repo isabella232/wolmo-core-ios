@@ -13,13 +13,13 @@ public extension UIAlertController {
     public static func confirmationAlertController(alertViewModel: ConfirmationAlertViewModel) -> UIAlertController {
         let alertController = UIAlertController(title: alertViewModel.title,
                                                 message: alertViewModel.message,
-                                                preferredStyle: UIAlertControllerStyle.Alert)
+                                                preferredStyle: .Alert)
         
-        let confirmAction = UIAlertAction(title: alertViewModel.confirmButtonTitle, style: UIAlertActionStyle.Default) { _ in
+        let confirmAction = UIAlertAction(title: alertViewModel.confirmButtonTitle, style: .Default) { _ in
             alertViewModel.confirmAction(alertViewModel)
         }
         
-        let dismissAction = UIAlertAction(title: alertViewModel.dismissButtonTitle, style: UIAlertActionStyle.Default) { _ in
+        let dismissAction = UIAlertAction(title: alertViewModel.dismissButtonTitle, style: .Default) { _ in
             alertViewModel.dismissAction(alertViewModel)
         }
         
@@ -32,9 +32,9 @@ public extension UIAlertController {
     public static func errorAlertController(alertViewModel: ErrorAlertViewModel) -> UIAlertController {
         let alertController = UIAlertController(title: alertViewModel.title,
                                                 message: alertViewModel.message,
-                                                preferredStyle: UIAlertControllerStyle.Alert)
+                                                preferredStyle: .Alert)
         
-        let dismissAction = UIAlertAction(title: alertViewModel.dismissButtonTitle, style: UIAlertActionStyle.Default) { _ in
+        let dismissAction = UIAlertAction(title: alertViewModel.dismissButtonTitle, style: .Default) { _ in
             alertViewModel.dismissAction(alertViewModel)
         }
         
