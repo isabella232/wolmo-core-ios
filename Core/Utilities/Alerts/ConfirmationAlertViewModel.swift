@@ -52,7 +52,15 @@ public struct ConfirmationAlertViewModel {
         self.confirmButtonTitle = confirmButtonTitle
     }
     
-    public static var DefaultConfirmButtonTitle: String = "confirmation-alert-view.dismiss.title".localized
+    /**
+     Default title for confirm button. You can provide a different default title by changing this property.
+     - seealso: Localizable.String
+    */
+    public static var DefaultConfirmButtonTitle: String = "confirmation-alert-view.dismiss.title".localized.capitalizedString
     
-    public static var DefaultDismissButtonTitle: String = "confirmation-alert-view.confirm.title".localized
+    /**
+     Default title for dismiss button. You can provide a different default title by changing this property.
+     - seealso: Localizable.String
+    */
+    public static var DefaultDismissButtonTitle: String = "confirmation-alert-view.confirm.title".localized.capitalizedString
 }
