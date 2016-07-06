@@ -20,7 +20,7 @@ extension ActionHandlerType where Self: UIControl {
     public func setAction(events: UIControlEvents = .TouchUpInside, _ action: (Self, UIEvent) -> Void) {
         let handler = ActionHandler(action: action)
         addTarget(handler, action: #selector(handler.action(_:forEvent:)), forControlEvents: events)
-        objc_setAssociatedObject(self, actionHandlerTypeAssociatedObjectKey, handler, .OBJC_ASSOCIATION_RETAIN)
+        setAssociatedObject(self, value: handler, key: actionHandlerTypeAssociatedObjectKey, policy: .OBJC_ASSOCIATION_RETAIN)
     }
     
 }

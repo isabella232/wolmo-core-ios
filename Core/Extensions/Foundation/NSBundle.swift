@@ -14,10 +14,6 @@ public extension NSBundle {
         return loadNib(nibName.rawValue)
     }
     
-    public func loadNib<NibType>(nibName: String) -> NibType? {
-        return loadNibNamed(nibName, owner: self, options: nil)[0] as? NibType
-    }
-    
     public subscript(key: String) -> String? {
         guard let value = objectForInfoDictionaryKey(key) as? String where !value.isEmpty else {
             return .None
@@ -25,4 +21,11 @@ public extension NSBundle {
         return value
     }
     
+}
+
+private extension NSBundle {
+    
+    private func loadNib<NibType>(nibName: String) -> NibType? {
+        return loadNibNamed(nibName, owner: self, options: nil)[0] as? NibType
+    }
 }
