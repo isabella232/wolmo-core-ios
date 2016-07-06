@@ -22,7 +22,6 @@
 		9D896AEC1CDE642F008B0E5F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D896AEA1CDE642F008B0E5F /* Quick.framework */; };
 		9D896AEE1CDE64FF008B0E5F /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D896AE91CDE642F008B0E5F /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D896AEF1CDE64FF008B0E5F /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D896AEA1CDE642F008B0E5F /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9D896AF41CDE6946008B0E5F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF31CDE6946008B0E5F /* UIView.swift */; };
 		9D896AF61CDE69D2008B0E5F /* CellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */; };
 		9D896AF81CDE6A07008B0E5F /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF71CDE6A07008B0E5F /* UITableView.swift */; };
 		9D896AFA1CDE6B78008B0E5F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF91CDE6B78008B0E5F /* UIViewController.swift */; };
@@ -43,6 +42,9 @@
 		B988B97E1D244D6300824685 /* ErrorAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9791D244D6300824685 /* ErrorAlertViewModel.swift */; };
 		B988B97F1D244D6300824685 /* ProgressHUDDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B97B1D244D6300824685 /* ProgressHUDDelegate.swift */; };
 		B988B9811D24621000824685 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9801D24621000824685 /* DeviceType.swift */; };
+		B988B99A1D2D7A6800824685 /* Collapsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9971D2D7A6800824685 /* Collapsable.swift */; };
+		B988B99B1D2D7A6800824685 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9981D2D7A6800824685 /* NibLoadable.swift */; };
+		B988B99C1D2D7A6800824685 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9991D2D7A6800824685 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +99,6 @@
 		9D896AE71CDE62DA008B0E5F /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawRepresentable.swift; path = Extensions/Foundation/RawRepresentable.swift; sourceTree = "<group>"; };
 		9D896AE91CDE642F008B0E5F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		9D896AEA1CDE642F008B0E5F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		9D896AF31CDE6946008B0E5F /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = Extensions/UIKit/UIView.swift; sourceTree = "<group>"; };
 		9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellIdentifiable.swift; sourceTree = "<group>"; };
 		9D896AF71CDE6A07008B0E5F /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableView.swift; path = Extensions/UIKit/UITableView.swift; sourceTree = "<group>"; };
 		9D896AF91CDE6B78008B0E5F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = Extensions/UIKit/UIViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +117,9 @@
 		B988B9791D244D6300824685 /* ErrorAlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlertViewModel.swift; sourceTree = "<group>"; };
 		B988B97B1D244D6300824685 /* ProgressHUDDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUDDelegate.swift; sourceTree = "<group>"; };
 		B988B9801D24621000824685 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		B988B9971D2D7A6800824685 /* Collapsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collapsable.swift; sourceTree = "<group>"; };
+		B988B9981D2D7A6800824685 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		B988B9991D2D7A6800824685 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,8 +213,8 @@
 		9D896AD81CDE5F19008B0E5F /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				B988B9961D2D7A6800824685 /* UIView */,
 				9D896ADB1CDE5FCB008B0E5F /* UIColor.swift */,
-				9D896AF31CDE6946008B0E5F /* UIView.swift */,
 				9D896AF71CDE6A07008B0E5F /* UITableView.swift */,
 				9D896AF91CDE6B78008B0E5F /* UIViewController.swift */,
 				B988B9701D244B6700824685 /* UITextField.swift */,
@@ -294,6 +298,17 @@
 				B988B97B1D244D6300824685 /* ProgressHUDDelegate.swift */,
 			);
 			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		B988B9961D2D7A6800824685 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				B988B9971D2D7A6800824685 /* Collapsable.swift */,
+				B988B9981D2D7A6800824685 /* NibLoadable.swift */,
+				B988B9991D2D7A6800824685 /* UIView.swift */,
+			);
+			name = UIView;
+			path = Extensions/UIKit/UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,15 +441,17 @@
 			files = (
 				9D896AF61CDE69D2008B0E5F /* CellIdentifiable.swift in Sources */,
 				B988B9711D244B6700824685 /* UITextField.swift in Sources */,
-				9D896AF41CDE6946008B0E5F /* UIView.swift in Sources */,
 				9D896AE21CDE6211008B0E5F /* NSURL.swift in Sources */,
 				B988B9751D244CBC00824685 /* UIAlertController.swift in Sources */,
 				9D896ADE1CDE6071008B0E5F /* NSBundle.swift in Sources */,
+				B988B99A1D2D7A6800824685 /* Collapsable.swift in Sources */,
 				9D896AE01CDE6129008B0E5F /* Array.swift in Sources */,
+				B988B99C1D2D7A6800824685 /* UIView.swift in Sources */,
 				B988B9611D24437500824685 /* Signal.swift in Sources */,
 				B988B97C1D244D6300824685 /* AlertPresenter.swift in Sources */,
 				B988B9731D244BAE00824685 /* AssociatedObject.swift in Sources */,
 				B988B97D1D244D6300824685 /* ConfirmationAlertViewModel.swift in Sources */,
+				B988B99B1D2D7A6800824685 /* NibLoadable.swift in Sources */,
 				B988B9631D24437E00824685 /* SignalProducer.swift in Sources */,
 				9D896AF81CDE6A07008B0E5F /* UITableView.swift in Sources */,
 				9D896AE81CDE62DA008B0E5F /* RawRepresentable.swift in Sources */,
