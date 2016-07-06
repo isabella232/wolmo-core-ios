@@ -31,7 +31,7 @@ public extension AVAsset {
                     
                     keysStatus[key] = status
                 }
-
+                
                 observer.sendNext(keysStatus)
                 observer.sendCompleted()
             }

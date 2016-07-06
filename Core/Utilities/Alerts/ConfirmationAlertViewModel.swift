@@ -11,10 +11,10 @@ import Foundation
 /**
  ConfirmationAlertViewModel models a `UIAlertController` where there are
  two options to select:
-
+ 
  * confirmAction: normally a action that do something.
  * dismissAction: normally a empty action.
-*/
+ */
 public struct ConfirmationAlertViewModel {
     
     public let title: String
@@ -25,18 +25,18 @@ public struct ConfirmationAlertViewModel {
     public let confirmAction: ConfirmationAlertViewModel -> ()
     
     /**
-    Initialize a new ConfirmationAlertViewModel with the provided parameters.
-    
-    Is not necessary to provide all parameters. In most cases, is only
-    needed `title`, `message` and `confirmAtion`.
-    
-    - parameter title: The alert title.
-    - parameter message: The alert message.
-    - parameter dismissButtonTitle: The dismiss button title.
-    - parameter dismissAction: The dismiss button action.
-    - parameter confirmButtonTitle: The confirm button title.
-    - parameter confirmAction: The confirm button action.
-    */
+     Initialize a new ConfirmationAlertViewModel with the provided parameters.
+     
+     Is not necessary to provide all parameters. In most cases, is only
+     needed `title`, `message` and `confirmAtion`.
+     
+     - parameter title: The alert title.
+     - parameter message: The alert message.
+     - parameter dismissButtonTitle: The dismiss button title.
+     - parameter dismissAction: The dismiss button action.
+     - parameter confirmButtonTitle: The confirm button title.
+     - parameter confirmAction: The confirm button action.
+     */
     public init(
         title: String,
         message: String,
@@ -55,12 +55,12 @@ public struct ConfirmationAlertViewModel {
     /**
      Default title for confirm button. You can provide a different default title by changing this property.
      - seealso: Localizable.String
-    */
+     */
     public static var DefaultConfirmButtonTitle: String = "confirmation-alert-view.dismiss.title".localized.capitalizedString
     
     /**
      Default title for dismiss button. You can provide a different default title by changing this property.
      - seealso: Localizable.String
-    */
+     */
     public static var DefaultDismissButtonTitle: String = "confirmation-alert-view.confirm.title".localized.capitalizedString
 }

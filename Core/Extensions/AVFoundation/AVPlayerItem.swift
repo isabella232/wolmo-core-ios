@@ -12,7 +12,7 @@ import enum Result.NoError
 
 public extension AVPlayerItem {
     
-    public func seekToTimeProducer(time: CMTime) -> SignalProducer<Bool, NoError> {
+    public func seekTo(time: CMTime) -> SignalProducer<Bool, NoError> {
         return SignalProducer { observer, _ in
             self.seekToTime(time) {
                 observer.sendNext($0)

@@ -42,10 +42,11 @@ public extension String {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluateWithObject(self)
     }
-    
-    /// cleanText: This function remove leading and trailing whitespaces.
-    ///
-    /// - returns: The resulting string
+    /*
+     cleanText: This function remove leading and trailing whitespaces.
+     
+     - returns: The resulting string
+     */
     public func cleanText() -> String {
         return stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }

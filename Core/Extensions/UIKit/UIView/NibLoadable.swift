@@ -16,10 +16,12 @@ public protocol NibLoadable {
 
 extension UIView: NibLoadable {
     
-    /// Loads the nib for the specific view , it will use the view name as the xib name.
-    ///
-    /// - parameter bundle: Specific bundle, default = mainBundle.
-    /// - returns: The loaded UIView
+    /**
+        Loads the nib for the specific view , it will use the view name as the xib name.
+ 
+        - parameter bundle: Specific bundle, default = mainBundle.
+        - returns: The loaded UIView
+    */
     public static func loadFromNib<T: UIView>(bundle: NSBundle = NSBundle.mainBundle()) -> T {
         let nibName = NSStringFromClass(self).componentsSeparatedByString(".").last!
         return bundle.loadNibNamed(nibName, owner: self, options: nil).first as! T // swiftlint:disable:this force_cast

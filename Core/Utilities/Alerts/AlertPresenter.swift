@@ -26,7 +26,7 @@ extension UIViewController: AlertViewPresenter {
      - Warning: The closure is fired *when* the alert is shown, it is not related to the dismiss/confirmation.
      Dismiss and confirmation callbacks can be set on the `ErrorAlertViewModel`.
      - Seealso: `ErrorAlertViewModel`
-    */
+     */
     public func presentAlert(alertViewModel: ErrorAlertViewModel, completion: (() -> Void)? = .None) {
         let alert: UIAlertController = .errorAlertController(alertViewModel)
         presentViewController(alert, animated: true, completion: completion)
@@ -40,7 +40,7 @@ extension UIViewController: AlertViewPresenter {
      - Warning: The closure is fired *when* the alert is shown, it is not related to the dismiss/confirmation.
      Dismiss and confirmation callbacks can be set on the `ConfirmationAlertViewModel`.
      - Seealso: `ConfirmationAlertViewModel`.
-    */
+     */
     public func presentAlert(alertViewModel: ConfirmationAlertViewModel, completion: (() -> Void)? = .None) {
         let alert: UIAlertController = .confirmationAlertController(alertViewModel)
         presentViewController(alert, animated: true, completion: completion)

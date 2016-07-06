@@ -51,12 +51,14 @@ extension UIView {
         addSubview(borderView)
     }
     
-    /// Loads the view into the specified containerView.
-    ///
-    /// It can be done after self's view is initialized, as it uses constraints to determine the size.
-    ///
-    /// - parameter containerView: The container view.
-    /// - parameter viewPositioning: Back or Front. Default: Front
+    /**
+     Loads the view into the specified containerView.
+    
+     It can be done after self's view is initialized, as it uses constraints to determine the size.
+    
+     - parameter containerView: The container view.
+     - parameter viewPositioning: Back or Front. Default: Front
+     */
     public func loadInto(containerView: UIView, viewPositioning: ViewPositioning = .Front) {
         containerView.addSubview(self)
         

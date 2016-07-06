@@ -17,7 +17,7 @@ public protocol Collapsable {
 }
 
 extension UIView: Collapsable {
-   
+    
     /**
      Collapse a view by adding/modifying constraint height. It works also if they view already has a constraint.
      

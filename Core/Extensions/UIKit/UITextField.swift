@@ -12,7 +12,7 @@ private var nextTextFieldKey: UInt8 = 0
 
 public extension UITextField {
     
-    // This is intended to be used when we have a form, so in the delegate we can directly change to the next texfield 
+    // This is intended to be used when we have a form, so in the delegate we can directly change to the next texfield
     // (which is assigned previously in nextTextField)
     public var nextTextField: UITextField? {
         get {
