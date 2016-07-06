@@ -36,7 +36,6 @@
 		B988B96F1D24482200824685 /* ActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B96E1D24482200824685 /* ActionHandler.swift */; };
 		B988B9711D244B6700824685 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9701D244B6700824685 /* UITextField.swift */; };
 		B988B9731D244BAE00824685 /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9721D244BAE00824685 /* AssociatedObject.swift */; };
-		B988B9751D244CBC00824685 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9741D244CBC00824685 /* UIAlertController.swift */; };
 		B988B97C1D244D6300824685 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9771D244D6300824685 /* AlertPresenter.swift */; };
 		B988B97D1D244D6300824685 /* ConfirmationAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9781D244D6300824685 /* ConfirmationAlertViewModel.swift */; };
 		B988B97E1D244D6300824685 /* ErrorAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9791D244D6300824685 /* ErrorAlertViewModel.swift */; };
@@ -45,6 +44,7 @@
 		B988B99A1D2D7A6800824685 /* Collapsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9971D2D7A6800824685 /* Collapsable.swift */; };
 		B988B99B1D2D7A6800824685 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9981D2D7A6800824685 /* NibLoadable.swift */; };
 		B988B99C1D2D7A6800824685 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9991D2D7A6800824685 /* UIView.swift */; };
+		B988B99E1D2D7B3B00824685 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B99D1D2D7B3B00824685 /* UIAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +111,6 @@
 		B988B96E1D24482200824685 /* ActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionHandler.swift; sourceTree = "<group>"; };
 		B988B9701D244B6700824685 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITextField.swift; path = Extensions/UIKit/UITextField.swift; sourceTree = "<group>"; };
 		B988B9721D244BAE00824685 /* AssociatedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedObject.swift; sourceTree = "<group>"; };
-		B988B9741D244CBC00824685 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		B988B9771D244D6300824685 /* AlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		B988B9781D244D6300824685 /* ConfirmationAlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationAlertViewModel.swift; sourceTree = "<group>"; };
 		B988B9791D244D6300824685 /* ErrorAlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlertViewModel.swift; sourceTree = "<group>"; };
@@ -120,6 +119,7 @@
 		B988B9971D2D7A6800824685 /* Collapsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collapsable.swift; sourceTree = "<group>"; };
 		B988B9981D2D7A6800824685 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		B988B9991D2D7A6800824685 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		B988B99D1D2D7B3B00824685 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIAlertController.swift; path = Extensions/UIKit/UIAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +218,7 @@
 				9D896AF71CDE6A07008B0E5F /* UITableView.swift */,
 				9D896AF91CDE6B78008B0E5F /* UIViewController.swift */,
 				B988B9701D244B6700824685 /* UITextField.swift */,
-				B988B9741D244CBC00824685 /* UIAlertController.swift */,
+				B988B99D1D2D7B3B00824685 /* UIAlertController.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -442,7 +442,6 @@
 				9D896AF61CDE69D2008B0E5F /* CellIdentifiable.swift in Sources */,
 				B988B9711D244B6700824685 /* UITextField.swift in Sources */,
 				9D896AE21CDE6211008B0E5F /* NSURL.swift in Sources */,
-				B988B9751D244CBC00824685 /* UIAlertController.swift in Sources */,
 				9D896ADE1CDE6071008B0E5F /* NSBundle.swift in Sources */,
 				B988B99A1D2D7A6800824685 /* Collapsable.swift in Sources */,
 				9D896AE01CDE6129008B0E5F /* Array.swift in Sources */,
@@ -459,6 +458,7 @@
 				B988B95E1D24432000824685 /* AVPlayerItem.swift in Sources */,
 				9D896AFA1CDE6B78008B0E5F /* UIViewController.swift in Sources */,
 				B988B97E1D244D6300824685 /* ErrorAlertViewModel.swift in Sources */,
+				B988B99E1D2D7B3B00824685 /* UIAlertController.swift in Sources */,
 				9D896AD51CDE5EEB008B0E5F /* String.swift in Sources */,
 				9D896AE41CDE624D008B0E5F /* NSTimer.swift in Sources */,
 				9D896ADC1CDE5FCB008B0E5F /* UIColor.swift in Sources */,
