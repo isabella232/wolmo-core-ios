@@ -40,9 +40,9 @@ public struct ConfirmationAlertViewModel {
     public init(
         title: String,
         message: String,
-        dismissButtonTitle: String = DefaultConfirmButtonTitle,
+        dismissButtonTitle: String = DefaultDismissButtonTitleKey.localized.localizedCapitalizedString,
         dismissAction: ConfirmationAlertViewModel -> () = { _ in },
-        confirmButtonTitle: String = DefaultDismissButtonTitle,
+        confirmButtonTitle: String = DefaultConfirmButtonTitleKey.localized.localizedCapitalizedString,
         confirmAction: ConfirmationAlertViewModel -> () = { _ in }) {
         self.title = title
         self.message = message
@@ -53,14 +53,16 @@ public struct ConfirmationAlertViewModel {
     }
     
     /**
-     Default title for confirm button. You can provide a different default title by changing this property.
+     Default title key for confirm button. It will fetch the localized value from the corresponding Localizable.String. 
+     You can provide a different key by changing this property.
      - seealso: Localizable.String
      */
-    public static var DefaultConfirmButtonTitle: String = "confirmation-alert-view.dismiss.title".localized.capitalizedString
+    public static var DefaultConfirmButtonTitleKey: String = "confirmation-alert-view.dismiss.title"
     
     /**
-     Default title for dismiss button. You can provide a different default title by changing this property.
+     Default title key for dismiss button. It will fetch the localized value from the corresponding Localizable.String.
+     You can provide a different key by changing this property.
      - seealso: Localizable.String
      */
-    public static var DefaultDismissButtonTitle: String = "confirmation-alert-view.confirm.title".localized.capitalizedString
+    public static var DefaultDismissButtonTitleKey: String = "confirmation-alert-view.confirm.title"
 }
