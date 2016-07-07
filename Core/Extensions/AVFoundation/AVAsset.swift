@@ -19,7 +19,7 @@ public extension AVAsset {
                 
                 var keysStatus: [String: AVKeyValueStatus] = [:]
                 
-                keys.forEach { key in
+                for key in keys {
                     var error: NSError?
                     let status = self.statusOfValueForKey(key, error: &error)
                     
