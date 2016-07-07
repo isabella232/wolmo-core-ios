@@ -14,7 +14,7 @@ public protocol NibLoadable {
     
 }
 
-extension UIView: NibLoadable {
+extension NibLoadable where Self: UIView {
     
     /**
         Loads the nib for the specific view , it will use the view name as the xib name.
