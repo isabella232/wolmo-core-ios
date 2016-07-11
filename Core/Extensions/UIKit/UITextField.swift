@@ -8,8 +8,6 @@
 
 import Foundation
 
-private var nextTextFieldKey: UInt8 = 0
-
 public extension UITextField {
     
     // This is intended to be used when we have a form, so in the delegate we can directly change to the next texfield
@@ -20,7 +18,9 @@ public extension UITextField {
         }
         
         set {
-            setAssociatedObject(self, value: newValue, key: &nextTextFieldKey, policy: .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            setAssociatedObject(self, key: &nextTextFieldKey, value: newValue, policy: .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 }
+
+private var nextTextFieldKey: UInt8 = 0

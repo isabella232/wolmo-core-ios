@@ -30,7 +30,7 @@ extension Collapsable where Self: UIView {
     public func collapse(animated: Bool = true, animationDuration: NSTimeInterval = 1) {
         if let previousHeightConstraint = previousHeightConstraint {
             // We save the previous height value
-            setAssociatedObject(self, value: previousHeightConstraint.constant, key: &CollapsableHeightConstraintKey, policy: .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            setAssociatedObject(self, key: &CollapsableHeightConstraintKey, value: previousHeightConstraint.constant, policy: .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             previousHeightConstraint.constant = 0
         } else {
             // We create a new height constraint with constant 0
