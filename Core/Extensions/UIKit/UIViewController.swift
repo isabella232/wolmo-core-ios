@@ -10,6 +10,9 @@ import UIKit
 
 public extension UIViewController {
     
+    /**
+     Toggles the visibility of the status and tabBar.
+     */
     public var hideBars: Bool {
         set {
             setHiddenValueFromBarsTo(newValue)

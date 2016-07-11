@@ -10,8 +10,10 @@ import Foundation
 
 public extension UITextField {
     
-    // This is intended to be used when we have a form, so in the delegate we can directly change to the next texfield
-    // (which is assigned previously in nextTextField)
+    /**
+     This is intended to be used in a form, so in the delegate it can directly change to nextTextField
+     (which was assigned previously).
+     */
     public var nextTextField: UITextField? {
         get {
             return getAssociatedObject(self, key: &nextTextFieldKey)

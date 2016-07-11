@@ -9,6 +9,7 @@
 import ReactiveCocoa
 
 public extension SignalProducer {
+    
     /**
      Transforms a `SignalProducer<Value, Error>` to `SignalProducer<Value, NewError>`
      This is usually pretty useful when the `flatMap` operator is used and the outer

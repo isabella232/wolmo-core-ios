@@ -25,26 +25,50 @@ public enum ViewPositioning {
 
 extension UIView {
     
-    public func topBorder(border: Border, offset: CGFloat) {
+    /** 
+     Adds a border to the top of self.
+     
+     - parameter border: models the border to be added
+     - parameter offset: the offset of the border related to self.
+    */
+    public func addTopBorder(border: Border, offset: CGFloat) {
         let borderView = UIView(frame: CGRect(x: 0, y: 0, width: superview!.bounds.width - offset, height: CGFloat(border.height)))
         borderView.backgroundColor = border.color
         addSubview(borderView)
     }
     
-    public func bottomBorder(border: Border, offset: CGFloat) {
+    /**
+     Adds a border to the bottom of self.
+     
+     - parameter border: models the border to be added
+     - parameter offset: the offset of the border related to self.
+     */
+    public func addBottomBorder(border: Border, offset: CGFloat) {
         let borderView = UIView(frame: CGRect(x: 0, y: bounds.height, width: superview!.bounds.width - offset,
             height: CGFloat(border.height)))
         borderView.backgroundColor = border.color
         addSubview(borderView)
     }
     
-    public func leftBorder(border: Border, offset: CGFloat) {
+    /**
+     Adds a border to the left of self.
+     
+     - parameter border: models the border to be added
+     - parameter offset: the offset of the border related to self.
+     */
+    public func addLeftBorder(border: Border, offset: CGFloat) {
         let borderView = UIView(frame: CGRect(x: 0, y: 0, width: CGFloat(border.height), height: bounds.height))
         borderView.backgroundColor = border.color
         addSubview(borderView)
     }
     
-    public func rightBorder(border: Border, offset: CGFloat) {
+    /**
+     Adds a border to the right of self.
+     
+     - parameter border: models the border to be added
+     - parameter offset: the offset of the border related to self.
+     */
+    public func addRightBorder(border: Border, offset: CGFloat) {
         let borderView = UIView(frame: CGRect(x: superview!.bounds.width - offset, y: 0, width: CGFloat(border.height),
             height: bounds.height))
         borderView.backgroundColor = border.color
@@ -53,9 +77,9 @@ extension UIView {
     
     /**
      Loads the view into the specified containerView.
-    
-     It can be done after self's view is initialized, as it uses constraints to determine the size.
-    
+     
+     - warning: It must be done after self's view is loaded.
+     - note: It uses constraints to determine the size, so the frame isn't needed. Because of this, `loadInto()` can be used in viewDidLoad().
      - parameter containerView: The container view.
      - parameter viewPositioning: Back or Front. Default: Front
      */

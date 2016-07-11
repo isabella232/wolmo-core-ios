@@ -10,6 +10,11 @@ import Foundation
 
 public extension NSDate {
     
+    /**
+     Creates a Date from a string.
+     
+     - parameter dateString: The date string representation.
+     */
     convenience init(dateString: String) {
         let dateStringFormatter = NSDateFormatter()
         dateStringFormatter.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
@@ -19,6 +24,11 @@ public extension NSDate {
         self.init(timeInterval:0, sinceDate:d)
     }
     
+    /**
+     Creates a Date from a day, month and year.
+     
+     - seealso: init(dateString: String)
+     */
     convenience init(day: Int, month: Int, year: Int) {
         var monthString: String = "\(month)"
         var dayString: String = "\(day)"
@@ -31,19 +41,32 @@ public extension NSDate {
         self.init(dateString: "\(year)-\(monthString)-\(dayString)")
     }
     
+    /**
+     Returns the current day of the week (ex: Monday).
+     */
     public func getWeekDay() -> String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("EEEE")
         return dateFormatter.stringFromDate(self)
     }
     
-    public func addDays(daysToAdd: Int) -> NSDate {
-        let secondsInDays: NSTimeInterval = Double(daysToAdd) * 60 * 60 * 24
+    /**
+     Returns a new date that is set to a given number of days relative to the date.
+     
+     - seealso: dateByAddingTimeInterval()
+     */
+    public func adding(days days: Int) -> NSDate {
+        let secondsInDays = Double(days) * 60 * 60 * 24
         return dateByAddingTimeInterval(secondsInDays)
     }
     
-    public func addHours(hoursToAdd: Int) -> NSDate {
-        let secondsInHours: NSTimeInterval = Double(hoursToAdd) * 60 * 60
+    /**
+     Returns a new date that is set to a given number of hours relative to the date.
+     
+     - seealso: dateByAddingTimeInterval()
+     */
+    public func adding(hours hours: Int) -> NSDate {
+        let secondsInHours: NSTimeInterval = Double(hours) * 60 * 60
         return dateByAddingTimeInterval(secondsInHours)
     }
 }

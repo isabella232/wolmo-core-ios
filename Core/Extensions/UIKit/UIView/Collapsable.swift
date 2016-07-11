@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Represents a collapsable view.
+*/
 public protocol Collapsable {
     
     func collapse(animated: Bool, animationDuration: NSTimeInterval)

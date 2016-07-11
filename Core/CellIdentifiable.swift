@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Identifies a cell
+ */
 public protocol IdentifiableCell {
     
     static var cellIdentifier: String { get }
@@ -15,7 +18,9 @@ public protocol IdentifiableCell {
 }
 
 extension UITableViewCell: IdentifiableCell {
-    
+    /**
+     Returns the corresponding cell identifier.
+     */
     public static var cellIdentifier: String { return String(self) }
     
 }

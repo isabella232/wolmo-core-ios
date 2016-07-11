@@ -6,16 +6,24 @@
 //  Copyright © 2016 Wolox. All rights reserved.
 //
 
-public protocol ActionHandlerType {}
+/**
+ Closure-based handlers for UIButton's events.
+ */
+public protocol ActionHandlerType {
+    
+    func setAction(events: UIControlEvents, _ action: (Self, UIEvent) -> Void)
+    
+}
 
 extension ActionHandlerType where Self: UIControl {
     
     /**
-     It adds the closure as target for that event, but retains any object use in the closure.
-     So if using self, you should probably use weak or onowned self.
+     Sets the action passed by parameter to the specified events.
      
-     - Parameter events: Control event for which the action is registered. TouchUpInside is default.
-     - Parameter action: Closure that receives the UIControl and the UIEvent and processes them.
+     - Parameter event: Control events for which the action is registered. TouchUpInside is default.
+     - Parameter action: Closure that receives the UIControl and the UIEvent.
+     
+     - note: It retains any object used in the closure.
      */
     public func setAction(events: UIControlEvents = .TouchUpInside, _ action: (Self, UIEvent) -> Void) {
         let handler = ActionHandler(action: action)

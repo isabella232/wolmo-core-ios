@@ -9,6 +9,12 @@
 import UIKit
 
 public extension UIColor {
+    
+    /**
+     Initialzer based on hex string.
+     
+     - parameter hexString: It can either be uppercase or lowercase, and contain or not a leading #.
+    */
     public convenience init?(hexString: String) {
         let r, g, b, a: CGFloat
         
