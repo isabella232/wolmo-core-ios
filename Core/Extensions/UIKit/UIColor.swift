@@ -31,7 +31,6 @@ public extension UIColor {
                 }
             }
         }
-        
         return nil
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public func/(lhs: String, rhs: String) -> String {
+public func / (lhs: String, rhs: String) -> String {
     return (lhs as NSString).stringByAppendingPathComponent(rhs)
 }
 
@@ -18,18 +18,22 @@ public extension String {
         return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
     }
     
+    public func localized(arguments: CVarArgType...) -> String {
+        return String(format: NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: ""), arguments: arguments)
+    }
+    
+    public var length: Int {
+        return characters.count
+    }
+    
     public var url: NSURL? {
         return NSURL(string: self)
     }
     
     public var hasSpaces: Bool {
         let whitespace = NSCharacterSet.whitespaceCharacterSet()
-        let range = self.rangeOfCharacterFromSet(whitespace)
+        let range = rangeOfCharacterFromSet(whitespace)
         return range != nil
-    }
-    
-    public func localized(arguments: CVarArgType...) -> String {
-        return String(format: NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: ""), arguments: arguments)
     }
     
     public func isValidEmail() -> Bool {
@@ -38,20 +42,21 @@ public extension String {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluateWithObject(self)
     }
-    
-    /// cleanText: This function remove leading and trailing whitespaces.
-    ///
-    /// - returns: The resulting string
+    /*
+     cleanText: This function remove leading and trailing whitespaces.
+     
+     - returns: The resulting string
+     */
     public func cleanText() -> String {
         return stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
     
     public func replace(string: String, replacement: String) -> String {
-        return self.stringByReplacingOccurrencesOfString(string, withString: replacement, options: NSStringCompareOptions.LiteralSearch, range: nil)
+        return stringByReplacingOccurrencesOfString(string, withString: replacement, options: NSStringCompareOptions.LiteralSearch, range: nil)
     }
     
     public var withoutWhitespaces: String {
-        return self.replace(" ", replacement: "")
+        return replace(" ", replacement: "")
     }
     
 }
