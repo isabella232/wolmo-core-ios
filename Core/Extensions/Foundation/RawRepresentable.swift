@@ -13,7 +13,7 @@ public extension RawRepresentable where RawValue == Int {
     /**
      Returns a sequence that contains all the possible rawValues of self.
      
-     - parameter startingAtRawValue: The rawValue from which to start.
+     - parameter startingAt: The rawValue from which to start.
      */
     public static func allValues(startingAt rawValue: Int = 0) -> AnySequence<Self> {
         let generator: RawRepresentableGenerator<Int, Self> = RawRepresentableGenerator(baseRawValue: rawValue) { $0.successor() }
