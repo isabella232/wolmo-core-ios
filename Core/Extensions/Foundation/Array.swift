@@ -48,7 +48,8 @@ public extension Array {
      Returns the indexth element. 
      - Complexity:
      Reading is O(1). 
-     Writing is O(1) unless self's storage is shared with another live array; O(count) if self does not wrap a bridged NSArray; otherwise the efficiency is unspecified..
+     Writing is O(1) unless self's storage is shared with another live array; 
+     O(count) if self does not wrap a bridged NSArray; otherwise the efficiency is unspecified..
      
      - Note: This function should be used over subscript when we don't want a runtime error when indexth element doesn't exist.
      - Warning: Returns .None if the index is out of bound.
@@ -59,7 +60,8 @@ public extension Array {
     }
     
     /**
-     Returns the first index where predicate returns true for the corresponding value, or nil if such value is not found.
+     Returns the first index where predicate returns true for the corresponding value, 
+     or nil if such value is not found.
      
      - parameter condition: The condition that will be applied.
      - returns: The element that satisfies the predicate or .None if none satisfies.
