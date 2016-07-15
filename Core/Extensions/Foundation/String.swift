@@ -28,7 +28,7 @@ public extension String {
     }
     
     /**
-     Returns a localized representation of self.
+     Returns a localized representation of the string.
      
      - parameter arguments: Formatting arguments.
      */
