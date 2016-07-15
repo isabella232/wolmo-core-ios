@@ -26,11 +26,11 @@ public extension RawRepresentable where RawValue == Int {
      - parameter startingAt: The rawValue from which to start.
      */
     public static func count(startingAt rawValue: Int = 0) -> Int {
-        var c = 0
+        var count = 0
         for _ in allValues(startingAt: rawValue) {
-            c += 1
+            count += 1
         }
-        return c
+        return count
     }
 }
 
