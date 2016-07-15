@@ -19,13 +19,13 @@ public extension UIColor {
         let r, g, b, a: CGFloat
         
         let start: String.Index
-        if hexString.hasPrefix("#") {
-            start = hexString.startIndex.advancedBy(1)
+        if hex.hasPrefix("#") {
+            start = hex.startIndex.advancedBy(1)
         } else {
-            start = hexString.startIndex
+            start = hex.startIndex
         }
         
-        var hexColor = hexString.substringFromIndex(start)
+        var hexColor = hex.substringFromIndex(start)
         
         if hexColor.characters.count == 6 {
             hexColor.appendContentsOf("ff")
