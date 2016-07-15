@@ -25,56 +25,6 @@ public enum ViewPositioning {
 
 extension UIView {
     
-    /** 
-     Adds a border to the top of self.
-     
-     - parameter border: models the border to be added
-     - parameter offset: the offset of the border related to self.
-    */
-    public func addTopBorder(border: Border, offset: CGFloat) {
-        let borderView = UIView(frame: CGRect(x: 0, y: 0, width: superview!.bounds.width - offset, height: CGFloat(border.height)))
-        borderView.backgroundColor = border.color
-        addSubview(borderView)
-    }
-    
-    /**
-     Adds a border to the bottom of self.
-     
-     - parameter border: models the border to be added
-     - parameter offset: the offset of the border related to self.
-     */
-    public func addBottomBorder(border: Border, offset: CGFloat) {
-        let borderView = UIView(frame: CGRect(x: 0, y: bounds.height, width: superview!.bounds.width - offset,
-            height: CGFloat(border.height)))
-        borderView.backgroundColor = border.color
-        addSubview(borderView)
-    }
-    
-    /**
-     Adds a border to the left of self.
-     
-     - parameter border: models the border to be added
-     - parameter offset: the offset of the border related to self.
-     */
-    public func addLeftBorder(border: Border, offset: CGFloat) {
-        let borderView = UIView(frame: CGRect(x: 0, y: 0, width: CGFloat(border.height), height: bounds.height))
-        borderView.backgroundColor = border.color
-        addSubview(borderView)
-    }
-    
-    /**
-     Adds a border to the right of self.
-     
-     - parameter border: models the border to be added
-     - parameter offset: the offset of the border related to self.
-     */
-    public func addRightBorder(border: Border, offset: CGFloat) {
-        let borderView = UIView(frame: CGRect(x: superview!.bounds.width - offset, y: 0, width: CGFloat(border.height),
-            height: bounds.height))
-        borderView.backgroundColor = border.color
-        addSubview(borderView)
-    }
-    
     /**
      Loads the view into the specified containerView.
      
