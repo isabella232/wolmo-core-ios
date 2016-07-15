@@ -8,20 +8,32 @@
 
 import Foundation
 
+internal let DefaultDateFormatter: NSDateFormatter = {
+    $0.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+    $0.dateFormat = "yyyy-MM-dd"
+    $0.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+    return $0
+}(NSDateFormatter())
+
+internal let DefaultWeekDateFormatter: NSDateFormatter = {
+    $0.setLocalizedDateFormatFromTemplate("EEEE")
+    return $0
+}(NSDateFormatter())
+
 public extension NSDate {
     
     /**
      Creates a Date from a string.
      
      - parameter dateString: The date string representation.
+     - parameter dateFormatter: The used for initializing the date.
      */
-    convenience init(dateString: String) {
-        let dateStringFormatter = NSDateFormatter()
-        dateStringFormatter.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        dateStringFormatter.dateFormat = "yyyy-MM-dd"
-        dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        let d = dateStringFormatter.dateFromString(dateString)!
-        self.init(timeInterval:0, sinceDate:d)
+    convenience init?(dateString: String, dateFormatter: NSDateFormatter = DefaultDateFormatter) {
+        guard let date = dateFormatter.dateFromString(dateString) else {
+            return nil
+        }
+        
+        self.init(timeInterval: 0, sinceDate: date)
     }
     
     /**
@@ -29,7 +41,7 @@ public extension NSDate {
      
      - seealso: init(dateString: String)
      */
-    convenience init(day: Int, month: Int, year: Int) {
+    convenience init?(day: Int, month: Int, year: Int) {
         var monthString: String = "\(month)"
         var dayString: String = "\(day)"
         if month < 10 {
@@ -43,10 +55,10 @@ public extension NSDate {
     
     /**
      Returns the current day of the week (ex: Monday).
+     
+     - parameter dateFormatter: The dateFormatter to use.
      */
-    public func getWeekDay() -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.setLocalizedDateFormatFromTemplate("EEEE")
+    public func getWeekDay(dateFormatter: NSDateFormatter = DefaultWeekDateFormatter) -> String {
         return dateFormatter.stringFromDate(self)
     }
     
