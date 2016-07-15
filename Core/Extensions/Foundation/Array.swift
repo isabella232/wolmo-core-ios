@@ -34,7 +34,8 @@ public extension Array {
     /**
      Returns a new array with element appended to the Array.
      
-     - Complexity: Amortized O(1) unless self's storage is shared with another live array; O(count) if self does not wrap a bridged NSArray; otherwise the efficiency is unspecified.
+     - Complexity: Amortized O(1) unless self's storage is shared with another live array; 
+     O(count) if self does not wrap a bridged NSArray; otherwise the efficiency is unspecified.
      - seealso: append().
     */
     public func appending(element: Element) -> [Element] {
