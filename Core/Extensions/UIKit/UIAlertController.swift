@@ -37,7 +37,7 @@ public extension UIAlertController {
      Builds a UIAlertController from an ErrorAlertViewModel
      
      - parameter alertViewModel: Models an ErrorAlertViewModel
-     - seealso: ConfirmationAlertViewModel
+     - seealso: ErrorAlertViewModel
      */
     public convenience init(alertViewModel: ErrorAlertViewModel) {
         self.init(title: alertViewModel.title,
