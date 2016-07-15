@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- Represents a collapsable view.
+ Represents a vertical collapsable view, which when collapsed not only isn't shown but isn't considered in vertical layout.
 */
 public protocol Collapsable {
     
