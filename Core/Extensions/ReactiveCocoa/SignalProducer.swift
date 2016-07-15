@@ -13,7 +13,7 @@ public extension SignalProducer {
     /**
      Transforms a `SignalProducer<Value, Error>` to `SignalProducer<Value, NewError>`
      This is usually pretty useful when the `flatMap` operator is used and the outer
-     producer as `NoError` and the inner one a different type of error.
+     producer has `NoError` error type and the inner one a different type of error.
      
      - returns: A signal producer with the same value type but with `NewError` as the error type
      */
