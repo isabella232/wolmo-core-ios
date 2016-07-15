@@ -19,7 +19,7 @@ public protocol IdentifiableCell {
 
 extension UITableViewCell: IdentifiableCell {
     /**
-     Returns the corresponding cell identifier.
+     Returns the identifier of the class. It is the name of the class.
      */
     public static var cellIdentifier: String { return String(self) }
     
