@@ -38,7 +38,7 @@ public struct ErrorAlertViewModel {
     }
     
     /**
-     Default title key for dismiss button. It will fetch the localized value from the corresponding Localizable.String.
+     Default title key for dismiss button. It will fetch the localized value from the corresponding strings file.
      You can provide a different key by changing this property.
      - seealso: Localizable.String
      */
