@@ -22,7 +22,7 @@ extension NibLoadable where Self: UIView {
     /**
         Loads the nib for the specific view , it will use the view name as the xib name.
  
-        - parameter bundle: Specific bundle, default = mainBundle.
+        - parameter bundle: Specific bundle, default = bundle for the class.
         - returns: The loaded UIView
     */
     public static func loadFromNib(bundle: NSBundle = NSBundle(forClass: Self.self)) -> Self? {
