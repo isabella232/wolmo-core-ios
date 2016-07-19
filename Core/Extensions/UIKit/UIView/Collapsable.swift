@@ -22,7 +22,7 @@ public protocol Collapsable {
     func collapse(animated: Bool, animationDuration: NSTimeInterval)
     
     /**
-     uncollapse self.
+     Uncollapse self.
      
      - Parameter animated: Indicates if the collapse should be animated.
      - Parameter animationDuration: The animationDuration of the collapse.
