@@ -140,7 +140,6 @@
 		9D896AAE1CDE3EC5008B0E5F = {
 			isa = PBXGroup;
 			children = (
-				B95948021D3E78FD003A082F /* MBProgressHUD.framework */,
 				9D896ABA1CDE3EC5008B0E5F /* Core */,
 				9D896AC61CDE3EC5008B0E5F /* CoreTests */,
 				9D896AB91CDE3EC5008B0E5F /* Products */,
@@ -220,6 +219,7 @@
 		9D896AF01CDE6504008B0E5F /* Framewokrs */ = {
 			isa = PBXGroup;
 			children = (
+				B95948021D3E78FD003A082F /* MBProgressHUD.framework */,
 				B988B9661D24457D00824685 /* ReactiveCocoa.framework */,
 				B988B9671D24457D00824685 /* Result.framework */,
 				9D896AE91CDE642F008B0E5F /* Nimble.framework */,
