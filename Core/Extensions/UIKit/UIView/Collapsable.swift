@@ -9,16 +9,31 @@
 import Foundation
 
 /**
- Represents a vertical collapsable view, which when collapsed not only isn't shown but isn't considered in vertical layout.
-*/
+ Represents a collapsable element.
+ */
 public protocol Collapsable {
     
+    /**
+     Collapse self.
+     
+     - Parameter animated: Indicates if the collapse should be animated.
+     - Parameter animationDuration: The animationDuration of the collapse.
+     */
     func collapse(animated: Bool, animationDuration: NSTimeInterval)
     
+    /**
+     uncollapse self.
+     
+     - Parameter animated: Indicates if the collapse should be animated.
+     - Parameter animationDuration: The animationDuration of the collapse.
+     */
     func uncollapse(animated: Bool, animationDuration: NSTimeInterval)
     
 }
 
+/**
+ Represents a vertical collapsable view, which when collapsed not only isn't shown but isn't considered in vertical layout.
+ */
 extension Collapsable where Self: UIView {
     
     /**
