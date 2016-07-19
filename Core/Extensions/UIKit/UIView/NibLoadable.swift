@@ -8,9 +8,12 @@
 
 import Foundation
 
-public protocol NibLoadable {
+/*
+ Represents an object which is loaded from a nib.
+ */
+public protocol NibLoadable: class {
     
-    static func loadFromNib<T: UIView>(bundle: NSBundle) -> T?
+    static func loadFromNib(bundle: NSBundle) -> Self?
     
 }
 
