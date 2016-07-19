@@ -18,7 +18,7 @@ public extension NSBundle {
      - seealso: loadNib(nibName: String)
      */
     public func loadNib<NibType, T: RawRepresentable where T.RawValue == String>(nibName: T) -> NibType? {
-        return loadNib(nibName.rawValue)
+        return loadNibNamed(nibName.rawValue, owner: self, options: nil)[0] as? NibType
     }
     
     /**
