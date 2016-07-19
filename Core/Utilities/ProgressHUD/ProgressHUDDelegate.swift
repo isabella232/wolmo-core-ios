@@ -14,8 +14,16 @@ import MBProgressHUD
  */
 public protocol ProgressHUDDelegate {
     
+    /**
+     Shows a progress hud.
+     
+     - parameter labelText: A label text to be shown under the progress hud.
+    */
     func showProgressHud(labelText: String?)
     
+    /**
+     Hides the progress hud.
+    */
     func hideProgressHud()
     
 }
