@@ -25,7 +25,7 @@ extension NibLoadable where Self: UIView {
         - parameter bundle: Specific bundle, default = mainBundle.
         - returns: The loaded UIView
     */
-    public static func loadFromNib(bundle: NSBundle = NSBundle.mainBundle()) -> Self? {
+    public static func loadFromNib(bundle: NSBundle = NSBundle(forClass: Self.self)) -> Self? {
         let nibName = NSStringFromClass(self).componentsSeparatedByString(".").last
         return nibName.flatMap(bundle.loadNib)
     }
