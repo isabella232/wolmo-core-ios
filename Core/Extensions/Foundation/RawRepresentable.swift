@@ -24,6 +24,8 @@ public extension RawRepresentable where RawValue == Int {
      Returns the count of all the possible values of self.
      
      - parameter startingAt: The rawValue from which to start.
+     
+     - Complexity: O(N) where N = #values - startingAt
      */
     public static func count(startingAt rawValue: Int = 0) -> Int {
         var count = 0
