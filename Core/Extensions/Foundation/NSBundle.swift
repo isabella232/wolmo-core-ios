@@ -24,7 +24,8 @@ public extension NSBundle {
     /**
      Returns the value associated with the specified key in the receiver's information property list.
      
-     The value associated with key in the receiver's property list (Info.plist). The localized value of a key is returned when one is available.
+     The value associated with key in the receiver's property list (Info.plist). 
+     The localized value of a key is returned when one is available.
      
      - parameter key: A key in the receiver's property list.
      - returns: The value associated with key in the receiver's property list (Info.plist) or .None if it don't exists.
