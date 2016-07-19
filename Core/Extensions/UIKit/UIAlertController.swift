@@ -10,10 +10,16 @@ import UIKit
 
 public extension UIAlertController {
     
-    public static func confirmationAlertController(alertViewModel: ConfirmationAlertViewModel) -> UIAlertController {
-        let alertController = UIAlertController(title: alertViewModel.title,
-                                                message: alertViewModel.message,
-                                                preferredStyle: .Alert)
+    /**
+     Builds a UIAlertController from a ConfirmationAlertViewModel
+     
+     - parameter alertViewModel: Models a ConfirmationAlertViewModel
+     - seealso: ConfirmationAlertViewModel
+    */
+    public convenience init(alertViewModel: ConfirmationAlertViewModel) {
+        self.init(title: alertViewModel.title,
+                  message: alertViewModel.message,
+                  preferredStyle: .Alert)
         
         let confirmAction = UIAlertAction(title: alertViewModel.confirmButtonTitle, style: .Default) { _ in
             alertViewModel.confirmAction(alertViewModel)
@@ -23,24 +29,26 @@ public extension UIAlertController {
             alertViewModel.dismissAction(alertViewModel)
         }
         
-        alertController.addAction(confirmAction)
-        alertController.addAction(dismissAction)
-        
-        return alertController
+        addAction(confirmAction)
+        addAction(dismissAction)
     }
     
-    public static func errorAlertController(alertViewModel: ErrorAlertViewModel) -> UIAlertController {
-        let alertController = UIAlertController(title: alertViewModel.title,
-                                                message: alertViewModel.message,
-                                                preferredStyle: .Alert)
+    /**
+     Builds a UIAlertController from an ErrorAlertViewModel
+     
+     - parameter alertViewModel: Models an ErrorAlertViewModel
+     - seealso: ErrorAlertViewModel
+     */
+    public convenience init(alertViewModel: ErrorAlertViewModel) {
+        self.init(title: alertViewModel.title,
+                  message: alertViewModel.message,
+                  preferredStyle: .Alert)
         
         let dismissAction = UIAlertAction(title: alertViewModel.dismissButtonTitle, style: .Default) { _ in
             alertViewModel.dismissAction(alertViewModel)
         }
+        addAction(dismissAction)
         
-        alertController.addAction(dismissAction)
-        
-        return alertController
     }
     
 }

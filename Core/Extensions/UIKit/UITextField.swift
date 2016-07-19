@@ -10,8 +10,12 @@ import Foundation
 
 public extension UITextField {
     
-    // This is intended to be used when we have a form, so in the delegate we can directly change to the next texfield
-    // (which is assigned previously in nextTextField)
+    /**
+     nextTextField is intended to be used in a form, so that the delegate uses it, for example, in the textFieldShouldReturn method.
+     
+     - warning: Avoid setting nextTextField in the didSet hook of an outlet.
+     Override awakeFromNib() of the containing view in that case.
+     */
     public var nextTextField: UITextField? {
         get {
             return getAssociatedObject(self, key: &nextTextFieldKey)

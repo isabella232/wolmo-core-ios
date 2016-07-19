@@ -21,7 +21,7 @@ run_tests ()
   fi
 
   destination=$(scheme_destination $1)
-  test_command="$test_command -destination $destination clean build test -configuration Debug"
+  test_command="$test_command -destination $destination clean test -configuration Debug"
   if type bundle > /dev/null && bundle show xcpretty > /dev/null
   then
     test_command="$test_command | bundle exec xcpretty -c"
@@ -39,6 +39,7 @@ run_tests ()
   then
     echo $test_command
   fi
+  open -b com.apple.iphonesimulator
   eval $test_command
 }
 
@@ -99,5 +100,10 @@ fi
 
 if [ -z "$RUNNING_ON_CI" ] && [ -f .slather.yml ]
 then
-  bundle exec slather coverage -s
+  slather_command="bundle exec slather coverage -s"
+  if [ ! -z "$VERBOSE" ]
+  then
+    slather_command="$slather_command --verbose"
+  fi
+  eval $slather_command
 fi

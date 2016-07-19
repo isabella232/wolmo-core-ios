@@ -9,11 +9,7 @@
 import Foundation
 
 /**
- ConfirmationAlertViewModel models a `UIAlertController` where there are
- two options to select:
- 
- * confirmAction: normally a action that do something.
- * dismissAction: normally a empty action.
+ ConfirmationAlertViewModel models a `UIAlertController` that can be confirmed or dismissed.
  */
 public struct ConfirmationAlertViewModel {
     
@@ -27,7 +23,7 @@ public struct ConfirmationAlertViewModel {
     /**
      Initialize a new ConfirmationAlertViewModel with the provided parameters.
      
-     Is not necessary to provide all parameters. In most cases, is only
+     Is not necessary to provide all parameters. In most cases, its only
      needed `title`, `message` and `confirmAtion`.
      
      - parameter title: The alert title.

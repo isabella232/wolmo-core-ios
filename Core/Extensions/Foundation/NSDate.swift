@@ -8,18 +8,40 @@
 
 import Foundation
 
+internal let DefaultDateFormatter: NSDateFormatter = {
+    $0.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+    $0.dateFormat = "yyyy-MM-dd"
+    $0.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+    return $0
+}(NSDateFormatter())
+
+internal let DefaultWeekDateFormatter: NSDateFormatter = {
+    $0.setLocalizedDateFormatFromTemplate("EEEE")
+    return $0
+}(NSDateFormatter())
+
 public extension NSDate {
     
-    convenience init(dateString: String) {
-        let dateStringFormatter = NSDateFormatter()
-        dateStringFormatter.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        dateStringFormatter.dateFormat = "yyyy-MM-dd"
-        dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        let d = dateStringFormatter.dateFromString(dateString)!
-        self.init(timeInterval:0, sinceDate:d)
+    /**
+     Creates a Date from a string.
+     
+     - parameter dateString: The date string representation.
+     - parameter dateFormatter: The used for initializing the date.
+     */
+    convenience init?(dateString: String, dateFormatter: NSDateFormatter = DefaultDateFormatter) {
+        guard let date = dateFormatter.dateFromString(dateString) else {
+            return nil
+        }
+        
+        self.init(timeInterval: 0, sinceDate: date)
     }
     
-    convenience init(day: Int, month: Int, year: Int) {
+    /**
+     Creates a Date from a day, month and year.
+     
+     - seealso: init(dateString: String)
+     */
+    convenience init?(day: Int, month: Int, year: Int) {
         var monthString: String = "\(month)"
         var dayString: String = "\(day)"
         if month < 10 {
@@ -31,19 +53,32 @@ public extension NSDate {
         self.init(dateString: "\(year)-\(monthString)-\(dayString)")
     }
     
-    public func getWeekDay() -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.setLocalizedDateFormatFromTemplate("EEEE")
+    /**
+     Returns the current day of the week (ex: Monday).
+     
+     - parameter dateFormatter: The dateFormatter to use.
+     */
+    public func getWeekDay(dateFormatter: NSDateFormatter = DefaultWeekDateFormatter) -> String {
         return dateFormatter.stringFromDate(self)
     }
     
-    public func addDays(daysToAdd: Int) -> NSDate {
-        let secondsInDays: NSTimeInterval = Double(daysToAdd) * 60 * 60 * 24
+    /**
+     Returns a new date that is set to a given number of days relative to the date.
+     
+     - seealso: dateByAddingTimeInterval()
+     */
+    public func adding(days days: Int) -> NSDate {
+        let secondsInDays = Double(days) * 60 * 60 * 24
         return dateByAddingTimeInterval(secondsInDays)
     }
     
-    public func addHours(hoursToAdd: Int) -> NSDate {
-        let secondsInHours: NSTimeInterval = Double(hoursToAdd) * 60 * 60
+    /**
+     Returns a new date that is set to a given number of hours relative to the date.
+     
+     - seealso: dateByAddingTimeInterval()
+     */
+    public func adding(hours hours: Int) -> NSDate {
+        let secondsInHours: NSTimeInterval = Double(hours) * 60 * 60
         return dateByAddingTimeInterval(secondsInHours)
     }
 }

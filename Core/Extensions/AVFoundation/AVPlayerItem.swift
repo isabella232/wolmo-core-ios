@@ -12,6 +12,13 @@ import enum Result.NoError
 
 public extension AVPlayerItem {
     
+    /**
+     Moves the playback cursor to a given time.
+     
+     - parameter time: The time to which to seek.
+     
+     - seealso: seekToTime(time, completionHandler)
+     */
     public func seekTo(time: CMTime) -> SignalProducer<Bool, NoError> {
         return SignalProducer { observer, _ in
             self.seekToTime(time) {

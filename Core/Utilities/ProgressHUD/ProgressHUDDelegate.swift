@@ -9,10 +9,21 @@
 import UIKit
 import MBProgressHUD
 
+/**
+ ProgressHUDDelegate abstracts the logic of presenting a progress HUD, usually used in blocking operation, just as sign up.
+ */
 public protocol ProgressHUDDelegate {
     
+    /**
+     Shows a progress hud.
+     
+     - parameter labelText: A label text to be shown under the progress hud.
+    */
     func showProgressHud(labelText: String?)
     
+    /**
+     Hides the progress hud.
+    */
     func hideProgressHud()
     
 }
@@ -22,7 +33,7 @@ extension UIViewController: ProgressHUDDelegate {
     /**
      Show a progress hud attached to the viewController's view.
      - parameter labelText: A label text to be shown under the progress hud.
-     - Warning: Showing a progress hud freezes the UI of the view it is attached to.
+     - Warning: Showing a progress hud freezes the viewController's view.
      */
     public func showProgressHud(labelText: String? = .None) {
         let progressHUD = MBProgressHUD.showHUDAddedTo(view, animated: true)
@@ -32,6 +43,9 @@ extension UIViewController: ProgressHUDDelegate {
         }
     }
     
+    /**
+     Hides the view associated with the ViewController.
+     */
     public func hideProgressHud() {
         MBProgressHUD.hideHUDForView(view, animated: true)
     }

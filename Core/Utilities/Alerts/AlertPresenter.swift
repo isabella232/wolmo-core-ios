@@ -8,10 +8,14 @@
 
 import Foundation
 
+/**
+ AlertViewPresenter abstracts the logic of presenting different type of alerts.
+ */
 public protocol AlertViewPresenter {
-    
+
     func presentAlert(alertViewModel: ErrorAlertViewModel, completion: (() -> Void)?)
     
+
     func presentAlert(alertViewModel: ConfirmationAlertViewModel, completion: (() -> Void)?)
     
 }
@@ -28,7 +32,7 @@ extension UIViewController: AlertViewPresenter {
      - Seealso: `ErrorAlertViewModel`
      */
     public func presentAlert(alertViewModel: ErrorAlertViewModel, completion: (() -> Void)? = .None) {
-        let alert: UIAlertController = .errorAlertController(alertViewModel)
+        let alert = UIAlertController(alertViewModel: alertViewModel)
         presentViewController(alert, animated: true, completion: completion)
     }
     
@@ -42,7 +46,7 @@ extension UIViewController: AlertViewPresenter {
      - Seealso: `ConfirmationAlertViewModel`.
      */
     public func presentAlert(alertViewModel: ConfirmationAlertViewModel, completion: (() -> Void)? = .None) {
-        let alert: UIAlertController = .confirmationAlertController(alertViewModel)
+        let alert = UIAlertController(alertViewModel: alertViewModel)
         presentViewController(alert, animated: true, completion: completion)
     }
     
