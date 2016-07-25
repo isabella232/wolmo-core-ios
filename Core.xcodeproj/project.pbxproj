@@ -44,6 +44,7 @@
 		B988B99B1D2D7A6800824685 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9981D2D7A6800824685 /* NibLoadable.swift */; };
 		B988B99C1D2D7A6800824685 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9991D2D7A6800824685 /* UIView.swift */; };
 		B988B99E1D2D7B3B00824685 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B99D1D2D7B3B00824685 /* UIAlertController.swift */; };
+		CE52487E1D4665B200B499CC /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52487D1D4665B200B499CC /* UIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		B988B9981D2D7A6800824685 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		B988B9991D2D7A6800824685 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		B988B99D1D2D7B3B00824685 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIAlertController.swift; path = Extensions/UIKit/UIAlertController.swift; sourceTree = "<group>"; };
+		CE52487D1D4665B200B499CC /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 				9D896AF91CDE6B78008B0E5F /* UIViewController.swift */,
 				B988B9701D244B6700824685 /* UITextField.swift */,
 				B988B99D1D2D7B3B00824685 /* UIAlertController.swift */,
+				CE52487D1D4665B200B499CC /* UIButton.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				B988B97C1D244D6300824685 /* AlertPresenter.swift in Sources */,
 				B988B9731D244BAE00824685 /* AssociatedObject.swift in Sources */,
 				B988B97D1D244D6300824685 /* ConfirmationAlertViewModel.swift in Sources */,
+				CE52487E1D4665B200B499CC /* UIButton.swift in Sources */,
 				B988B99B1D2D7A6800824685 /* NibLoadable.swift in Sources */,
 				B988B9631D24437E00824685 /* SignalProducer.swift in Sources */,
 				9D896AF81CDE6A07008B0E5F /* UITableView.swift in Sources */,
