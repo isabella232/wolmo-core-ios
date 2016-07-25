@@ -10,6 +10,18 @@ import UIKit
 
 public extension UIButton {
     
+    /*
+     Sets the button's title underlined with style and for state specified.
+     
+     - parameter title: Title for the button.
+     - parameter style: NSUnderlineStyle with which the title is underlined.
+        By default, StyleSingle.
+     - parameter color: UIColor for the underline, or None if the color
+        should be the same as the foreground's. By default, None.
+     - parameter forState: UIControlState for which to set the title.
+        By default, Normal.
+     
+     */
     public func setUnderlinedTitle(title: String, style: NSUnderlineStyle = .StyleSingle, color: UIColor? = .None, forState state: UIControlState = .Normal) {
         var attributes: [String : AnyObject] = [NSUnderlineStyleAttributeName: style.rawValue]
         if let colorAttr = color {
