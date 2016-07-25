@@ -23,8 +23,8 @@ public extension String {
     /**
      Returns a localized representation of the string.
     */
-    public var localized: String {
-        return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
+    public func localized(bundle: NSBundle = NSBundle.mainBundle()) -> String {
+        return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
     }
     
     /**
@@ -32,8 +32,8 @@ public extension String {
      
      - parameter arguments: Formatting arguments.
      */
-    public func localized(arguments: CVarArgType...) -> String {
-        return String(format: NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: ""), arguments: arguments)
+    public func localized(bundle: NSBundle = NSBundle.mainBundle(), arguments: CVarArgType...) -> String {
+        return String(format: NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: ""), arguments: arguments)
     }
     
     /**
