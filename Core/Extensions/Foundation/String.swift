@@ -36,7 +36,7 @@ public extension String {
      - parameter arguments: Formatting arguments.
      */
     public func localized(bundle: NSBundle = NSBundle.mainBundle(), arguments: CVarArgType...) -> String {
-        return String(format: NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: ""), arguments: arguments)
+        return String(format: localized(), arguments: arguments)
     }
     
     /**
