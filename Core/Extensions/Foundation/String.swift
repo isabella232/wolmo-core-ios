@@ -22,6 +22,8 @@ public extension String {
     
     /**
      Returns a localized representation of the string.
+     
+     - parameter bundle: Bundle were to search for localization.
     */
     public func localized(bundle: NSBundle = NSBundle.mainBundle()) -> String {
         return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
@@ -30,6 +32,7 @@ public extension String {
     /**
      Returns a localized representation of the string.
      
+     - parameter bundle: Bundle were to search for localization.
      - parameter arguments: Formatting arguments.
      */
     public func localized(bundle: NSBundle = NSBundle.mainBundle(), arguments: CVarArgType...) -> String {
