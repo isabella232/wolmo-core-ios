@@ -91,7 +91,7 @@ public extension String {
     /**
      Returns a new string without whitespaces.
      */
-    public var withoutWhitespaces: String {
+    public var withoutWhiteSpaces: String {
         return replacing(" ", with: "")
     }
     
