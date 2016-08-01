@@ -29,8 +29,8 @@ public extension UIAlertController {
             alertViewModel.dismissAction(alertViewModel)
         }
         
-        addAction(confirmAction)
         addAction(dismissAction)
+        addAction(confirmAction)
     }
     
     /**
