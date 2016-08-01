@@ -47,6 +47,10 @@
 		B988B99B1D2D7A6800824685 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9981D2D7A6800824685 /* NibLoadable.swift */; };
 		B988B99C1D2D7A6800824685 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9991D2D7A6800824685 /* UIView.swift */; };
 		B988B99E1D2D7B3B00824685 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B99D1D2D7B3B00824685 /* UIAlertController.swift */; };
+		B9F63CA21D522CDA00D09C1D /* AssociatedObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959483F1D4FDD54003A082F /* AssociatedObjectSpec.swift */; };
+		B9F63CA31D522CDD00D09C1D /* CellIdentifiableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95948401D4FDD54003A082F /* CellIdentifiableSpec.swift */; };
+		B9F63CA51D522CE300D09C1D /* ConfirmationAlertViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959483D1D4FDD54003A082F /* ConfirmationAlertViewModelSpec.swift */; };
+		B9F63CA61D522CE600D09C1D /* ErrorAlertViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959483E1D4FDD54003A082F /* ErrorAlertViewModelSpec.swift */; };
 		CE52487E1D4665B200B499CC /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52487D1D4665B200B499CC /* UIButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +102,10 @@
 		B95948191D3EA039003A082F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B959481B1D3EA051003A082F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B959481D1D3EA060003A082F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B959483D1D4FDD54003A082F /* ConfirmationAlertViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationAlertViewModelSpec.swift; sourceTree = "<group>"; };
+		B959483E1D4FDD54003A082F /* ErrorAlertViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlertViewModelSpec.swift; sourceTree = "<group>"; };
+		B959483F1D4FDD54003A082F /* AssociatedObjectSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedObjectSpec.swift; sourceTree = "<group>"; };
+		B95948401D4FDD54003A082F /* CellIdentifiableSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellIdentifiableSpec.swift; sourceTree = "<group>"; };
 		B988B95B1D243D9100824685 /* AVAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAsset.swift; sourceTree = "<group>"; };
 		B988B95D1D24432000824685 /* AVPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerItem.swift; sourceTree = "<group>"; };
 		B988B9601D24437500824685 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
@@ -180,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				9D896AF11CDE6565008B0E5F /* Extensions */,
+				B959483A1D4FDD54003A082F /* Utilities */,
 				9D896AC91CDE3EC5008B0E5F /* Info.plist */,
 			);
 			path = CoreTests;
@@ -254,6 +263,25 @@
 				9D896AC71CDE3EC5008B0E5F /* StringSpec.swift */,
 			);
 			name = Foundation;
+			sourceTree = "<group>";
+		};
+		B959483A1D4FDD54003A082F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B959483C1D4FDD54003A082F /* Alerts */,
+				B959483F1D4FDD54003A082F /* AssociatedObjectSpec.swift */,
+				B95948401D4FDD54003A082F /* CellIdentifiableSpec.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B959483C1D4FDD54003A082F /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				B959483D1D4FDD54003A082F /* ConfirmationAlertViewModelSpec.swift */,
+				B959483E1D4FDD54003A082F /* ErrorAlertViewModelSpec.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 		B988B95A1D243D6200824685 /* AVFoundation */ = {
@@ -497,7 +525,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F63CA31D522CDD00D09C1D /* CellIdentifiableSpec.swift in Sources */,
+				B9F63CA51D522CE300D09C1D /* ConfirmationAlertViewModelSpec.swift in Sources */,
 				9D896AC81CDE3EC5008B0E5F /* StringSpec.swift in Sources */,
+				B9F63CA21D522CDA00D09C1D /* AssociatedObjectSpec.swift in Sources */,
+				B9F63CA61D522CE600D09C1D /* ErrorAlertViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

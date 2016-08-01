@@ -29,7 +29,7 @@ public struct ErrorAlertViewModel {
     public init(
         title: String,
         message: String,
-        dismissButtonTitle: String = DefaultDismissButtonTitle.localized().localizedCapitalizedString,
+        dismissButtonTitle: String = DefaultDismissButtonTitleKey.localized().localizedCapitalizedString,
         dismissAction: ErrorAlertViewModel -> () = { _ in }) {
         self.title = title
         self.message = message
@@ -42,5 +42,5 @@ public struct ErrorAlertViewModel {
      You can provide a different key by changing this property.
      - seealso: Localizable.String
      */
-    public static var DefaultDismissButtonTitle: String = "error-alert-view.dismiss.title"
+    public static var DefaultDismissButtonTitleKey: String = "error-alert-view.dismiss.title"
 }
