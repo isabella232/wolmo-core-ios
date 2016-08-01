@@ -32,6 +32,7 @@ run_tests ()
     fi
   fi
 
+  test_command="open -b com.apple.iphonesimulator && $test_command"
   echo ""
   echo " → Running tests for scheme '$1'"
   echo ""
@@ -39,7 +40,6 @@ run_tests ()
   then
     echo $test_command
   fi
-  open -b com.apple.iphonesimulator
   eval $test_command
 }
 
