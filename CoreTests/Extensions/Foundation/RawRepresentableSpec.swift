@@ -19,7 +19,6 @@ private enum IntGenerator: Int {
     case Three
 }
 
-// TODO: Implement RawRepresentableSpec
 public class RawRepresentableSpec: QuickSpec {
     
     override public func spec() {

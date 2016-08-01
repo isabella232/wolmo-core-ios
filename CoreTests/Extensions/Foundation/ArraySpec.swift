@@ -12,7 +12,6 @@ import Quick
 import Nimble
 import Core
 
-// TODO: Implement ArraySpec
 public class ArraySpec: QuickSpec {
     
     override public func spec() {
