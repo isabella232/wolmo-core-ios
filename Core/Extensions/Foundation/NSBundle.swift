@@ -15,10 +15,10 @@ public extension NSBundle {
      
      - parameter nibName: Contains a StringRepresentable nib.
      - returns: The loaded NibType or .None if it don't exists.
-     - seealso: loadNib(nibName: String)
+     - seealso: loadNibNamed()
      */
     public func loadNib<NibType, T: RawRepresentable where T.RawValue == String>(nibName: T) -> NibType? {
-        return loadNib(nibName.rawValue)
+        return loadNibNamed(nibName.rawValue, owner: self, options: nil)[0] as? NibType
     }
     
     /**

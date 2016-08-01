@@ -8,9 +8,12 @@
 
 import Foundation
 
-public protocol NibLoadable {
+/*
+ Represents an object which is loaded from a nib.
+ */
+public protocol NibLoadable: class {
     
-    static func loadFromNib<T: UIView>(bundle: NSBundle) -> T
+    static func loadFromNib(bundle: NSBundle) -> Self?
     
 }
 
@@ -19,11 +22,11 @@ extension NibLoadable where Self: UIView {
     /**
         Loads the nib for the specific view , it will use the view name as the xib name.
  
-        - parameter bundle: Specific bundle, default = mainBundle.
+        - parameter bundle: Specific bundle, default = bundle for the class.
         - returns: The loaded UIView
     */
-    public static func loadFromNib<T: UIView>(bundle: NSBundle = NSBundle.mainBundle()) -> T? {
-        let nibName = NSStringFromClass(self).componentsSeparatedByString(".").last!
-        return bundle.loadNib(nibName)
+    public static func loadFromNib(bundle: NSBundle = NSBundle(forClass: Self.self)) -> Self? {
+        let nibName = NSStringFromClass(self).componentsSeparatedByString(".").last
+        return nibName.flatMap(bundle.loadNib)
     }
 }

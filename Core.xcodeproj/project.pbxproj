@@ -26,6 +26,9 @@
 		9D896AF81CDE6A07008B0E5F /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF71CDE6A07008B0E5F /* UITableView.swift */; };
 		9D896AFA1CDE6B78008B0E5F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF91CDE6B78008B0E5F /* UIViewController.swift */; };
 		B95948031D3E78FD003A082F /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95948021D3E78FD003A082F /* MBProgressHUD.framework */; };
+		B959481A1D3EA039003A082F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95948191D3EA039003A082F /* AVFoundation.framework */; };
+		B959481C1D3EA051003A082F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B959481B1D3EA051003A082F /* UIKit.framework */; };
+		B959481E1D3EA060003A082F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B959481D1D3EA060003A082F /* Foundation.framework */; };
 		B988B95C1D243D9100824685 /* AVAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B95B1D243D9100824685 /* AVAsset.swift */; };
 		B988B95E1D24432000824685 /* AVPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B95D1D24432000824685 /* AVPlayerItem.swift */; };
 		B988B9611D24437500824685 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9601D24437500824685 /* Signal.swift */; };
@@ -92,6 +95,9 @@
 		9D896AF71CDE6A07008B0E5F /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableView.swift; path = Extensions/UIKit/UITableView.swift; sourceTree = "<group>"; };
 		9D896AF91CDE6B78008B0E5F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = Extensions/UIKit/UIViewController.swift; sourceTree = "<group>"; };
 		B95948021D3E78FD003A082F /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
+		B95948191D3EA039003A082F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B959481B1D3EA051003A082F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B959481D1D3EA060003A082F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B988B95B1D243D9100824685 /* AVAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAsset.swift; sourceTree = "<group>"; };
 		B988B95D1D24432000824685 /* AVPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerItem.swift; sourceTree = "<group>"; };
 		B988B9601D24437500824685 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
@@ -118,6 +124,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B959481E1D3EA060003A082F /* Foundation.framework in Frameworks */,
+				B959481C1D3EA051003A082F /* UIKit.framework in Frameworks */,
+				B959481A1D3EA039003A082F /* AVFoundation.framework in Frameworks */,
 				B95948031D3E78FD003A082F /* MBProgressHUD.framework in Frameworks */,
 				B988B9681D24457D00824685 /* ReactiveCocoa.framework in Frameworks */,
 				B988B9691D24457D00824685 /* Result.framework in Frameworks */,
@@ -140,7 +149,6 @@
 		9D896AAE1CDE3EC5008B0E5F = {
 			isa = PBXGroup;
 			children = (
-				B95948021D3E78FD003A082F /* MBProgressHUD.framework */,
 				9D896ABA1CDE3EC5008B0E5F /* Core */,
 				9D896AC61CDE3EC5008B0E5F /* CoreTests */,
 				9D896AB91CDE3EC5008B0E5F /* Products */,
@@ -220,6 +228,10 @@
 		9D896AF01CDE6504008B0E5F /* Framewokrs */ = {
 			isa = PBXGroup;
 			children = (
+				B959481D1D3EA060003A082F /* Foundation.framework */,
+				B959481B1D3EA051003A082F /* UIKit.framework */,
+				B95948191D3EA039003A082F /* AVFoundation.framework */,
+				B95948021D3E78FD003A082F /* MBProgressHUD.framework */,
 				B988B9661D24457D00824685 /* ReactiveCocoa.framework */,
 				B988B9671D24457D00824685 /* Result.framework */,
 				9D896AE91CDE642F008B0E5F /* Nimble.framework */,
