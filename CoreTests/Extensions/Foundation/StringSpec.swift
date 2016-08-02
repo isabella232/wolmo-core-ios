@@ -160,17 +160,25 @@ final class StringSpec: QuickSpec {
         
         describe("#withoutWhiteSpaces") {
             
-            context("When a string has whitespaces") {
+            context("When the string has whitespaces") {
                 
                 it("should remove them all") {
                     expect("has whitespaces".withoutWhiteSpaces).to(equal("haswhitespaces"))
                 }
             }
             
-            context("When a string doesn't have whitespaces") {
+            context("When the string doesn't have whitespaces") {
                 
                 it("should return the same string") {
                     expect("nowhitespaces".withoutWhiteSpaces).to(equal("nowhitespaces"))
+                }
+            }
+            
+            context("When the contains leading or trailing whitespaces") {
+                
+                it("should remove them") {
+                    let string = "   te st@te st.com   "
+                    expect(string.withoutWhiteSpaces).to(equal("test@test.com"))
                 }
             }
         }
