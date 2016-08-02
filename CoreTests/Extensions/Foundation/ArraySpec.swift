@@ -37,7 +37,7 @@ public class ArraySpec: QuickSpec {
         
         describe("#appending") {
             
-            let base: [Int] = [1, 2, 3]
+            let base = [1, 2, 3]
             
             it("should return a new array appending the new value") {
                 expect(base.appending(4)).to(equal([1, 2, 3, 4]))
