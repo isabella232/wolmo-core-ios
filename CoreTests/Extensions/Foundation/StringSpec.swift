@@ -148,6 +148,12 @@ final class StringSpec: QuickSpec {
                     let replaced = string.replacing("this", with: "that")
                     expect(replaced).to(equal("that is my string"))
                 }
+                
+                it("should not mutate the string") {
+                    let string = "this is my string"
+                    let _ = string.replacing("this", with: "that")
+                    expect(string).to(equal("this is my string"))
+                }
             }
             
         }
