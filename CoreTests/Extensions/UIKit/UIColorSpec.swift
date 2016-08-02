@@ -31,15 +31,26 @@ public class UIColorSpec: QuickSpec {
                         expect(color).toNot(beNil())
                     }
                 }
+                
+                context("When the length is 8 (it has alpha)") {
+                    
+                    it("should not be nil") {
+                        let color = UIColor(hex: "#08BBF433")
+                        expect(color).toNot(beNil())
+                    }
+                }
             }
             
             context("When the hexString is invalid") {
                 
-                context("When the length is greater than 6") {
+                context("When the hexString length is greater than 6") {
                     
-                    it("should be nil") {
-                        let color = UIColor(hex: "#08BBF43")
-                        expect(color).to(beNil())
+                    context("When the length is different from 8") {
+                        
+                        it("should be nil") {
+                            let color = UIColor(hex: "#08BBF43")
+                            expect(color).to(beNil())
+                        }
                     }
                 }
                 

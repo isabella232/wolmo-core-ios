@@ -53,6 +53,10 @@ public class UIAlertControllerSpec: QuickSpec {
                 it("should return confirmationAlertViewModel's dismiss button title") {
                     expect(alertController.actions[1].title).to(equal(confirmationAlertViewModel.confirmButtonTitle))
                 }
+                
+                it("should have two possible actions: dismiss and confirm") {
+                    expect(alertController.actions.count).to(equal(2))
+                }
             }
         }
     }
