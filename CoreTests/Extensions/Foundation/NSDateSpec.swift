@@ -53,6 +53,16 @@ public class NSDateSpec: QuickSpec {
                             let date = NSDate(dateString: "1992-12-18")
                             expect(date).toNot(beNil())
                         }
+                        
+                        it("should have hours in 00") {
+                            let date = NSDate(dateString: "1992-12-18")
+                            expect(date!.seconds()).to(equal(0))
+                        }
+                        
+                        it("should have seconds in 00") {
+                            let date = NSDate(dateString: "1992-12-18")
+                            expect(date!.seconds()).to(equal(0))
+                        }
                     }
                     
                     context("When the format is incorrect") {
@@ -97,10 +107,18 @@ public class NSDateSpec: QuickSpec {
             
             context("When adding hours in the same date") {
                 
-                it("should remain being the same date") {
+                it("should add the hours to the current hours") {
+                    // mondays hours are 00:00.
                     let monday = week[0]
-                    monday.adding(hours: 1)
-                    expect(monday.getWeekDay()).to(equal("Monday"))
+                    let newDate = monday.adding(hours: 18)
+                    expect(newDate.hours()).to(equal(18))
+                }
+                
+                it("should remain being the same date") {
+                    // mondays hours are 00:00.
+                    let monday = week[0]
+                    let newDate = monday.adding(hours: 20)
+                    expect(newDate.getWeekDay()).to(equal("Monday"))
                 }
                 
             }
@@ -108,9 +126,17 @@ public class NSDateSpec: QuickSpec {
             context("When adding hours and getting a new date") {
                 
                 it("should be the day after") {
+                    // mondays hours are 00:00.
                     let monday = week[0]
-                    let newDate = monday.adding(hours: 24)
+                    let newDate = monday.adding(hours: 25)
                     expect(newDate.getWeekDay()).to(equal("Tuesday"))
+                }
+                
+                it("should have the corresponding hours") {
+                    // mondays hours are 00:00.
+                    let monday = week[0]
+                    let newDate = monday.adding(hours: 25)
+                    expect(newDate.hours()).to(equal(1))
                 }
             }
         }
@@ -119,8 +145,19 @@ public class NSDateSpec: QuickSpec {
             
             context("When left date is before right date") {
                 
-                it("should return true") {
-                    expect(week[1] < week[2]).to(beTrue())
+                context("When both dates are in the same week") {
+                    
+                    it("should return true") {
+                        expect(week[1] < week[2]).to(beTrue())
+                    }
+                }
+                
+                context("When dates are in different weeks") {
+                    
+                    it("should return true") {
+                        let comparison = week[2].adding(days: 7) < week[1].adding(days: 9)
+                        expect(comparison).to(beTrue())
+                    }
                 }
             }
             
@@ -136,8 +173,20 @@ public class NSDateSpec: QuickSpec {
             
             context("When left date is after right date") {
                 
-                it("should return true") {
-                    expect(week[2] > week[1]).to(beTrue())
+                context("When both dates are in the same week") {
+                    
+                    it("should return true") {
+                        expect(week[2] > week[1]).to(beTrue())
+                    }
+                    
+                }
+                
+                context("When dates are in different weeks") {
+                    
+                    it("should return true") {
+                        let comparison = week[1].adding(days: 9) > week[2].adding(days: 7)
+                        expect(comparison).to(beTrue())
+                    }
                 }
             }
             
