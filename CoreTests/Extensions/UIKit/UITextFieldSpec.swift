@@ -29,32 +29,31 @@ public class UITextFieldSpec: QuickSpec {
             context("When there is a next textfield associated") {
                 
                 var textField: UITextField!
+                var nextTextField: UITextField!
                 
                 beforeEach {
                     textField = UITextField()
-                    let nextTextField = UITextField()
-                    nextTextField.text = "next"
+                    nextTextField = UITextField()
                     textField.next = nextTextField
                 }
                 
                 it("should return the next textfield") {
                     expect(textField.next).toNot(beNil())
-                    expect(textField.next?.text!).to(equal("next"))
+                    expect(textField.next!).to(equal(nextTextField))
                 }
                 
                 context("When the next textField is changed") {
                     
+                    var otherTextField: UITextField!
+                    
                     beforeEach {
-                        let nextTextField = UITextField()
-                        nextTextField.text = "changed"
-                        textField.next = nextTextField
+                        otherTextField = UITextField()
+                        textField.next = otherTextField
                     }
                     
                     it("should return the new textfield") {
-                        
                         expect(textField.next).toNot(beNil())
-                        print(textField.next!.text)
-                        expect(textField.next?.text!).to(equal("changed"))
+                        expect(textField.next!).to(equal(otherTextField))
                     }
                 }
             }
