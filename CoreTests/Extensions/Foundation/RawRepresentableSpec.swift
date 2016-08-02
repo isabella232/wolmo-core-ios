@@ -12,7 +12,7 @@ import Quick
 import Nimble
 import Core
 
-private enum IntGenerator: Int {
+private enum IntRepresentable: Int {
     case Zero
     case One
     case Two
@@ -26,14 +26,14 @@ public class RawRepresentableSpec: QuickSpec {
         describe("#allValues") {
             
             it("should return all values") {
-                let allValues = Array(IntGenerator.allValues())
+                let allValues = Array(IntRepresentable.allValues())
                 expect(allValues).to(equal([.Zero, .One, .Two, .Three]))
             }
             
             context("When specifying an initial value") {
                 
                 it("should return all values after starting at the initial value") {
-                    let values = Array(IntGenerator.allValues(startingAt: 1))
+                    let values = Array(IntRepresentable.allValues(startingAt: 1))
                     expect(values).to(equal([.One, .Two, .Three]))
                 }
             }
@@ -42,13 +42,13 @@ public class RawRepresentableSpec: QuickSpec {
         describe("#count") {
             
             it("should return all values") {
-                expect(IntGenerator.count()).to(equal(4))
+                expect(IntRepresentable.count()).to(equal(4))
             }
             
             context("When specifying an initial value") {
                 
                 it("should return all values after starting at the initial value") {
-                    expect(IntGenerator.count(startingAt: 1)).to(equal(3))
+                    expect(IntRepresentable.count(startingAt: 1)).to(equal(3))
                 }
             }
         }
@@ -60,7 +60,7 @@ public class RawRepresentableGeneratorSpec: QuickSpec {
     
     override public func spec() {
         
-        var generator: RawRepresentableGenerator<Int, IntGenerator>!
+        var generator: RawRepresentableGenerator<Int, IntRepresentable>!
         
         beforeEach {
             generator = RawRepresentableGenerator(baseRawValue: 0) { $0 }
@@ -71,8 +71,8 @@ public class RawRepresentableGeneratorSpec: QuickSpec {
             context("When using the identity function as generator") {
                 
                 it("should return always the same element") {
-                    expect(generator.next()).to(equal(IntGenerator.Zero))
-                    expect(generator.next()).to(equal(IntGenerator.Zero))
+                    expect(generator.next()).to(equal(IntRepresentable.Zero))
+                    expect(generator.next()).to(equal(IntRepresentable.Zero))
                 }
             }
             
@@ -83,8 +83,8 @@ public class RawRepresentableGeneratorSpec: QuickSpec {
                 }
                 
                 it("should return the following element") {
-                    expect(generator.next()).to(equal(IntGenerator.Zero))
-                    expect(generator.next()).to(equal(IntGenerator.One))
+                    expect(generator.next()).to(equal(IntRepresentable.Zero))
+                    expect(generator.next()).to(equal(IntRepresentable.One))
                 }
                 
             }
