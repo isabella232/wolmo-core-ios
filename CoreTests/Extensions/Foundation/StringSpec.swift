@@ -57,7 +57,7 @@ final class StringSpec: QuickSpec {
             context("When the string has spaces") {
                 
                 it("should return true") {
-                    let string = "string without spaces"
+                    let string = "string with spaces"
                     expect(string.hasSpaces).to(beTrue())
                 }
             }
@@ -82,6 +82,14 @@ final class StringSpec: QuickSpec {
                         expect(email.isValidEmail()).to(beFalse())
                     }
                 }
+                
+                context("When the email doesn't contains anything after .") {
+                    
+                    it("should return false") {
+                        let email = "email@wolox."
+                        expect(email.isValidEmail()).to(beFalse())
+                    }
+                }
             }
             
             context("When the email is valid") {
@@ -89,6 +97,14 @@ final class StringSpec: QuickSpec {
                 it("should return true") {
                     let email = "myemail@gmail.com"
                     expect(email.isValidEmail()).to(beTrue())
+                }
+                
+                context("With any provider") {
+                    
+                    it("should return true") {
+                        let email = "some@email.com"
+                        expect(email.isValidEmail()).to(beTrue())
+                    }
                 }
             }
         }
