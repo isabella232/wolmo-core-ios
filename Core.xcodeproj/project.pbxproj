@@ -29,8 +29,6 @@
 		B959481A1D3EA039003A082F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95948191D3EA039003A082F /* AVFoundation.framework */; };
 		B959481C1D3EA051003A082F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B959481B1D3EA051003A082F /* UIKit.framework */; };
 		B959481E1D3EA060003A082F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B959481D1D3EA060003A082F /* Foundation.framework */; };
-		B95948361D4FDCD6003A082F /* AVAssetSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95948311D4FDCD6003A082F /* AVAssetSpec.swift */; };
-		B95948371D4FDCD6003A082F /* AVPlayerItemSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95948321D4FDCD6003A082F /* AVPlayerItemSpec.swift */; };
 		B95948381D4FDCD6003A082F /* SignalProducerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95948341D4FDCD6003A082F /* SignalProducerSpec.swift */; };
 		B95948391D4FDCD6003A082F /* SignalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95948351D4FDCD6003A082F /* SignalSpec.swift */; };
 		B988B95C1D243D9100824685 /* AVAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B95B1D243D9100824685 /* AVAsset.swift */; };
@@ -51,6 +49,8 @@
 		B988B99B1D2D7A6800824685 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9981D2D7A6800824685 /* NibLoadable.swift */; };
 		B988B99C1D2D7A6800824685 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9991D2D7A6800824685 /* UIView.swift */; };
 		B988B99E1D2D7B3B00824685 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B99D1D2D7B3B00824685 /* UIAlertController.swift */; };
+		B9F011F81D512C2000F72672 /* ReactiveCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B988B9661D24457D00824685 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B9F011F91D512C3200F72672 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B988B9671D24457D00824685 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE52487E1D4665B200B499CC /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52487D1D4665B200B499CC /* UIButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +71,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B9F011F91D512C3200F72672 /* Result.framework in CopyFiles */,
+				B9F011F81D512C2000F72672 /* ReactiveCocoa.framework in CopyFiles */,
 				9D896AEE1CDE64FF008B0E5F /* Nimble.framework in CopyFiles */,
 				9D896AEF1CDE64FF008B0E5F /* Quick.framework in CopyFiles */,
 			);
@@ -102,8 +104,6 @@
 		B95948191D3EA039003A082F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B959481B1D3EA051003A082F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B959481D1D3EA060003A082F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B95948311D4FDCD6003A082F /* AVAssetSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAssetSpec.swift; sourceTree = "<group>"; };
-		B95948321D4FDCD6003A082F /* AVPlayerItemSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerItemSpec.swift; sourceTree = "<group>"; };
 		B95948341D4FDCD6003A082F /* SignalProducerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerSpec.swift; sourceTree = "<group>"; };
 		B95948351D4FDCD6003A082F /* SignalSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalSpec.swift; sourceTree = "<group>"; };
 		B988B95B1D243D9100824685 /* AVAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAsset.swift; sourceTree = "<group>"; };
@@ -252,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				B95948331D4FDCD6003A082F /* ReactiveCocoa */,
-				B95948301D4FDCD6003A082F /* AVFoundation */,
 				9D896AF21CDE656B008B0E5F /* Foundation */,
 			);
 			name = Extensions;
@@ -264,16 +263,6 @@
 				9D896AC71CDE3EC5008B0E5F /* StringSpec.swift */,
 			);
 			name = Foundation;
-			sourceTree = "<group>";
-		};
-		B95948301D4FDCD6003A082F /* AVFoundation */ = {
-			isa = PBXGroup;
-			children = (
-				B95948311D4FDCD6003A082F /* AVAssetSpec.swift */,
-				B95948321D4FDCD6003A082F /* AVPlayerItemSpec.swift */,
-			);
-			name = AVFoundation;
-			path = Extensions/AVFoundation;
 			sourceTree = "<group>";
 		};
 		B95948331D4FDCD6003A082F /* ReactiveCocoa */ = {
@@ -528,9 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B95948381D4FDCD6003A082F /* SignalProducerSpec.swift in Sources */,
-				B95948361D4FDCD6003A082F /* AVAssetSpec.swift in Sources */,
 				B95948391D4FDCD6003A082F /* SignalSpec.swift in Sources */,
-				B95948371D4FDCD6003A082F /* AVPlayerItemSpec.swift in Sources */,
 				9D896AC81CDE3EC5008B0E5F /* StringSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

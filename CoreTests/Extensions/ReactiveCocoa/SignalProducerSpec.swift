@@ -40,6 +40,18 @@ public class SignalProducerSpec: QuickSpec {
                     
                     observer.sendFailed(NSError(domain: "", code: 0, userInfo: [:]))
                 }
+                
+                it("should not ignore a value") { waitUntil { done in
+                    
+                    let converted: SignalProducer<(), NoError> = producer.liftError()
+                    
+                    converted.startWithNext {
+                        done()
+                    }
+                    
+                    observer.sendNext(())
+                    observer.sendFailed(NSError(domain: "", code: 0, userInfo: [:]))
+                }}
             }
             
         }
