@@ -11,24 +11,16 @@ WolMo - Core iOS is a framework which provides extensions and utilities for iOS 
   * [Installation](#installation)
   	* [Carthage](#carthage)
   	* [Manually](#manually)
-  * [Usage](#usage)
   * [Bootstrap](#bootstrap) 
   * [Contributing](#usage)
   * [About](#about)
   * [License](#license)
 
-## Bootstrap
-```
-git clone git@github.com:Wolox/wolmo-core-ios.git
-cd wolmo-core-ios
-script/bootstrap
-```
-
 ## Installation
 
 ### Carthage
 
-Carthage is a dependency manager that builds your dependencies and provides you with binary frameworks.
+[Carthage](https://github.com/Carthage/Carthage) is a dependency manager that builds your dependencies and provides you with binary frameworks.
 
 You can install Carthage with Homebrew using the following command:
 
@@ -44,13 +36,21 @@ github "Wolox/wolmo-core-ios" "master"
 ### Manually
 [Bootstrap](#bootstrap) the project and then drag it to your workspace.
 
+## Bootstrap
+```
+git clone git@github.com:Wolox/wolmo-core-ios.git
+cd wolmo-core-ios
+script/bootstrap
+```
+
 ## Contributing
-1. [Bootstrap](#bootstrap)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Run tests (`./script/test`)
-7. Push your branch (`git push origin my-new-feature`)
-8. Create a new Pull Request
+1. Fork it
+2. [Bootstrap](#bootstrap)
+3. Create your feature branch (`git checkout -b my-new-feature`)
+4. Commit your changes (`git commit -am 'Add some feature'`)
+5. Run tests (`./script/test`)
+6. Push your branch (`git push origin my-new-feature`)
+7. Create a new Pull Request
 
 ## About
 
