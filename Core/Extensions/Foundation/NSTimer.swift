@@ -31,7 +31,7 @@ public extension NSTimer {
      - parameter repeatInterval: The interval between each execution of `handler`.
      Note that individual calls may be delayed; subsequent calls to `handler` will be
      based on the time the `NSTimer` was created.
-     - parameter handler: A closure to execute after `delay`.
+     - parameter handler: A closure to execute after each `repeatInterval`.
      
      - returns: The newly-created `NSTimer` instance.
      */

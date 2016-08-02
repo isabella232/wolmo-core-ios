@@ -16,11 +16,18 @@ public class NSTimerSpec: QuickSpec {
     
     override public func spec() {
         
+        var timer: NSTimer!
+        
+        afterEach {
+            timer!.invalidate()
+            timer = nil
+        }
+        
         describe("#schedule(delay:)") {
             
             
-            it("should trigger handler after delay") { waitUntil(timeout: 3) { done in
-                NSTimer.schedule(1) { _ in
+            it("should trigger handler after delay") { waitUntil(timeout: 2) { done in
+                timer = NSTimer.schedule(1) { _ in
                     done()
                 }
             }}
@@ -31,9 +38,8 @@ public class NSTimerSpec: QuickSpec {
             it("should repeteadly trigger handler after delay") { waitUntil(timeout: 5) { done in
                 var timesCalled = 0
                 
-                NSTimer.schedule(repeatInterval: 2) { _ in
+                timer = NSTimer.schedule(repeatInterval: 1) { _ in
                     timesCalled += 1
-                    
                     if timesCalled == 2 {
                         done()
                     }
