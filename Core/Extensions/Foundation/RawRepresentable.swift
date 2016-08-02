@@ -55,7 +55,7 @@ public struct RawRepresentableGenerator<RawValue, Representable: RawRepresentabl
     /**
      Returns the new representable value.
      
-     note: The first value, is always the element associated with the baseRawValue
+     - note: The first value, is always the element associated with the baseRawValue
      provided at init.
      */
     public mutating func next() -> Representable? {
