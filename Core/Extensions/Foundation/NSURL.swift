@@ -13,6 +13,8 @@ import Foundation
  
  - parameter baseURL: base URL.
  - parameter pathComponent: path that will be appended.
+ 
+ - returns: The new NSURL, with pathComponent appended to baseURL
  */
 public func / (baseURL: NSURL, pathComponent: String) -> NSURL {
     return baseURL.URLByAppendingPathComponent(pathComponent)
@@ -22,10 +24,12 @@ public func / (baseURL: NSURL, pathComponent: String) -> NSURL {
  Appends an int to an URL.
  
  - parameter baseURL: base URL.
- - parameter rhs: Int number that will be appended.
+ - parameter pathComponent: Int number that will be appended.
+ 
+ - returns: The new NSURL, with pathComponent appended to baseURL
  */
-public func / (baseURL: NSURL, rhs: Int) -> NSURL {
-    return baseURL / String(rhs)
+public func / (baseURL: NSURL, pathComponent: Int) -> NSURL {
+    return baseURL / String(pathComponent)
 }
 
 public extension NSURL {
