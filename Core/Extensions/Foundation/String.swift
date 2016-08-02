@@ -73,7 +73,7 @@ public extension String {
     /*
      Removes leading and trailing whitespaces.
      */
-    public func cleanText() -> String {
+    public var trimmed: String {
         return stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
     

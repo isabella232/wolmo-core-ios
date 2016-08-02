@@ -109,9 +109,9 @@ final class StringSpec: QuickSpec {
             }
         }
         
-        describe("#cleanText") {
+        describe("#trimmed") {
             
-            context("When the string have whitespaces") {
+            context("When the string has whitespaces") {
                 var string: String!
                 
                 beforeEach {
@@ -119,8 +119,13 @@ final class StringSpec: QuickSpec {
                 }
                 
                 it("removes leading and trailing whitespaces") {
-                    let result = string.cleanText()
+                    let result = string.trimmed
                     expect(result).to(equal("te st@te st.com"))
+                }
+                
+                it("maintains not leading or trailing spaces") {
+                    let string = "This should remain the same"
+                    expect(string.trimmed).to(equal(string))
                 }
             }
         }
