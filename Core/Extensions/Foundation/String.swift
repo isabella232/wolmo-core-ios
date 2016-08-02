@@ -11,11 +11,13 @@ import Foundation
 /**
     Appends two string, similar to web resource addressing.
     
-    - parameter lhs: base string.
-    - parameter rhs: string that will be appended.
+    - parameter basePath: base string.
+    - parameter pathComponent: string that will be appended.
+ 
+    - returns: The new NSURL, with pathComponent appended to baseURL.
  */
-public func / (lhs: String, rhs: String) -> String {
-    return (lhs as NSString).stringByAppendingPathComponent(rhs)
+public func / (basePath: String, pathComponent: String) -> String {
+    return (basePath as NSString).stringByAppendingPathComponent(pathComponent)
 }
 
 public extension String {

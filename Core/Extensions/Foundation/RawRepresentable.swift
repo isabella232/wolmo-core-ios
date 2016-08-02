@@ -16,7 +16,7 @@ public extension RawRepresentable where RawValue == Int {
      - parameter startingAt: The rawValue from which to start.
      */
     public static func allValues(startingAt rawValue: Int = 0) -> AnySequence<Self> {
-        let generator: RawRepresentableGenerator<Int, Self> = RawRepresentableGenerator(baseRawValue: rawValue) { $0.successor() }
+        let generator: RawRepresentableGenerator<Int, Self> = RawRepresentableGenerator(startingAt: rawValue) { $0.successor() }
         return AnySequence { generator }
     }
     
@@ -47,8 +47,16 @@ public struct RawRepresentableGenerator<RawValue, Representable: RawRepresentabl
     /**
      Provides a baseRawValue and a function to get a new RawValue.
      */
-    public init(baseRawValue: RawValue, rawValueSuccesor: RawValue -> RawValue?) {
+    public init(startingAt baseRawValue: RawValue, rawValueSuccesor: RawValue -> RawValue?) {
         _nextRawValue = baseRawValue
+        _rawValueSuccesor = rawValueSuccesor
+    }
+    
+    /**
+     Provides a baseRawValue and a function to get a new RawValue.
+     */
+    public init(startingAt baseRawValue: Representable, rawValueSuccesor: RawValue -> RawValue?) {
+        _nextRawValue = baseRawValue.rawValue
         _rawValueSuccesor = rawValueSuccesor
     }
     

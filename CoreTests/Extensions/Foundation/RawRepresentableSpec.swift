@@ -71,7 +71,7 @@ public class RawRepresentableGeneratorSpec: QuickSpec {
         var generator: RawRepresentableGenerator<Int, IntRepresentable>!
         
         beforeEach {
-            generator = RawRepresentableGenerator(baseRawValue: 0) { $0 }
+            generator = RawRepresentableGenerator(startingAt: .Zero) { $0 }
         }
         
         describe("#next") {
@@ -87,7 +87,7 @@ public class RawRepresentableGeneratorSpec: QuickSpec {
             context("When adding one in the generator") {
                 
                 beforeEach {
-                    generator = RawRepresentableGenerator(baseRawValue: 0) { $0 + 1 }
+                    generator = RawRepresentableGenerator(startingAt: .Zero) { $0 + 1 }
                 }
                 
                 it("should return the following element") {
