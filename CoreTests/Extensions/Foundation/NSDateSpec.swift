@@ -12,12 +12,26 @@ import Quick
 import Nimble
 import Core
 
-let week: [NSDate] = {
+private let DefaultDateFormatter: NSDateFormatter = {
+    $0.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+    $0.dateFormat = "yyyy-MM-dd"
+    $0.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+    return $0
+}(NSDateFormatter())
+
+private let week: [NSDate] = {
     var week: [NSDate] = []
-    let monday = NSDate(day: 25, month: 7, year: 2016)
+    let monday = DefaultDateFormatter.dateFromString("2016-07-25")!
     
     for dateIterator in 0...6 {
-        week.append((monday?.adding(days: dateIterator))!)
+        let date = NSCalendar.currentCalendar()
+            .dateByAddingUnit(
+                .Day,
+                value: dateIterator,
+                toDate: monday,
+                options: [])
+        
+        week.append((monday.adding(days: dateIterator)))
     }
     
     return week
