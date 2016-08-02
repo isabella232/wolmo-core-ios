@@ -38,7 +38,10 @@ public extension NSURL {
      Returns if the URL is of type HTTP protocol.
     */
     public var isHTTPProtocol: Bool {
-        return absoluteString.lowercaseString.rangeOfString("http") != nil
+        return absoluteString
+                .lowercaseString
+                .substringToIndex(absoluteString.startIndex.advancedBy(5)) // We want HTTP (4) or HTTPS(5)
+                .rangeOfString("http") != nil
     }
     
     /**
