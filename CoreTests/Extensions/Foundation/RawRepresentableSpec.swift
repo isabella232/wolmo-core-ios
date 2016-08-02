@@ -30,11 +30,19 @@ public class RawRepresentableSpec: QuickSpec {
                 expect(allValues).to(equal([.Zero, .One, .Two, .Three]))
             }
             
-            context("When specifying an initial value") {
+            context("When specifying an existent initial value") {
                 
                 it("should return all values after starting at the initial value") {
                     let values = Array(IntRepresentable.allValues(startingAt: 1))
                     expect(values).to(equal([.One, .Two, .Three]))
+                }
+            }
+            
+            context("When specifying an inexistent initial value") {
+                
+                it("should return no values") {
+                    let values = Array(IntRepresentable.allValues(startingAt: -1))
+                    expect(values).to(equal([]))
                 }
             }
         }
