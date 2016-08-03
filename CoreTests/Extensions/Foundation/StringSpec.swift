@@ -174,7 +174,7 @@ final class StringSpec: QuickSpec {
                 }
             }
             
-            context("When the contains leading or trailing whitespaces") {
+            context("When the string contains leading or trailing whitespaces") {
                 
                 it("should remove them") {
                     let string = "   te st@te st.com   "
