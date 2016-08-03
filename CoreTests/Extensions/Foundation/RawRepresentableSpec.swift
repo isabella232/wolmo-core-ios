@@ -50,13 +50,13 @@ public class RawRepresentableSpec: QuickSpec {
         describe("#count") {
             
             it("should return all values") {
-                expect(IntRepresentable.count()).to(equal(4))
+                expect(IntRepresentable.count(startingAt: .Zero)).to(equal(4))
             }
             
             context("When specifying an initial value") {
                 
                 it("should return all values after starting at the initial value") {
-                    expect(IntRepresentable.count(startingAt: 1)).to(equal(3))
+                    expect(IntRepresentable.count(startingAt: .One)).to(equal(3))
                 }
             }
         }
@@ -87,7 +87,7 @@ public class RawRepresentableGeneratorSpec: QuickSpec {
             context("When adding one in the generator") {
                 
                 beforeEach {
-                    generator = RawRepresentableGenerator(startingAt: .Zero) { $0 + 1 }
+                    generator = RawRepresentableGenerator(startingAt: .Zero) { IntRepresentable(rawValue: $0.rawValue + 1) }
                 }
                 
                 it("should return the following element") {
