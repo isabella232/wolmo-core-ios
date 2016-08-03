@@ -56,7 +56,7 @@ public class NSDateSpec: QuickSpec {
                         
                         it("should have hours in 00") {
                             let date = NSDate(dateString: "1992-12-18")
-                            expect(date!.seconds()).to(equal(0))
+                            expect(date!.hours()).to(equal(0))
                         }
                         
                         it("should have seconds in 00") {
