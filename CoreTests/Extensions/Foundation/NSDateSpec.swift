@@ -31,7 +31,7 @@ private let week: [NSDate] = {
                 toDate: monday,
                 options: [])
         
-        week.append((monday.adding(days: dateIterator)))
+        week.append(date!)
     }
     
     return week
