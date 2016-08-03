@@ -155,7 +155,7 @@ public class NSDateSpec: QuickSpec {
                 context("When dates are in different weeks") {
                     
                     it("should return true") {
-                        let comparison = week[2].adding(days: 7) < week[1].adding(days: 9)
+                        let comparison = week[2] < week[1].adding(days: 9)
                         expect(comparison).to(beTrue())
                     }
                 }
@@ -184,7 +184,7 @@ public class NSDateSpec: QuickSpec {
                 context("When dates are in different weeks") {
                     
                     it("should return true") {
-                        let comparison = week[1].adding(days: 9) > week[2].adding(days: 7)
+                        let comparison = week[1].adding(days: 9) > week[2]
                         expect(comparison).to(beTrue())
                     }
                 }
