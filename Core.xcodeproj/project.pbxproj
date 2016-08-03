@@ -29,6 +29,9 @@
 		B959481A1D3EA039003A082F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95948191D3EA039003A082F /* AVFoundation.framework */; };
 		B959481C1D3EA051003A082F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B959481B1D3EA051003A082F /* UIKit.framework */; };
 		B959481E1D3EA060003A082F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B959481D1D3EA060003A082F /* Foundation.framework */; };
+		B959482D1D4FDB3A003A082F /* UIAlertControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959482A1D4FDB3A003A082F /* UIAlertControllerSpec.swift */; };
+		B959482E1D4FDB3A003A082F /* UIColorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959482B1D4FDB3A003A082F /* UIColorSpec.swift */; };
+		B959482F1D4FDB3A003A082F /* UITextFieldSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959482C1D4FDB3A003A082F /* UITextFieldSpec.swift */; };
 		B988B95C1D243D9100824685 /* AVAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B95B1D243D9100824685 /* AVAsset.swift */; };
 		B988B95E1D24432000824685 /* AVPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B95D1D24432000824685 /* AVPlayerItem.swift */; };
 		B988B9611D24437500824685 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9601D24437500824685 /* Signal.swift */; };
@@ -98,6 +101,9 @@
 		B95948191D3EA039003A082F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B959481B1D3EA051003A082F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B959481D1D3EA060003A082F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B959482A1D4FDB3A003A082F /* UIAlertControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerSpec.swift; sourceTree = "<group>"; };
+		B959482B1D4FDB3A003A082F /* UIColorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorSpec.swift; sourceTree = "<group>"; };
+		B959482C1D4FDB3A003A082F /* UITextFieldSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldSpec.swift; sourceTree = "<group>"; };
 		B988B95B1D243D9100824685 /* AVAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAsset.swift; sourceTree = "<group>"; };
 		B988B95D1D24432000824685 /* AVPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerItem.swift; sourceTree = "<group>"; };
 		B988B9601D24437500824685 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
@@ -243,6 +249,7 @@
 		9D896AF11CDE6565008B0E5F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B95948291D4FDB3A003A082F /* UIKit */,
 				9D896AF21CDE656B008B0E5F /* Foundation */,
 			);
 			name = Extensions;
@@ -254,6 +261,17 @@
 				9D896AC71CDE3EC5008B0E5F /* StringSpec.swift */,
 			);
 			name = Foundation;
+			sourceTree = "<group>";
+		};
+		B95948291D4FDB3A003A082F /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B959482A1D4FDB3A003A082F /* UIAlertControllerSpec.swift */,
+				B959482B1D4FDB3A003A082F /* UIColorSpec.swift */,
+				B959482C1D4FDB3A003A082F /* UITextFieldSpec.swift */,
+			);
+			name = UIKit;
+			path = Extensions/UIKit;
 			sourceTree = "<group>";
 		};
 		B988B95A1D243D6200824685 /* AVFoundation */ = {
@@ -497,7 +515,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B959482E1D4FDB3A003A082F /* UIColorSpec.swift in Sources */,
 				9D896AC81CDE3EC5008B0E5F /* StringSpec.swift in Sources */,
+				B959482F1D4FDB3A003A082F /* UITextFieldSpec.swift in Sources */,
+				B959482D1D4FDB3A003A082F /* UIAlertControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
