@@ -42,16 +42,16 @@ public extension RawRepresentable where RawValue == Int {
  */
 public struct RawRepresentableGenerator<RawValue, Representable: RawRepresentable where Representable.RawValue == RawValue>: GeneratorType {
     
-    private let _rawValueSuccesor: Representable -> Representable?
-    private var _nextRawValue: Representable?
+    private let _valueSuccessor: Representable -> Representable?
+    private var _nextValue: Representable?
     
     
     /**
      Provides a baseRawValue and a function to get a new RawValue.
      */
-    public init(startingAt baseRawValue: Representable, rawValueSuccesor: Representable -> Representable?) {
-        _nextRawValue = baseRawValue
-        _rawValueSuccesor = rawValueSuccesor
+    public init(startingAt baseValue: Representable, valueSuccessor: Representable -> Representable?) {
+        _nextValue = baseValue
+        _valueSuccessor = valueSuccessor
     }
     
     /**
@@ -61,9 +61,9 @@ public struct RawRepresentableGenerator<RawValue, Representable: RawRepresentabl
      provided at init.
      */
     public mutating func next() -> Representable? {
-        if let nextRawValue = _nextRawValue {
-            let value = nextRawValue
-            _nextRawValue = _rawValueSuccesor(nextRawValue)
+        if let nextValue = _nextValue {
+            let value = nextValue
+            _nextValue = _valueSuccessor(nextValue)
             return value
         } else {
             return .None
