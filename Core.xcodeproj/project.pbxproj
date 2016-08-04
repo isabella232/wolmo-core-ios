@@ -29,6 +29,8 @@
 		B959481A1D3EA039003A082F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95948191D3EA039003A082F /* AVFoundation.framework */; };
 		B959481C1D3EA051003A082F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B959481B1D3EA051003A082F /* UIKit.framework */; };
 		B959481E1D3EA060003A082F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B959481D1D3EA060003A082F /* Foundation.framework */; };
+		B95948381D4FDCD6003A082F /* SignalProducerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95948341D4FDCD6003A082F /* SignalProducerSpec.swift */; };
+		B95948391D4FDCD6003A082F /* SignalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95948351D4FDCD6003A082F /* SignalSpec.swift */; };
 		B959482D1D4FDB3A003A082F /* UIAlertControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959482A1D4FDB3A003A082F /* UIAlertControllerSpec.swift */; };
 		B959482E1D4FDB3A003A082F /* UIColorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959482B1D4FDB3A003A082F /* UIColorSpec.swift */; };
 		B959482F1D4FDB3A003A082F /* UITextFieldSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959482C1D4FDB3A003A082F /* UITextFieldSpec.swift */; };
@@ -50,6 +52,8 @@
 		B988B99B1D2D7A6800824685 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9981D2D7A6800824685 /* NibLoadable.swift */; };
 		B988B99C1D2D7A6800824685 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9991D2D7A6800824685 /* UIView.swift */; };
 		B988B99E1D2D7B3B00824685 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B99D1D2D7B3B00824685 /* UIAlertController.swift */; };
+		B9F011F81D512C2000F72672 /* ReactiveCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B988B9661D24457D00824685 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B9F011F91D512C3200F72672 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B988B9671D24457D00824685 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE52487E1D4665B200B499CC /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52487D1D4665B200B499CC /* UIButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +74,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B9F011F91D512C3200F72672 /* Result.framework in CopyFiles */,
+				B9F011F81D512C2000F72672 /* ReactiveCocoa.framework in CopyFiles */,
 				9D896AEE1CDE64FF008B0E5F /* Nimble.framework in CopyFiles */,
 				9D896AEF1CDE64FF008B0E5F /* Quick.framework in CopyFiles */,
 			);
@@ -101,6 +107,8 @@
 		B95948191D3EA039003A082F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B959481B1D3EA051003A082F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B959481D1D3EA060003A082F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B95948341D4FDCD6003A082F /* SignalProducerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerSpec.swift; sourceTree = "<group>"; };
+		B95948351D4FDCD6003A082F /* SignalSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalSpec.swift; sourceTree = "<group>"; };
 		B959482A1D4FDB3A003A082F /* UIAlertControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerSpec.swift; sourceTree = "<group>"; };
 		B959482B1D4FDB3A003A082F /* UIColorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorSpec.swift; sourceTree = "<group>"; };
 		B959482C1D4FDB3A003A082F /* UITextFieldSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldSpec.swift; sourceTree = "<group>"; };
@@ -249,6 +257,7 @@
 		9D896AF11CDE6565008B0E5F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B95948331D4FDCD6003A082F /* ReactiveCocoa */,
 				B95948291D4FDB3A003A082F /* UIKit */,
 				9D896AF21CDE656B008B0E5F /* Foundation */,
 			);
@@ -261,6 +270,16 @@
 				9D896AC71CDE3EC5008B0E5F /* StringSpec.swift */,
 			);
 			name = Foundation;
+			sourceTree = "<group>";
+		};
+		B95948331D4FDCD6003A082F /* ReactiveCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				B95948341D4FDCD6003A082F /* SignalProducerSpec.swift */,
+				B95948351D4FDCD6003A082F /* SignalSpec.swift */,
+			);
+			name = ReactiveCocoa;
+			path = Extensions/ReactiveCocoa;
 			sourceTree = "<group>";
 		};
 		B95948291D4FDB3A003A082F /* UIKit */ = {
@@ -515,6 +534,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B95948381D4FDCD6003A082F /* SignalProducerSpec.swift in Sources */,
+				B95948391D4FDCD6003A082F /* SignalSpec.swift in Sources */,
 				B959482E1D4FDB3A003A082F /* UIColorSpec.swift in Sources */,
 				9D896AC81CDE3EC5008B0E5F /* StringSpec.swift in Sources */,
 				B959482F1D4FDB3A003A082F /* UITextFieldSpec.swift in Sources */,
