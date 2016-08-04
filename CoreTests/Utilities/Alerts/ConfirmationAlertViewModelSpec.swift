@@ -62,7 +62,7 @@ public class ConfirmationAlertViewModelSpec: QuickSpec {
                 it("should return the default #dismissButtonTitle") {
                     let title = defaultConfirmationAlertViewModel.dismissButtonTitle
                     // TODO: Complete this spec when adding localization
-//                    expect(title).to(equal(""))
+                    // expect(title).to(equal(""))
                 }
                 
                 it("should match the localized value of #DefaultDismissButtonTitleKey") {

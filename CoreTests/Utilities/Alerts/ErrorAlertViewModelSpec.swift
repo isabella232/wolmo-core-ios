@@ -12,7 +12,6 @@ import Quick
 import Nimble
 import Core
 
-// TODO: Implement ErrorAlertViewModelSpec
 public class ErrorAlertViewModelSpec: QuickSpec {
     
     override public func spec() {
