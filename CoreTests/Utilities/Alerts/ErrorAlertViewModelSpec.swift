@@ -55,12 +55,6 @@ public class ErrorAlertViewModelSpec: QuickSpec {
             
             context("When using the default parameter") {
                 
-                it("should return the default #dismissButtonTitle") {
-                    let title = errorAlertViewModel.dismissButtonTitle
-                    // TODO: Complete this spec when adding localization
-                    //                    expect(title).to(equal(""))
-                }
-                
                 it("should match the localized value of #DefaultDismissButtonTitleKey") {
                     let defaultTitle = ErrorAlertViewModel.DefaultDismissButtonTitleKey.localized().localizedCapitalizedString
                     let title = defaultErrorAlertViewModel.dismissButtonTitle

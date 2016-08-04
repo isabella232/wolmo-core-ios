@@ -58,13 +58,7 @@ public class ConfirmationAlertViewModelSpec: QuickSpec {
         describe("#dismissButtonTitle") {
             
             context("When using the default parameter") {
-                
-                it("should return the default #dismissButtonTitle") {
-                    let title = defaultConfirmationAlertViewModel.dismissButtonTitle
-                    // TODO: Complete this spec when adding localization
-                    // expect(title).to(equal(""))
-                }
-                
+
                 it("should match the localized value of #DefaultDismissButtonTitleKey") {
                     let defaultTitle = ConfirmationAlertViewModel.DefaultDismissButtonTitleKey.localized().localizedCapitalizedString
                     let title = defaultConfirmationAlertViewModel.dismissButtonTitle
@@ -84,12 +78,6 @@ public class ConfirmationAlertViewModelSpec: QuickSpec {
         describe("#confirmButtonTitle") {
             
             context("When using the default parameter") {
-                
-                it("should return the default #confirmButtonTitle") {
-                    let title = defaultConfirmationAlertViewModel.confirmButtonTitle
-                    // TODO: Complete this spec when adding localization
-                    // expect(title).to(equal(""))
-                }
                 
                 it("should match the localized value of #DefaultConfirmButtonTitleKey") {
                     let defaultTitle = ConfirmationAlertViewModel.DefaultConfirmButtonTitleKey.localized().localizedCapitalizedString
