@@ -59,7 +59,7 @@ public class AssociatedObjectSpec: QuickSpec {
                 it("should set an associated object") {
                     setAssociatedObject(associatableObject, key: &key, value: classToAssociate)
                     let associated: AssociatableObjectClassMock = getAssociatedObject(associatableObject, key: &key)!
-                    expect(associated.x).to(equal(structToAssociate.x))
+                    expect(associated.x).to(equal(classToAssociate.x))
                 }
             }
             
@@ -95,7 +95,7 @@ public class AssociatedObjectSpec: QuickSpec {
                     expect(a.x).to(equal(classToAssociate.x))
                 }
                 
-                context("when there ir a new associated value") {
+                context("when there is a new associated value") {
                     
                     var newObjectToAssociate: AssociatableObjectClassMock!
                     
