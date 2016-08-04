@@ -29,6 +29,11 @@
 		B959481A1D3EA039003A082F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95948191D3EA039003A082F /* AVFoundation.framework */; };
 		B959481C1D3EA051003A082F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B959481B1D3EA051003A082F /* UIKit.framework */; };
 		B959481E1D3EA060003A082F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B959481D1D3EA060003A082F /* Foundation.framework */; };
+		B95948241D4FD599003A082F /* ArraySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959481F1D4FD599003A082F /* ArraySpec.swift */; };
+		B95948251D4FD599003A082F /* NSDateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95948201D4FD599003A082F /* NSDateSpec.swift */; };
+		B95948261D4FD599003A082F /* NSTimerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95948211D4FD599003A082F /* NSTimerSpec.swift */; };
+		B95948271D4FD599003A082F /* NSURLSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95948221D4FD599003A082F /* NSURLSpec.swift */; };
+		B95948281D4FD599003A082F /* RawRepresentableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95948231D4FD599003A082F /* RawRepresentableSpec.swift */; };
 		B95948381D4FDCD6003A082F /* SignalProducerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95948341D4FDCD6003A082F /* SignalProducerSpec.swift */; };
 		B95948391D4FDCD6003A082F /* SignalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95948351D4FDCD6003A082F /* SignalSpec.swift */; };
 		B959482D1D4FDB3A003A082F /* UIAlertControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959482A1D4FDB3A003A082F /* UIAlertControllerSpec.swift */; };
@@ -107,6 +112,11 @@
 		B95948191D3EA039003A082F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B959481B1D3EA051003A082F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B959481D1D3EA060003A082F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B959481F1D4FD599003A082F /* ArraySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArraySpec.swift; path = Extensions/Foundation/ArraySpec.swift; sourceTree = "<group>"; };
+		B95948201D4FD599003A082F /* NSDateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDateSpec.swift; path = Extensions/Foundation/NSDateSpec.swift; sourceTree = "<group>"; };
+		B95948211D4FD599003A082F /* NSTimerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSTimerSpec.swift; path = Extensions/Foundation/NSTimerSpec.swift; sourceTree = "<group>"; };
+		B95948221D4FD599003A082F /* NSURLSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSURLSpec.swift; path = Extensions/Foundation/NSURLSpec.swift; sourceTree = "<group>"; };
+		B95948231D4FD599003A082F /* RawRepresentableSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawRepresentableSpec.swift; path = Extensions/Foundation/RawRepresentableSpec.swift; sourceTree = "<group>"; };
 		B95948341D4FDCD6003A082F /* SignalProducerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerSpec.swift; sourceTree = "<group>"; };
 		B95948351D4FDCD6003A082F /* SignalSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalSpec.swift; sourceTree = "<group>"; };
 		B959482A1D4FDB3A003A082F /* UIAlertControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerSpec.swift; sourceTree = "<group>"; };
@@ -267,6 +277,11 @@
 		9D896AF21CDE656B008B0E5F /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				B959481F1D4FD599003A082F /* ArraySpec.swift */,
+				B95948201D4FD599003A082F /* NSDateSpec.swift */,
+				B95948211D4FD599003A082F /* NSTimerSpec.swift */,
+				B95948221D4FD599003A082F /* NSURLSpec.swift */,
+				B95948231D4FD599003A082F /* RawRepresentableSpec.swift */,
 				9D896AC71CDE3EC5008B0E5F /* StringSpec.swift */,
 			);
 			name = Foundation;
@@ -534,6 +549,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B95948251D4FD599003A082F /* NSDateSpec.swift in Sources */,
+				B95948271D4FD599003A082F /* NSURLSpec.swift in Sources */,
+				B95948281D4FD599003A082F /* RawRepresentableSpec.swift in Sources */,
+				B95948261D4FD599003A082F /* NSTimerSpec.swift in Sources */,
+				B95948241D4FD599003A082F /* ArraySpec.swift in Sources */,
 				B95948381D4FDCD6003A082F /* SignalProducerSpec.swift in Sources */,
 				B95948391D4FDCD6003A082F /* SignalSpec.swift in Sources */,
 				B959482E1D4FDB3A003A082F /* UIColorSpec.swift in Sources */,
