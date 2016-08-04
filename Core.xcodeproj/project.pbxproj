@@ -108,7 +108,7 @@
 		9D896AE71CDE62DA008B0E5F /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawRepresentable.swift; path = Extensions/Foundation/RawRepresentable.swift; sourceTree = "<group>"; };
 		9D896AE91CDE642F008B0E5F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		9D896AEA1CDE642F008B0E5F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellIdentifiable.swift; sourceTree = "<group>"; };
+		9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellIdentifiable.swift; path = ../CellIdentifiable.swift; sourceTree = "<group>"; };
 		9D896AF71CDE6A07008B0E5F /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableView.swift; path = Extensions/UIKit/UITableView.swift; sourceTree = "<group>"; };
 		9D896AF91CDE6B78008B0E5F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = Extensions/UIKit/UIViewController.swift; sourceTree = "<group>"; };
 		B95948021D3E78FD003A082F /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
@@ -225,7 +225,6 @@
 				B988B95A1D243D6200824685 /* AVFoundation */,
 				9D896AD81CDE5F19008B0E5F /* UIKit */,
 				9D896AD71CDE5EF6008B0E5F /* Foundation */,
-				9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +363,7 @@
 				B988B96E1D24482200824685 /* ActionHandler.swift */,
 				B988B9721D244BAE00824685 /* AssociatedObject.swift */,
 				B988B9801D24621000824685 /* DeviceType.swift */,
+				9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
