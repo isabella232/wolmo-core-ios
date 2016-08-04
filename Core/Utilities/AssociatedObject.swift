@@ -18,7 +18,12 @@
  - warning: Using associated objects should be avoided, as they are used in runtime and not in compile time, and could lead to performance issues.
  - seealso: objc_setAssociatedObject.
  */
-public func setAssociatedObject<T>(object: AnyObject, key: UnsafePointer<Void>, value: T, policy: objc_AssociationPolicy) {
+public func setAssociatedObject<T>(object: AnyObject, key: UnsafePointer<Void>, value: T?, policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN) {
+    guard let value = value else {
+        objc_setAssociatedObject(object, key, nil, policy)
+        return
+    }
+    
     if let value = value as? AnyObject {
         objc_setAssociatedObject(object, key, value, policy)
     } else {
