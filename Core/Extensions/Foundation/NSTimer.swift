@@ -16,8 +16,8 @@ public extension NSTimer {
      - parameter delay: The delay before execution.
      - parameter handler: A closure to execute after `delay`.
      
-     - warning: Timer should be invalidated after using this function.
-     Use `timer.invalidate()`
+     - note: Timer doesn't need to be invalidated after using this function.
+     - seealso: CFRunLoopTimerCreateWithHandler()
      - returns: The newly-created `NSTimer` instance.
      */
     public static func schedule(delay: NSTimeInterval, handler: NSTimer! -> Void) -> NSTimer {
