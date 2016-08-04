@@ -45,7 +45,7 @@ public extension Array {
     }
     
     /**
-     Returns the indexth element. 
+     Returns the indexth element.
      - Complexity:
      Reading is O(1). 
      Writing is O(1) unless self's storage is shared with another live array; 
@@ -54,6 +54,8 @@ public extension Array {
      - Note: This function should be used over subscript when we don't want a runtime error when indexth element doesn't exist.
      - Warning: Returns .None if the index is out of bound.
      - seealso: subcript()
+     - returns: The Element or nil if the array doesn't contain an element in 
+        that index
      */
     public func get(index: Int) -> Element? {
         return indices ~= index ? self[index] : nil

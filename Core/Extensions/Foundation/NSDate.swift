@@ -23,6 +23,61 @@ internal let DefaultWeekDateFormatter: NSDateFormatter = {
 public extension NSDate {
     
     /**
+     Returns the hours from a date.
+        
+     - parameter calendar: the calendar to get the date components from. 
+     Default: current user calendar.
+     
+     - seealso: NSCalendar().component()
+     - returns: An Int value representing the hours, between 0 - 24.
+     */
+    public func hours(using calendar: NSCalendar = .currentCalendar()) -> Int {
+       return calendar.component(.Hour, fromDate: self)
+    }
+    
+    /**
+     Returns the minutes from a date.
+     
+     - parameter calendar: the calendar to get the date components from. 
+     Default: current user calendar.
+     
+     - seealso: NSCalendar().component()
+     - returns: An Int value representing the minutes, between 0 - 60.
+     */
+    public func minutes(using calendar: NSCalendar = .currentCalendar()) -> Int {
+        return calendar.component(.Minute, fromDate: self)
+    }
+    
+    /**
+     Returns the seconds from a date.
+     
+     - parameter calendar: the calendar to get the date components from. 
+     Default: current user calendar.
+     
+     - seealso: NSCalendar().component()
+     - returns: An Int value representing the seconds, between 0 - 60.
+     */
+    public func seconds(using calendar: NSCalendar = .currentCalendar()) -> Int {
+        return calendar.component(.Second, fromDate: self)
+    }
+    
+    /**
+     Returns the date components specified by `units` from a date.
+     
+     - parameter units: The units to retrieve. ex: .Second
+     - parameter calendar: the calendar to get the date components from. 
+     Default: current user calendar.
+     
+     - seealso: NSCalendar().components()
+     - note: You could pass an array to units, such as [.Hour, .Second] to 
+     retrieve both components at the same time.
+     - returns: The requested date components.
+     */
+    public func components(units: NSCalendarUnit, using calendar: NSCalendar = .currentCalendar()) -> NSDateComponents {
+        return calendar.components(units, fromDate: self)
+    }
+    
+    /**
      Creates a Date from a string.
      
      - parameter dateString: The date string representation.
