@@ -25,38 +25,52 @@ public class RawRepresentableSpec: QuickSpec {
         
         describe("#allValues") {
             
-            it("should return all values") {
-                let allValues = Array(IntRepresentable.allValues(startingAt: .Zero))
-                expect(allValues).to(equal([.Zero, .One, .Two, .Three]))
-            }
-            
             context("When specifying an existent initial value") {
                 
-                context("When using a rawValue") {
-                    
-                    it("should return all values after starting at the initial value") {
-                        let values = Array(IntRepresentable.allValues(startingAt: .One))
-                        expect(values).to(equal([.One, .Two, .Three]))
-                    }
-                }
-                
-                it("should return all values after starting at the initial value") {
+                it("should return all values starting at the initial value") {
                     let values = Array(IntRepresentable.allValues(startingAt: .One))
                     expect(values).to(equal([.One, .Two, .Three]))
                 }
+                
+                context("When the value is the first one") {
+                    
+                    it("should return all values") {
+                        let values = Array(IntRepresentable.allValues(startingAt: .Zero))
+                        expect(values).to(equal([.Zero, .One, .Two, .Three]))
+                    }
+                }
+                
+                context("When the value is the last one") {
+                    
+                    it("should return the last value") {
+                        let values = Array(IntRepresentable.allValues(startingAt: .Three))
+                        expect(values).to(equal([.Three]))
+                    }
+                }
+
             }
         }
         
         describe("#count") {
             
-            it("should return all values") {
-                expect(IntRepresentable.count(startingAt: .Zero)).to(equal(4))
-            }
-            
             context("When specifying an initial value") {
                 
-                it("should return all values after starting at the initial value") {
+                it("should return the count of all the values starting at the initial value") {
                     expect(IntRepresentable.count(startingAt: .One)).to(equal(3))
+                }
+                
+                context("When the value is the first one") {
+                    
+                    it("should return the count of all the values") {
+                        expect(IntRepresentable.count(startingAt: .Zero)).to(equal(4))
+                    }
+                }
+                
+                context("When the value is the last one") {
+                    
+                    it("should return one") {
+                        expect(IntRepresentable.count(startingAt: .Three)).to(equal(1))
+                    }
                 }
             }
         }
