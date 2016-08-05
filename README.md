@@ -30,7 +30,7 @@ brew install carthage
 ```
 To download wolmo-core-iOS, add this to your Cartfile:
 ```
-github "Wolox/wolmo-core-ios" "master"
+github "Wolox/wolmo-core-ios" ~> 0.1.0
 ```
 
 ### Manually
