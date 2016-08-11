@@ -11,8 +11,11 @@ WolMo - Core iOS is a framework which provides extensions and utilities for iOS 
 ## Table of Contents
 
   * [Installation](#installation)
-  	* [Carthage](#carthage)
-  	* [Manually](#manually)
+    * [Carthage](#carthage)
+    * [Manually](#manually)
+  * [Usage](#usage)
+    * [Utilities](#utilities)
+    * [Extensions](#extensions)
   * [Bootstrap](#bootstrap) 
   * [Contributing](#usage)
   * [About](#about)
@@ -37,6 +40,44 @@ github "Wolox/wolmo-core-ios" ~> 0.1.0
 
 ### Manually
 [Bootstrap](#bootstrap) the project and then drag it to your workspace.
+
+## Usage
+
+The framework is divided into 2 sections: Utilities and Extensions. 
+
+The main difference between them is that a Utility represents a component that is independant of the existance of another component. On the other hand, extensions represents an extra functionality for another component: This extra functionality could not exist if the component it relies on doesn't exist.
+
+### Utilities
+Constitutes a component which is independent from another component.
+
+For example, [AlertViewPresenter](Core/Utilities/Alerts/alertViewPresenter) represents the behaviour of presenting an alert. In this case, any class (struct, enum, etc...) which can adopt this behaviour may be an `AlertViewPresenter`. 
+
+In this framework, we give a default implementation of `UIViewController` as an `AlertViewPresenter`. However, note that they are independent one from another.
+
+`Wolmo-core` provides the following utilities:
+
+1. [AlertViewPresenter](Core/Utilities/Alerts/AlertViewPresenter.swift): Abstracts the logic of presenting different type of alerts.
+2. [ProgressHUDDelegate](Core/Utilities/ProgressHUD/ProgressHUDDelegate.swift): Abstracts the logic of presenting a progress HUD, usually used in blocking operation (like a sign up).
+3. [ActionHandler](Core/Utilities/ProgressHUD/ActionHandler.swift): Closure-based handlers for UIControlEvents (great for UIButtons).
+4. [AssociatedObject](Core/Utilities/ProgressHUD/AssociatedObject.swift): Setter and getted for associated objects. Works with objects and value types.
+5. [DeviceType](Core/Utilities/ProgressHUD/DeviceType.swift): Provides the current device type.
+6. [CellIdentifiable](Core/Utilities/ProgressHUD/CellIdentifiable.swift): Identifies a cell. Usually used with `UICollectionView` and `UITableView`.
+
+### Extensions
+Extends the behaviour of a component (class, struct, enum, ...) by adding common functionality (functions, computed properties, initializers, etc...). 
+
+Extensions also contain components which depends exclusively on other components. 
+
+It would not make sense to have these components as Utilities, because they don't exist by themselves, but by adding a behaviour to an another existing component.
+
+For example, [Collapsable](Core/Extensions/UIKit/UIView/Collapsable.swift) represents a collapsable element. This behaviour is an addition to a `UIView`; it would not make sense to have something which is not renderable as `Collapsable`. Furthermore, it doesn't make sense for `Collapsable` to exist per se; it is a behaviour added to any view which conforms to it.
+
+`Wolmo-core` provides the following extensions:
+
+1. [ReactiveCocoa](Core/Extensions/ReactiveCocoa): Extensions for Signal and SignalProducer.
+2. [AVFoundation](Core/Extensions/AVFoundation): Extensions used for audio services, such as `AVAsset` and `AVPlayerItem`.
+3. [UIKit](Core/Extensions/UIKit): Extensions for UIKit elements, such as `UIButton`, `UIView` and `UIViewController`.
+4. [Foundation](Core/Extensions/Foundation): Extensions for Foundation elements, such as `String`, `Array` and `NSDate`.
 
 ## Bootstrap
 ```
