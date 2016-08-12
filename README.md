@@ -68,16 +68,14 @@ Extends the behaviour of a component (`class`, `struct`, `enum`, ...) by adding 
 
 Extensions contain components which depends exclusively on other components. 
 
-It would not make sense to have these components in [Utilities](#utilities), because they don't exist by themselves, but by adding a behaviour to another existing component.
-
 For example, [Collapsable](Core/Extensions/UIKit/UIView/Collapsable.swift) represents a collapsable element. This behaviour is an addition to a `UIView`; it would not make sense to have something which is not renderable as `Collapsable`. Furthermore, it doesn't make sense for `Collapsable` to exist per se; it is a behaviour added to any view which conforms to it.
 
 `Wolmo-core` provides the following extensions:
 
-1. [ReactiveCocoa](Core/Extensions/ReactiveCocoa): Extensions for Signal and SignalProducer.
-2. [AVFoundation](Core/Extensions/AVFoundation): Extensions used for audio services, such as `AVAsset` and `AVPlayerItem`.
-3. [UIKit](Core/Extensions/UIKit): Extensions for UIKit elements, such as `UIButton`, `UIView` and `UIViewController`.
-4. [Foundation](Core/Extensions/Foundation): Extensions for Foundation elements, such as `String`, `Array` and `NSDate`.
+1. [ReactiveCocoa](Core/Extensions/ReactiveCocoa): Extensions for [Signal](Core/Extensions/ReactiveCocoa/Signal.swift) and [SignalProducer](Core/Extensions/ReactiveCocoa/SignalProducer.swift).
+2. [AVFoundation](Core/Extensions/AVFoundation): Extensions used for AVFoundation elements, such as [AVAsset](Core/Extensions/AVFoundation/AVAsset.swift) and [AVPlayerItem](Core/Extensions/AVFoundation/AVPlayerItem.swift).
+3. [UIKit](Core/Extensions/UIKit): Extensions for UIKit elements, such as [UIView](Core/Extensions/UIKit/UIView/UIView.swift) and [UIViewController](Core/Extensions/UIKit/UIViewController.swift).
+4. [Foundation](Core/Extensions/Foundation): Extensions for Foundation elements, such as [String](Core/Extensions/Foundation/String.swift), [Array](Core/Extensions/Foundation/Array.swift) and [NSDate](Core/Extensions/Foundation/NSDate.swift).
 
 ## Bootstrap
 ```
