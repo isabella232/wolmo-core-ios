@@ -7,7 +7,7 @@
 //
 
 /**
- Closure-based handlers for UIButton's events.
+ Closure-based handlers for UIControlEvents.
  */
 public protocol ActionHandlerType {
     

@@ -21,7 +21,6 @@
 		9D896AEC1CDE642F008B0E5F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D896AEA1CDE642F008B0E5F /* Quick.framework */; };
 		9D896AEE1CDE64FF008B0E5F /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D896AE91CDE642F008B0E5F /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D896AEF1CDE64FF008B0E5F /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D896AEA1CDE642F008B0E5F /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9D896AF61CDE69D2008B0E5F /* CellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */; };
 		9D896AF81CDE6A07008B0E5F /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF71CDE6A07008B0E5F /* UITableView.swift */; };
 		9D896AFA1CDE6B78008B0E5F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AF91CDE6B78008B0E5F /* UIViewController.swift */; };
 		B95948031D3E78FD003A082F /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95948021D3E78FD003A082F /* MBProgressHUD.framework */; };
@@ -47,7 +46,7 @@
 		B988B96F1D24482200824685 /* ActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B96E1D24482200824685 /* ActionHandler.swift */; };
 		B988B9711D244B6700824685 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9701D244B6700824685 /* UITextField.swift */; };
 		B988B9731D244BAE00824685 /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9721D244BAE00824685 /* AssociatedObject.swift */; };
-		B988B97C1D244D6300824685 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9771D244D6300824685 /* AlertPresenter.swift */; };
+		B988B97C1D244D6300824685 /* AlertViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9771D244D6300824685 /* AlertViewPresenter.swift */; };
 		B988B97D1D244D6300824685 /* ConfirmationAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9781D244D6300824685 /* ConfirmationAlertViewModel.swift */; };
 		B988B97E1D244D6300824685 /* ErrorAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9791D244D6300824685 /* ErrorAlertViewModel.swift */; };
 		B988B97F1D244D6300824685 /* ProgressHUDDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B97B1D244D6300824685 /* ProgressHUDDelegate.swift */; };
@@ -63,7 +62,8 @@
 		B9F63CA51D522CE300D09C1D /* ConfirmationAlertViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959483D1D4FDD54003A082F /* ConfirmationAlertViewModelSpec.swift */; };
 		B9F63CA61D522CE600D09C1D /* ErrorAlertViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959483E1D4FDD54003A082F /* ErrorAlertViewModelSpec.swift */; };
 		B9F63CB41D53D2C200D09C1D /* StringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F63CB31D53D2C200D09C1D /* StringSpec.swift */; };
-		CE52487E1D4665B200B499CC /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52487D1D4665B200B499CC /* UIButton.swift */; };
+		B9F63CC01D5CE7DF00D09C1D /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F63CBF1D5CE7DF00D09C1D /* UIButton.swift */; };
+		B9F63CC21D5CE7FA00D09C1D /* CellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F63CC11D5CE7FA00D09C1D /* CellIdentifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,7 +108,6 @@
 		9D896AE71CDE62DA008B0E5F /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawRepresentable.swift; path = Extensions/Foundation/RawRepresentable.swift; sourceTree = "<group>"; };
 		9D896AE91CDE642F008B0E5F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		9D896AEA1CDE642F008B0E5F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellIdentifiable.swift; path = ../CellIdentifiable.swift; sourceTree = "<group>"; };
 		9D896AF71CDE6A07008B0E5F /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableView.swift; path = Extensions/UIKit/UITableView.swift; sourceTree = "<group>"; };
 		9D896AF91CDE6B78008B0E5F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = Extensions/UIKit/UIViewController.swift; sourceTree = "<group>"; };
 		B95948021D3E78FD003A082F /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
@@ -138,7 +137,7 @@
 		B988B96E1D24482200824685 /* ActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionHandler.swift; sourceTree = "<group>"; };
 		B988B9701D244B6700824685 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITextField.swift; path = Extensions/UIKit/UITextField.swift; sourceTree = "<group>"; };
 		B988B9721D244BAE00824685 /* AssociatedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedObject.swift; sourceTree = "<group>"; };
-		B988B9771D244D6300824685 /* AlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
+		B988B9771D244D6300824685 /* AlertViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewPresenter.swift; sourceTree = "<group>"; };
 		B988B9781D244D6300824685 /* ConfirmationAlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationAlertViewModel.swift; sourceTree = "<group>"; };
 		B988B9791D244D6300824685 /* ErrorAlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlertViewModel.swift; sourceTree = "<group>"; };
 		B988B97B1D244D6300824685 /* ProgressHUDDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUDDelegate.swift; sourceTree = "<group>"; };
@@ -148,7 +147,8 @@
 		B988B9991D2D7A6800824685 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		B988B99D1D2D7B3B00824685 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIAlertController.swift; path = Extensions/UIKit/UIAlertController.swift; sourceTree = "<group>"; };
 		B9F63CB31D53D2C200D09C1D /* StringSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringSpec.swift; path = Extensions/Foundation/StringSpec.swift; sourceTree = "<group>"; };
-		CE52487D1D4665B200B499CC /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		B9F63CBF1D5CE7DF00D09C1D /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIButton.swift; path = Extensions/UIKit/UIButton.swift; sourceTree = "<group>"; };
+		B9F63CC11D5CE7FA00D09C1D /* CellIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellIdentifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,7 +252,7 @@
 				9D896AF91CDE6B78008B0E5F /* UIViewController.swift */,
 				B988B9701D244B6700824685 /* UITextField.swift */,
 				B988B99D1D2D7B3B00824685 /* UIAlertController.swift */,
-				CE52487D1D4665B200B499CC /* UIButton.swift */,
+				B9F63CBF1D5CE7DF00D09C1D /* UIButton.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -363,7 +363,7 @@
 				B988B96E1D24482200824685 /* ActionHandler.swift */,
 				B988B9721D244BAE00824685 /* AssociatedObject.swift */,
 				B988B9801D24621000824685 /* DeviceType.swift */,
-				9D896AF51CDE69D2008B0E5F /* CellIdentifiable.swift */,
+				B9F63CC11D5CE7FA00D09C1D /* CellIdentifiable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -371,7 +371,7 @@
 		B988B9761D244D6300824685 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
-				B988B9771D244D6300824685 /* AlertPresenter.swift */,
+				B988B9771D244D6300824685 /* AlertViewPresenter.swift */,
 				B988B9781D244D6300824685 /* ConfirmationAlertViewModel.swift */,
 				B988B9791D244D6300824685 /* ErrorAlertViewModel.swift */,
 			);
@@ -542,7 +542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D896AF61CDE69D2008B0E5F /* CellIdentifiable.swift in Sources */,
+				B9F63CC21D5CE7FA00D09C1D /* CellIdentifiable.swift in Sources */,
 				B988B9711D244B6700824685 /* UITextField.swift in Sources */,
 				9D896AE21CDE6211008B0E5F /* NSURL.swift in Sources */,
 				9D896ADE1CDE6071008B0E5F /* NSBundle.swift in Sources */,
@@ -550,10 +550,10 @@
 				9D896AE01CDE6129008B0E5F /* Array.swift in Sources */,
 				B988B99C1D2D7A6800824685 /* UIView.swift in Sources */,
 				B988B9611D24437500824685 /* Signal.swift in Sources */,
-				B988B97C1D244D6300824685 /* AlertPresenter.swift in Sources */,
+				B988B97C1D244D6300824685 /* AlertViewPresenter.swift in Sources */,
+				B9F63CC01D5CE7DF00D09C1D /* UIButton.swift in Sources */,
 				B988B9731D244BAE00824685 /* AssociatedObject.swift in Sources */,
 				B988B97D1D244D6300824685 /* ConfirmationAlertViewModel.swift in Sources */,
-				CE52487E1D4665B200B499CC /* UIButton.swift in Sources */,
 				B988B99B1D2D7A6800824685 /* NibLoadable.swift in Sources */,
 				B988B9631D24437E00824685 /* SignalProducer.swift in Sources */,
 				9D896AF81CDE6A07008B0E5F /* UITableView.swift in Sources */,
