@@ -16,7 +16,7 @@ public extension UITextField {
      - warning: Avoid setting nextTextField in the didSet hook of an outlet.
      Override awakeFromNib() of the containing view in that case.
      */
-    public var next: UITextField? {
+    open var next: UITextField? {
         get {
             return getAssociatedObject(self, key: &nextTextFieldKey)
         }

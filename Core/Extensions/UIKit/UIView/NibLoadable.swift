@@ -13,7 +13,7 @@ import Foundation
  */
 public protocol NibLoadable: class {
     
-    static func loadFromNib(bundle: NSBundle) -> Self?
+    static func loadFromNib(_ bundle: Bundle) -> Self?
     
 }
 
@@ -25,8 +25,8 @@ extension NibLoadable where Self: UIView {
         - parameter bundle: Specific bundle, default = bundle for the class.
         - returns: The loaded UIView
     */
-    public static func loadFromNib(bundle: NSBundle = NSBundle(forClass: Self.self)) -> Self? {
-        let nibName = NSStringFromClass(self).componentsSeparatedByString(".").last
+    public static func loadFromNib(_ bundle: Bundle = Bundle(for: Self.self)) -> Self? {
+        let nibName = NSStringFromClass(self).components(separatedBy: ".").last
         return nibName.flatMap(bundle.loadNib)
     }
 }

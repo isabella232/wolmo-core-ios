@@ -17,7 +17,7 @@ public extension Array {
      
      - returns: Dictionary with elements grouped by their corresponding keys.
      */
-    public func groupBy<K>(buildGroupKey: Element -> K) -> [K: [Element]] {
+    public func groupBy<K>(_ buildGroupKey: (Element) -> K) -> [K: [Element]] {
         var result: [K : [Element]] = [:]
         for element in self {
             let key = buildGroupKey(element)
@@ -38,7 +38,7 @@ public extension Array {
      O(count) if self does not wrap a bridged NSArray; otherwise the efficiency is unspecified.
      - seealso: append().
     */
-    public func appending(element: Element) -> [Element] {
+    public func appending(_ element: Element) -> [Element] {
         var result = self
         result.append(element)
         return result
@@ -57,7 +57,7 @@ public extension Array {
      - returns: The Element or nil if the array doesn't contain an element in 
         that index
      */
-    public func get(index: Int) -> Element? {
+    public func get(_ index: Int) -> Element? {
         return indices ~= index ? self[index] : nil
     }
     
@@ -69,8 +69,8 @@ public extension Array {
      - returns: The element that satisfies the predicate or .None if none satisfies.
      - seealso: indexOf()
     */
-    public func filterFirst(condition: Element -> Bool) -> Element? {
-        return indexOf(condition).map { self[$0] }
+    public func filterFirst(_ condition: (Element) -> Bool) -> Element? {
+        return index(where: condition).map { self[$0] }
     }
     
 }

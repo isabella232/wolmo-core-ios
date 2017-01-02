@@ -34,10 +34,10 @@ public extension UIViewController {
      - parameter into: The containerView into which the controller will be loaded.
      - parameter viewPositioning: Back or Front. Default: Front
      */
-    public func loadViewController(childViewController: UIViewController, into containerView: UIView, viewPositioning: ViewPositioning = .Front) {
-        childViewController.willMoveToParentViewController(self)
+    public func loadViewController(_ childViewController: UIViewController, into containerView: UIView, viewPositioning: ViewPositioning = .front) {
+        childViewController.willMove(toParentViewController: self)
         addChildViewController(childViewController)
-        childViewController.didMoveToParentViewController(self)
+        childViewController.didMove(toParentViewController: self)
         childViewController.view.loadInto(containerView, viewPositioning: viewPositioning)
     }
     
@@ -52,9 +52,9 @@ public extension UIViewController {
 
 private extension UIViewController {
     
-    private func setHiddenValueFromBarsTo(value: Bool) {
-        tabBarController?.tabBar.hidden = value
-        UIApplication.sharedApplication().statusBarHidden = value
+    func setHiddenValueFromBarsTo(_ value: Bool) {
+        tabBarController?.tabBar.isHidden = value
+        UIApplication.shared.isStatusBarHidden = value
     }
     
 }

@@ -19,7 +19,7 @@ public protocol Collapsable {
      - Parameter animated: Indicates if the collapse should be animated.
      - Parameter animationDuration: The animationDuration of the collapse.
      */
-    func collapse(animated: Bool, animationDuration: NSTimeInterval)
+    func collapse(_ animated: Bool, animationDuration: TimeInterval)
     
     /**
      Uncollapse self.
@@ -27,7 +27,7 @@ public protocol Collapsable {
      - Parameter animated: Indicates if the collapse should be animated.
      - Parameter animationDuration: The animationDuration of the collapse.
      */
-    func uncollapse(animated: Bool, animationDuration: NSTimeInterval)
+    func uncollapse(_ animated: Bool, animationDuration: TimeInterval)
     
 }
 
@@ -45,15 +45,15 @@ extension Collapsable where Self: UIView {
      - Parameter animated: Indicates if the collapse should be animated.
      - Parameter animationDuration: The animationDuration of the collapse.
      */
-    public func collapse(animated: Bool = true, animationDuration: NSTimeInterval = 1) {
+    public func collapse(_ animated: Bool = true, animationDuration: TimeInterval = 1) {
         if let previousHeightConstraint = previousHeightConstraint {
             // We save the previous height value
             setAssociatedObject(self, key: &CollapsableHeightConstraintKey, value: previousHeightConstraint.constant, policy: .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             previousHeightConstraint.constant = 0
         } else {
             // We create a new height constraint with constant 0
-            let zeroheightConstraint = heightAnchor.constraintEqualToConstant(0)
-            zeroheightConstraint.active = true
+            let zeroheightConstraint = heightAnchor.constraint(equalToConstant: 0)
+            zeroheightConstraint.isActive = true
         }
         
         updateView(animated, animationDuration: animationDuration)
@@ -68,27 +68,27 @@ extension Collapsable where Self: UIView {
      - Parameter animated: Indicates if the collapse should be animated.
      - Parameter animationDuration: The animationDuration of the collapse.
      */
-    public func uncollapse(animated: Bool = true, animationDuration: NSTimeInterval = 1) {
+    public func uncollapse(_ animated: Bool = true, animationDuration: TimeInterval = 1) {
         if let heightConstraint = previousHeightConstraint {
             // If we have a previous height, it means that before collapsing it had another height constraint.
             if let previousHeight: CGFloat = getAssociatedObject(self, key: &CollapsableHeightConstraintKey) {
                 heightConstraint.constant = previousHeight
             } else {
                 // We desactive the height constraint added because it didn't have a height before collapsing.
-                heightConstraint.active = false
+                heightConstraint.isActive = false
             }
         }
         
         updateView(animated, animationDuration: animationDuration)
     }
     
-    private func updateView(animated: Bool, animationDuration: NSTimeInterval) {
+    fileprivate func updateView(_ animated: Bool, animationDuration: TimeInterval) {
         setNeedsLayout()
         
         if animated {
-            UIView.animateWithDuration(animationDuration) {
+            UIView.animate(withDuration: animationDuration, animations: {
                 self.layoutIfNeeded()
-            }
+            }) 
         } else {
             layoutIfNeeded()
         }
@@ -99,8 +99,8 @@ private var CollapsableHeightConstraintKey: UInt8 = 0
 
 private extension UIView {
     
-    private var previousHeightConstraint: NSLayoutConstraint? {
-        return constraints.filterFirst { $0.firstAttribute == .Height }
+    var previousHeightConstraint: NSLayoutConstraint? {
+        return constraints.filterFirst { $0.firstAttribute == .height }
     }
     
 }

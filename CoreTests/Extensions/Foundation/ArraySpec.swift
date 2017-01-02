@@ -12,9 +12,9 @@ import Quick
 import Nimble
 import Core
 
-public class ArraySpec: QuickSpec {
+open class ArraySpec: QuickSpec {
     
-    override public func spec() {
+    override open func spec() {
         
         
         describe("#groupBy") {

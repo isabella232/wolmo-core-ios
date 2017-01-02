@@ -12,9 +12,9 @@ import enum Result.NoError
 import ReactiveCocoa
 import Core
 
-public class SignalSpec: QuickSpec {
+open class SignalSpec: QuickSpec {
     
-    override public func spec() {
+    override open func spec() {
         
         describe("#liftError") {
             

@@ -22,7 +22,7 @@ public extension AVAsset {
         It can be an AVKeyValueStatus or an Error.
      - seealso: loadValuesAsynchronouslyForKeys(keys, completionHandler)
     */
-    public func loadValuesAsynchronouslyForKeys(keys: [String]) -> SignalProducer<[String: Result<AVKeyValueStatus, NSError>], NoError> {
+    public func loadValuesAsynchronouslyForKeys(_ keys: [String]) -> SignalProducer<[String: Result<AVKeyValueStatus, NSError>], NoError> {
         return SignalProducer { observer, _ in
             self.loadValuesAsynchronouslyForKeys(keys) { _ in
                 

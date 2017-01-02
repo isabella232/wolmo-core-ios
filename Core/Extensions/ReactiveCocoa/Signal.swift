@@ -17,7 +17,7 @@ public extension Signal {
      
      - returns: A signal with the same value type but with `NewError` as the error type
      */
-    func liftError<NewError: ErrorType>() -> Signal<Value, NewError> {
+    func liftError<NewError: Error>() -> Signal<Value, NewError> {
         return flatMapError { _ in SignalProducer<Value, NewError>.empty }
     }
     

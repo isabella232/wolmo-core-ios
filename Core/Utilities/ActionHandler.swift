@@ -11,7 +11,7 @@
  */
 public protocol ActionHandlerType {
     
-    func setAction(events: UIControlEvents, _ action: (Self, UIEvent) -> Void)
+    func setAction(_ events: UIControlEvents, _ action: (Self, UIEvent) -> Void)
     
 }
 
@@ -25,9 +25,9 @@ extension ActionHandlerType where Self: UIControl {
      
      - note: It retains any object used in the closure.
      */
-    public func setAction(events: UIControlEvents = .TouchUpInside, _ action: (Self, UIEvent) -> Void) {
+    public func setAction(_ events: UIControlEvents = .touchUpInside, _ action: @escaping (Self, UIEvent) -> Void) {
         let handler = ActionHandler(action: action)
-        addTarget(handler, action: #selector(handler.action(_:forEvent:)), forControlEvents: events)
+        addTarget(handler, action: #selector(handler.action(_:forEvent:)), for: events)
         setAssociatedObject(self, key: actionHandlerTypeAssociatedObjectKey, value: handler, policy: .OBJC_ASSOCIATION_RETAIN)
     }
     
@@ -35,16 +35,16 @@ extension ActionHandlerType where Self: UIControl {
 
 extension UIControl: ActionHandlerType {}
 
-private let actionHandlerTypeAssociatedObjectKey = UnsafeMutablePointer<Int8>.alloc(1)
+private let actionHandlerTypeAssociatedObjectKey = UnsafeMutablePointer<Int8>.allocate(capacity: 1)
 
 private class ActionHandler<T>: NSObject {
-    private let _action: ((T, UIEvent) -> Void)
+    fileprivate let _action: ((T, UIEvent) -> Void)
     
-    init(action: (T, UIEvent) -> Void) {
+    init(action: @escaping (T, UIEvent) -> Void) {
         _action = action
     }
     
-    @objc func action(sender: UIControl, forEvent event: UIEvent) {
+    @objc func action(_ sender: UIControl, forEvent event: UIEvent) {
         if let sender = sender as? T {
             _action(sender, event)
         }

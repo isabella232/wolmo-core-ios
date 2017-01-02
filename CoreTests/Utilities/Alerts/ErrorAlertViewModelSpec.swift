@@ -12,9 +12,9 @@ import Quick
 import Nimble
 import Core
 
-public class ErrorAlertViewModelSpec: QuickSpec {
+open class ErrorAlertViewModelSpec: QuickSpec {
     
-    override public func spec() {
+    override open func spec() {
         
         var defaultErrorAlertViewModel: ErrorAlertViewModel!
         

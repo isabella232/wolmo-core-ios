@@ -13,10 +13,10 @@ import Foundation
  */
 public protocol AlertViewPresenter {
 
-    func presentAlert(alertViewModel: ErrorAlertViewModel, completion: (() -> Void)?)
+    func presentAlert(_ alertViewModel: ErrorAlertViewModel, completion: (() -> Void)?)
     
 
-    func presentAlert(alertViewModel: ConfirmationAlertViewModel, completion: (() -> Void)?)
+    func presentAlert(_ alertViewModel: ConfirmationAlertViewModel, completion: (() -> Void)?)
     
 }
 
@@ -31,9 +31,9 @@ extension UIViewController: AlertViewPresenter {
      Dismiss and confirmation callbacks can be set on the `ErrorAlertViewModel`.
      - Seealso: `ErrorAlertViewModel`
      */
-    public func presentAlert(alertViewModel: ErrorAlertViewModel, completion: (() -> Void)? = .None) {
+    public func presentAlert(_ alertViewModel: ErrorAlertViewModel, completion: (() -> Void)? = .none) {
         let alert = UIAlertController(alertViewModel: alertViewModel)
-        presentViewController(alert, animated: true, completion: completion)
+        present(alert, animated: true, completion: completion)
     }
     
     /**
@@ -45,9 +45,9 @@ extension UIViewController: AlertViewPresenter {
      Dismiss and confirmation callbacks can be set on the `ConfirmationAlertViewModel`.
      - Seealso: `ConfirmationAlertViewModel`.
      */
-    public func presentAlert(alertViewModel: ConfirmationAlertViewModel, completion: (() -> Void)? = .None) {
+    public func presentAlert(_ alertViewModel: ConfirmationAlertViewModel, completion: (() -> Void)? = .none) {
         let alert = UIAlertController(alertViewModel: alertViewModel)
-        presentViewController(alert, animated: true, completion: completion)
+        present(alert, animated: true, completion: completion)
     }
     
 }

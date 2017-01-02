@@ -12,23 +12,23 @@ import Quick
 import Nimble
 import Core
 
-private let DefaultDateFormatter: NSDateFormatter = {
-    $0.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+private let DefaultDateFormatter: DateFormatter = {
+    $0.calendar = Calendar(identifier: Calendar.Identifier.gregorian)
     $0.dateFormat = "yyyy-MM-dd"
-    $0.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+    $0.locale = Locale(identifier: "en_US_POSIX")
     return $0
-}(NSDateFormatter())
+}(DateFormatter())
 
-private let week: [NSDate] = {
-    var week: [NSDate] = []
-    let monday = DefaultDateFormatter.dateFromString("2016-07-25")!
+private let week: [Date] = {
+    var week: [Date] = []
+    let monday = DefaultDateFormatter.date(from: "2016-07-25")!
     
     for dateIterator in 0...6 {
-        let date = NSCalendar.currentCalendar()
-            .dateByAddingUnit(
-                .Day,
+        let date = (Calendar.current as NSCalendar)
+            .date(
+                byAdding: .day,
                 value: dateIterator,
-                toDate: monday,
+                to: monday,
                 options: [])
         
         week.append(date!)
@@ -37,9 +37,9 @@ private let week: [NSDate] = {
     return week
 }()
 
-public class NSDateSpec: QuickSpec {
+open class NSDateSpec: QuickSpec {
     
-    override public func spec() {
+    override open func spec() {
         
         describe("#init") {
             

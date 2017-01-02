@@ -17,8 +17,8 @@ public struct ConfirmationAlertViewModel {
     public let message: String
     public let dismissButtonTitle: String
     public let confirmButtonTitle: String
-    public let dismissAction: ConfirmationAlertViewModel -> ()
-    public let confirmAction: ConfirmationAlertViewModel -> ()
+    public let dismissAction: (ConfirmationAlertViewModel) -> ()
+    public let confirmAction: (ConfirmationAlertViewModel) -> ()
     
     /**
      Initialize a new ConfirmationAlertViewModel with the provided parameters.
@@ -37,9 +37,9 @@ public struct ConfirmationAlertViewModel {
         title: String,
         message: String,
         dismissButtonTitle: String = DefaultDismissButtonTitleKey.localized().localizedCapitalizedString,
-        dismissAction: ConfirmationAlertViewModel -> () = { _ in },
+        dismissAction: @escaping (ConfirmationAlertViewModel) -> () = { _ in },
         confirmButtonTitle: String = DefaultConfirmButtonTitleKey.localized().localizedCapitalizedString,
-        confirmAction: ConfirmationAlertViewModel -> () = { _ in }) {
+        confirmAction: @escaping (ConfirmationAlertViewModel) -> () = { _ in }) {
         self.title = title
         self.message = message
         self.confirmAction = confirmAction

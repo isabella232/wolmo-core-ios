@@ -18,7 +18,7 @@
  - warning: Using associated objects should be avoided, as they are used in runtime and not in compile time, and could lead to performance issues.
  - seealso: objc_setAssociatedObject.
  */
-public func setAssociatedObject<T>(object: AnyObject, key: UnsafePointer<Void>, value: T?, policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN) {
+public func setAssociatedObject<T>(_ object: AnyObject, key: UnsafeRawPointer, value: T?, policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN) {
     guard let value = value else {
         objc_setAssociatedObject(object, key, nil, policy)
         return
@@ -41,13 +41,13 @@ public func setAssociatedObject<T>(object: AnyObject, key: UnsafePointer<Void>, 
  - warning: Using associated objects should be avoided, as they are used in runtime and not in compile time, and could lead to performance issues.
  - seealso: objc_getAssociatedObject.
  */
-public func getAssociatedObject<T>(object: AnyObject, key: UnsafePointer<Void>) -> T? {
+public func getAssociatedObject<T>(_ object: AnyObject, key: UnsafeRawPointer) -> T? {
     if let value = objc_getAssociatedObject(object, key) as? T {
         return value
     } else if let value = objc_getAssociatedObject(object, key) as? AssociatedObjectBox<T> {
         return value.value
     } else {
-        return .None
+        return .none
     }
 }
 
@@ -69,6 +69,6 @@ private final class AssociatedObjectBox<T> {
  
  - returns: An AssociatedObjectBox (class) which holds the value.
  */
-private func lift<T>(value: T) -> AssociatedObjectBox<T> {
+private func lift<T>(_ value: T) -> AssociatedObjectBox<T> {
     return AssociatedObjectBox(value)
 }

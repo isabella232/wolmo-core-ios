@@ -31,10 +31,10 @@ private struct AssociatableObjectStructMock {
 
 private var key: Int = 0
 
-public class AssociatedObjectSpec: QuickSpec {
+open class AssociatedObjectSpec: QuickSpec {
     
     
-    override public func spec() {
+    override open func spec() {
         
         var associatableObject: AssociatableObjectClassMock! // It has to be an AnyObject (AKA: class)
         

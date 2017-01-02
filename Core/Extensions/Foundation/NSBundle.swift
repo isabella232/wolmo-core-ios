@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension NSBundle {
+public extension Bundle {
     
     /**
      Loads a nib from the bundle.
@@ -17,8 +17,8 @@ public extension NSBundle {
      - returns: The loaded NibType or .None if it don't exists.
      - seealso: loadNibNamed()
      */
-    public func loadNib<NibType, T: RawRepresentable where T.RawValue == String>(nibName: T) -> NibType? {
-        return loadNibNamed(nibName.rawValue, owner: self, options: nil)[0] as? NibType
+    public func loadNib<NibType, T: RawRepresentable>(_ nibName: T) -> NibType? where T.RawValue == String {
+        return loadNibNamed(nibName.rawValue, owner: self, options: nil)?[0] as? NibType
     }
     
     /**
@@ -32,8 +32,8 @@ public extension NSBundle {
      - seealso: objectForInfoDictionaryKey()
     */
     public subscript(key: String) -> String? {
-        guard let value = objectForInfoDictionaryKey(key) as? String where !value.isEmpty else {
-            return .None
+        guard let value = object(forInfoDictionaryKey: key) as? String, !value.isEmpty else {
+            return .none
         }
         return value
     }

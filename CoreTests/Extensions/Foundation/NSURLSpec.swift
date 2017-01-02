@@ -12,15 +12,15 @@ import Quick
 import Nimble
 import Core
 
-public class NSURLSpec: QuickSpec {
+open class NSURLSpec: QuickSpec {
     
-    override public func spec() {
+    override open func spec() {
         
-        let remoteURL = NSURL(string: "https://www.google.com.ar")!
+        let remoteURL = URL(string: "https://www.google.com.ar")!
         
-        let localURL: NSURL = {
-            let fileManager = NSFileManager.defaultManager()
-            return fileManager.URLsForDirectory(.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).last!
+        let localURL: URL = {
+            let fileManager = FileManager.default
+            return fileManager.urls(for: .documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).last!
         }()
             
         describe("#/") {

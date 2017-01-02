@@ -17,7 +17,7 @@ import Foundation
     - returns: The new NSURL, with pathComponent appended to baseURL.
  */
 public func / (basePath: String, pathComponent: String) -> String {
-    return (basePath as NSString).stringByAppendingPathComponent(pathComponent)
+    return (basePath as NSString).appendingPathComponent(pathComponent)
 }
 
 public extension String {
@@ -28,7 +28,7 @@ public extension String {
      - parameter bundle: Bundle were to search for localization.
      - parameter arguments: Formatting arguments.
      */
-    public func localized(bundle: NSBundle = NSBundle.mainBundle(), arguments: CVarArgType...) -> String {
+    public func localized(_ bundle: Bundle = Bundle.main, arguments: CVarArg...) -> String {
         return String(format: NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: ""), arguments: arguments)
     }
     
@@ -47,16 +47,16 @@ public extension String {
     /**
      Builds an NSURL from a string.
      */
-    public var url: NSURL? {
-        return NSURL(string: self)
+    public var url: URL? {
+        return URL(string: self)
     }
     
     /**
      Checks if the string has spaces or not.
      */
     public var hasSpaces: Bool {
-        let whitespace = NSCharacterSet.whitespaceCharacterSet()
-        let range = rangeOfCharacterFromSet(whitespace)
+        let whitespace = CharacterSet.whitespaces
+        let range = rangeOfCharacter(from: whitespace)
         return range != nil
     }
     
@@ -67,14 +67,14 @@ public extension String {
         let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
         
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluateWithObject(self)
+        return emailTest.evaluate(with: self)
     }
     
     /*
      Removes leading and trailing whitespaces.
      */
     public var trimmed: String {
-        return stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        return trimmingCharacters(in: CharacterSet.whitespaces)
     }
     
     /**
@@ -86,8 +86,8 @@ public extension String {
      - parameter range: The range of the string to search.
      - seealso: stringByReplacingOccurrencesOfString().
      */
-    public func replacing(target: String, with replacement: String, options: NSStringCompareOptions = .LiteralSearch, range: Range<Index>? = .None) -> String {
-        return stringByReplacingOccurrencesOfString(target, withString: replacement, options: .LiteralSearch, range: range)
+    public func replacing(_ target: String, with replacement: String, options: NSString.CompareOptions = .literal, range: Range<Index>? = .none) -> String {
+        return replacingOccurrences(of: target, with: replacement, options: .literal, range: range)
     }
     
     /**

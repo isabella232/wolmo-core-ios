@@ -8,19 +8,19 @@
 
 import Foundation
 
-internal let DefaultDateFormatter: NSDateFormatter = {
-    $0.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+internal let DefaultDateFormatter: DateFormatter = {
+    $0.calendar = Calendar(identifier: Calendar.Identifier.gregorian)
     $0.dateFormat = "yyyy-MM-dd"
-    $0.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+    $0.locale = Locale(identifier: "en_US_POSIX")
     return $0
-}(NSDateFormatter())
+}(DateFormatter())
 
-internal let DefaultWeekDateFormatter: NSDateFormatter = {
+internal let DefaultWeekDateFormatter: DateFormatter = {
     $0.setLocalizedDateFormatFromTemplate("EEEE")
     return $0
-}(NSDateFormatter())
+}(DateFormatter())
 
-public extension NSDate {
+public extension Date {
     
     /**
      Returns the hours from a date.
@@ -31,8 +31,8 @@ public extension NSDate {
      - seealso: NSCalendar().component()
      - returns: An Int value representing the hours, between 0 - 24.
      */
-    public func hours(using calendar: NSCalendar = .currentCalendar()) -> Int {
-       return calendar.component(.Hour, fromDate: self)
+    public func hours(using calendar: Calendar = .current) -> Int {
+       return (calendar as NSCalendar).component(.hour, from: self)
     }
     
     /**
@@ -44,8 +44,8 @@ public extension NSDate {
      - seealso: NSCalendar().component()
      - returns: An Int value representing the minutes, between 0 - 60.
      */
-    public func minutes(using calendar: NSCalendar = .currentCalendar()) -> Int {
-        return calendar.component(.Minute, fromDate: self)
+    public func minutes(using calendar: Calendar = .current) -> Int {
+        return (calendar as NSCalendar).component(.minute, from: self)
     }
     
     /**
@@ -57,8 +57,8 @@ public extension NSDate {
      - seealso: NSCalendar().component()
      - returns: An Int value representing the seconds, between 0 - 60.
      */
-    public func seconds(using calendar: NSCalendar = .currentCalendar()) -> Int {
-        return calendar.component(.Second, fromDate: self)
+    public func seconds(using calendar: Calendar = .current) -> Int {
+        return (calendar as NSCalendar).component(.second, from: self)
     }
     
     /**
@@ -73,8 +73,8 @@ public extension NSDate {
      retrieve both components at the same time.
      - returns: The requested date components.
      */
-    public func components(units: NSCalendarUnit, using calendar: NSCalendar = .currentCalendar()) -> NSDateComponents {
-        return calendar.components(units, fromDate: self)
+    public func components(_ units: NSCalendar.Unit, using calendar: Calendar = .current) -> DateComponents {
+        return (calendar as NSCalendar).components(units, from: self)
     }
     
     /**
@@ -83,12 +83,12 @@ public extension NSDate {
      - parameter dateString: The date string representation.
      - parameter dateFormatter: The used for initializing the date.
      */
-    convenience init?(dateString: String, dateFormatter: NSDateFormatter = DefaultDateFormatter) {
-        guard let date = dateFormatter.dateFromString(dateString) else {
+    init?(dateString: String, dateFormatter: DateFormatter = DefaultDateFormatter) {
+        guard let date = dateFormatter.date(from: dateString) else {
             return nil
         }
         
-        self.init(timeInterval: 0, sinceDate: date)
+        (self as NSDate).init(timeInterval: 0, since: date)
     }
     
     /**
@@ -96,7 +96,7 @@ public extension NSDate {
      
      - seealso: init(dateString: String)
      */
-    convenience init?(day: Int, month: Int, year: Int) {
+    init?(day: Int, month: Int, year: Int) {
         var monthString: String = "\(month)"
         var dayString: String = "\(day)"
         if month < 10 {
@@ -113,8 +113,8 @@ public extension NSDate {
      
      - parameter dateFormatter: The dateFormatter to use.
      */
-    public func getWeekDay(dateFormatter: NSDateFormatter = DefaultWeekDateFormatter) -> String {
-        return dateFormatter.stringFromDate(self)
+    public func getWeekDay(_ dateFormatter: DateFormatter = DefaultWeekDateFormatter) -> String {
+        return dateFormatter.string(from: self)
     }
     
     /**
@@ -122,9 +122,9 @@ public extension NSDate {
      
      - seealso: dateByAddingTimeInterval()
      */
-    public func adding(days days: Int) -> NSDate {
+    public func adding(days: Int) -> Date {
         let secondsInDays = Double(days) * 60 * 60 * 24
-        return dateByAddingTimeInterval(secondsInDays)
+        return addingTimeInterval(secondsInDays)
     }
     
     /**
@@ -132,22 +132,22 @@ public extension NSDate {
      
      - seealso: dateByAddingTimeInterval()
      */
-    public func adding(hours hours: Int) -> NSDate {
-        let secondsInHours: NSTimeInterval = Double(hours) * 60 * 60
-        return dateByAddingTimeInterval(secondsInHours)
+    public func adding(hours: Int) -> Date {
+        let secondsInHours: TimeInterval = Double(hours) * 60 * 60
+        return addingTimeInterval(secondsInHours)
     }
 }
 
-extension NSDate: Comparable {}
+extension Date: Comparable {}
 
-public func < (lhs: NSDate, rhs: NSDate) -> Bool {
-    return lhs.compare(rhs) == NSComparisonResult.OrderedAscending
+public func < (lhs: Date, rhs: Date) -> Bool {
+    return lhs.compare(rhs) == ComparisonResult.orderedAscending
 }
 
-public func > (lhs: NSDate, rhs: NSDate) -> Bool {
-    return lhs.compare(rhs) == NSComparisonResult.OrderedDescending
+public func > (lhs: Date, rhs: Date) -> Bool {
+    return lhs.compare(rhs) == ComparisonResult.orderedDescending
 }
 
-public func == (lhs: NSDate, rhs: NSDate) -> Bool {
-    return NSCalendar.currentCalendar().compareDate(lhs, toDate: rhs, toUnitGranularity: NSCalendarUnit.Second) == .OrderedSame
+public func == (lhs: Date, rhs: Date) -> Bool {
+    return (Calendar.current as NSCalendar).compare(lhs, to: rhs, toUnitGranularity: NSCalendar.Unit.second) == .orderedSame
 }

@@ -19,8 +19,8 @@ public struct Border {
 }
 
 public enum ViewPositioning {
-    case Back
-    case Front
+    case back
+    case front
 }
 
 extension UIView {
@@ -34,7 +34,7 @@ extension UIView {
      
      Note: By default, the border will have the width of the view.
      */
-    public func topBorder(border: Border, offset: CGFloat = 0) {
+    public func topBorder(_ border: Border, offset: CGFloat = 0) {
         let borderView = UIView(frame: CGRect(x: 0, y: 0, width: bounds.width - offset, height: CGFloat(border.height)))
         borderView.backgroundColor = border.color
         addSubview(borderView)
@@ -49,7 +49,7 @@ extension UIView {
      
      Note: By default, the border will have the width of the view.
      */
-    public func bottomBorder(border: Border, offset: CGFloat = 0) {
+    public func bottomBorder(_ border: Border, offset: CGFloat = 0) {
         let borderView = UIView(frame: CGRect(x: 0, y: bounds.height - CGFloat(border.height), width: bounds.width - offset,
             height: CGFloat(border.height)))
         borderView.backgroundColor = border.color
@@ -65,7 +65,7 @@ extension UIView {
      
      Note: By default, the border will have the height of the view.
      */
-    public func leftBorder(border: Border, offset: CGFloat = 0) {
+    public func leftBorder(_ border: Border, offset: CGFloat = 0) {
         let borderView = UIView(frame: CGRect(x: 0, y: 0, width: CGFloat(border.height), height: bounds.height - offset))
         borderView.backgroundColor = border.color
         addSubview(borderView)
@@ -80,7 +80,7 @@ extension UIView {
      
      Note: By default, the border will have the height of the view.
      */
-    public func rightBorder(border: Border, offset: CGFloat = 0) {
+    public func rightBorder(_ border: Border, offset: CGFloat = 0) {
         let borderView = UIView(frame: CGRect(x: bounds.width - CGFloat(border.height), y: 0, width: CGFloat(border.height),
             height: bounds.height - offset))
         borderView.backgroundColor = border.color
@@ -95,19 +95,19 @@ extension UIView {
      - parameter containerView: The container view.
      - parameter viewPositioning: Back or Front. Default: Front
      */
-    public func loadInto(containerView: UIView, viewPositioning: ViewPositioning = .Front) {
+    public func loadInto(_ containerView: UIView, viewPositioning: ViewPositioning = .front) {
         containerView.addSubview(self)
         
         containerView.translatesAutoresizingMaskIntoConstraints = false
         translatesAutoresizingMaskIntoConstraints = false
         
-        containerView.topAnchor.constraintEqualToAnchor(topAnchor).active = true
-        containerView.bottomAnchor.constraintEqualToAnchor(bottomAnchor).active = true
-        containerView.leadingAnchor.constraintEqualToAnchor(leadingAnchor).active = true
-        containerView.trailingAnchor.constraintEqualToAnchor(trailingAnchor).active = true
+        containerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
-        if case viewPositioning = ViewPositioning.Back {
-            containerView.sendSubviewToBack(self)
+        if case viewPositioning = ViewPositioning.back {
+            containerView.sendSubview(toBack: self)
         }
     }
     

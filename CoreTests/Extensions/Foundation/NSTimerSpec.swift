@@ -12,11 +12,11 @@ import Quick
 import Nimble
 import Core
 
-public class NSTimerSpec: QuickSpec {
+open class NSTimerSpec: QuickSpec {
     
-    override public func spec() {
+    override open func spec() {
         
-        var timer: NSTimer!
+        var timer: Timer!
         
         afterEach {
             timer!.invalidate()
@@ -27,7 +27,7 @@ public class NSTimerSpec: QuickSpec {
             
             
             it("should trigger handler after delay") { waitUntil(timeout: 2) { done in
-                timer = NSTimer.schedule(1) { _ in
+                timer = Timer.schedule(1) { _ in
                     done()
                 }
             }}

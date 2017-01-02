@@ -13,15 +13,15 @@ import Nimble
 import Core
 
 private enum IntRepresentable: Int {
-    case Zero
-    case One
-    case Two
-    case Three
+    case zero
+    case one
+    case two
+    case three
 }
 
-public class RawRepresentableSpec: QuickSpec {
+open class RawRepresentableSpec: QuickSpec {
     
-    override public func spec() {
+    override open func spec() {
         
         describe("#allValues") {
             
@@ -78,9 +78,9 @@ public class RawRepresentableSpec: QuickSpec {
     
 }
 
-public class RawRepresentableGeneratorSpec: QuickSpec {
+open class RawRepresentableGeneratorSpec: QuickSpec {
     
-    override public func spec() {
+    override open func spec() {
         
         var generator: RawRepresentableGenerator<Int, IntRepresentable>!
         

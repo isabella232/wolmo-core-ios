@@ -14,9 +14,9 @@ import Core
 
 class IdentifiableCellMock: UITableViewCell {}
 
-public class CellIdentifiableSpec: QuickSpec {
+open class CellIdentifiableSpec: QuickSpec {
     
-    override public func spec() {
+    override open func spec() {
         
         describe("#cellIdentifier") {
             
