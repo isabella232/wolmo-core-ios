@@ -16,13 +16,13 @@ open class UITextFieldSpec: QuickSpec {
     
     override open func spec() {
 
-        describe("#next") {
+        describe("#nextTextField") {
             
             context("When there isn't next textfield associated") {
             
                 it("should be nil") {
                     let textField = UITextField()
-                    expect(textField.next).to(beNil())
+                    expect(textField.nextTextField).to(beNil())
                 }
             }
             
@@ -34,12 +34,12 @@ open class UITextFieldSpec: QuickSpec {
                 beforeEach {
                     textField = UITextField()
                     nextTextField = UITextField()
-                    textField.next = nextTextField
+                    textField.nextTextField = nextTextField
                 }
                 
                 it("should return the next textfield") {
-                    expect(textField.next).toNot(beNil())
-                    expect(textField.next!).to(equal(nextTextField))
+                    expect(textField.nextTextField).toNot(beNil())
+                    expect(textField.nextTextField!).to(equal(nextTextField))
                 }
                 
                 context("When the next textField is changed") {
@@ -48,12 +48,12 @@ open class UITextFieldSpec: QuickSpec {
                     
                     beforeEach {
                         otherTextField = UITextField()
-                        textField.next = otherTextField
+                        textField.nextTextField = otherTextField
                     }
                     
                     it("should return the new textfield") {
-                        expect(textField.next).toNot(beNil())
-                        expect(textField.next!).to(equal(otherTextField))
+                        expect(textField.nextTextField).toNot(beNil())
+                        expect(textField.nextTextField!).to(equal(otherTextField))
                     }
                 }
             }

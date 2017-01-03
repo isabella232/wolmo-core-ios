@@ -7,7 +7,7 @@
 //
 
 import AVFoundation
-import ReactiveCocoa
+import ReactiveSwift
 import enum Result.NoError
 
 public extension AVPlayerItem {
@@ -21,8 +21,8 @@ public extension AVPlayerItem {
      */
     public func seekTo(_ time: CMTime) -> SignalProducer<Bool, NoError> {
         return SignalProducer { observer, _ in
-            self.seekToTime(time) {
-                observer.sendNext($0)
+            self.seek(to: time) {
+                observer.send(value: $0)
                 observer.sendCompleted()
             }
         }

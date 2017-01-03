@@ -49,7 +49,7 @@ public extension URL {
      - parameter subDirectory: The subDirectory to look for.
     */
     public func contains(subDirectory: String) -> Bool {
-        return pathComponents.contains(subDirectory) ?? false
+        return pathComponents.contains(subDirectory) 
     }
     
 }

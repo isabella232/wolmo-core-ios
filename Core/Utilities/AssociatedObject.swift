@@ -23,12 +23,7 @@ public func setAssociatedObject<T>(_ object: AnyObject, key: UnsafeRawPointer, v
         objc_setAssociatedObject(object, key, nil, policy)
         return
     }
-    
-    if let value = value as? AnyObject {
-        objc_setAssociatedObject(object, key, value, policy)
-    } else {
-        objc_setAssociatedObject(object, key, lift(value), policy)
-    }
+    objc_setAssociatedObject(object, key, value, policy)
 }
 
 /**

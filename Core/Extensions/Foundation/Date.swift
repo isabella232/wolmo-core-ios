@@ -1,5 +1,5 @@
 //
-//  NSDate.swift
+//  Date.swift
 //  Core
 //
 //  Created by Guido Marucci Blas on 5/7/16.
@@ -32,7 +32,7 @@ public extension Date {
      - returns: An Int value representing the hours, between 0 - 24.
      */
     public func hours(using calendar: Calendar = .current) -> Int {
-       return (calendar as NSCalendar).component(.hour, from: self)
+       return calendar.component(.hour, from: self)
     }
     
     /**
@@ -45,7 +45,7 @@ public extension Date {
      - returns: An Int value representing the minutes, between 0 - 60.
      */
     public func minutes(using calendar: Calendar = .current) -> Int {
-        return (calendar as NSCalendar).component(.minute, from: self)
+        return calendar.component(.minute, from: self)
     }
     
     /**
@@ -58,7 +58,7 @@ public extension Date {
      - returns: An Int value representing the seconds, between 0 - 60.
      */
     public func seconds(using calendar: Calendar = .current) -> Int {
-        return (calendar as NSCalendar).component(.second, from: self)
+        return calendar.component(.second, from: self)
     }
     
     /**
@@ -73,8 +73,8 @@ public extension Date {
      retrieve both components at the same time.
      - returns: The requested date components.
      */
-    public func components(_ units: NSCalendar.Unit, using calendar: Calendar = .current) -> DateComponents {
-        return (calendar as NSCalendar).components(units, from: self)
+    public func components(_ units: Set<Calendar.Component>, using calendar: Calendar = .current) -> DateComponents {
+        return calendar.dateComponents(units, from: self)
     }
     
     /**
@@ -88,7 +88,7 @@ public extension Date {
             return nil
         }
         
-        (self as NSDate).init(timeInterval: 0, since: date)
+        self.init(timeInterval: 0, since: date)
     }
     
     /**
@@ -136,18 +136,4 @@ public extension Date {
         let secondsInHours: TimeInterval = Double(hours) * 60 * 60
         return addingTimeInterval(secondsInHours)
     }
-}
-
-extension Date: Comparable {}
-
-public func < (lhs: Date, rhs: Date) -> Bool {
-    return lhs.compare(rhs) == ComparisonResult.orderedAscending
-}
-
-public func > (lhs: Date, rhs: Date) -> Bool {
-    return lhs.compare(rhs) == ComparisonResult.orderedDescending
-}
-
-public func == (lhs: Date, rhs: Date) -> Bool {
-    return (Calendar.current as NSCalendar).compare(lhs, to: rhs, toUnitGranularity: NSCalendar.Unit.second) == .orderedSame
 }

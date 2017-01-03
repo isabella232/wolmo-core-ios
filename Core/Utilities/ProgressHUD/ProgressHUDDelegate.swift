@@ -36,10 +36,10 @@ extension UIViewController: ProgressHUDDelegate {
      - Warning: Showing a progress hud freezes the viewController's view.
      */
     public func showProgressHud(_ labelText: String? = .none) {
-        let progressHUD = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        let progressHUD = MBProgressHUD.showAdded(to: view, animated: true)
         
         if let labelText = labelText {
-            progressHUD.labelText = labelText
+            progressHUD?.labelText = labelText
         }
     }
     
@@ -47,7 +47,7 @@ extension UIViewController: ProgressHUDDelegate {
      Hides the view associated with the ViewController.
      */
     public func hideProgressHud() {
-        MBProgressHUD.hideHUDForView(view, animated: true)
+        MBProgressHUD.hide(for: view, animated: true)
     }
     
 }

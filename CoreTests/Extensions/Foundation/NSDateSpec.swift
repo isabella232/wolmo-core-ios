@@ -50,17 +50,17 @@ open class NSDateSpec: QuickSpec {
                     context("When the format is correct") {
                         
                         it("should be a Date") {
-                            let date = NSDate(dateString: "1992-12-18")
+                            let date = Date(dateString: "1992-12-18")
                             expect(date).toNot(beNil())
                         }
                         
                         it("should have hours in 00") {
-                            let date = NSDate(dateString: "1992-12-18")
+                            let date = Date(dateString: "1992-12-18")
                             expect(date!.hours()).to(equal(0))
                         }
                         
                         it("should have seconds in 00") {
-                            let date = NSDate(dateString: "1992-12-18")
+                            let date = Date(dateString: "1992-12-18")
                             expect(date!.seconds()).to(equal(0))
                         }
                     }
@@ -68,7 +68,7 @@ open class NSDateSpec: QuickSpec {
                     context("When the format is incorrect") {
                         
                         it("should be nil") {
-                            let date = NSDate(dateString: "18/12/1992")
+                            let date = Date(dateString: "18/12/1992")
                             expect(date).to(beNil())
                         }
                     }
@@ -203,8 +203,8 @@ open class NSDateSpec: QuickSpec {
             context("When comparing equal dates") {
                 
                 it("should return true") {
-                    let date = NSDate(dateString: "1992-12-18")
-                    let _date = NSDate(day: 18, month: 12, year: 1992)
+                    let date = Date(dateString: "1992-12-18")
+                    let _date = Date(day: 18, month: 12, year: 1992)
                     
                     expect(date == _date).to(beTrue())
                 }
@@ -213,8 +213,8 @@ open class NSDateSpec: QuickSpec {
             context("When comparing different dates") {
                 
                 it("should return false") {
-                    let date = NSDate(dateString: "1992-12-17")
-                    let _date = NSDate(day: 18, month: 12, year: 1992)
+                    let date = Date(dateString: "1992-12-17")
+                    let _date = Date(day: 18, month: 12, year: 1992)
                     
                     expect(date == _date).to(beFalse())
                 }

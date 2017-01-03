@@ -15,7 +15,7 @@
 		9D896AE01CDE6129008B0E5F /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896ADF1CDE6129008B0E5F /* Array.swift */; };
 		9D896AE21CDE6211008B0E5F /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AE11CDE6211008B0E5F /* NSURL.swift */; };
 		9D896AE41CDE624D008B0E5F /* NSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AE31CDE624D008B0E5F /* NSTimer.swift */; };
-		9D896AE61CDE628E008B0E5F /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AE51CDE628E008B0E5F /* NSDate.swift */; };
+		9D896AE61CDE628E008B0E5F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AE51CDE628E008B0E5F /* Date.swift */; };
 		9D896AE81CDE62DA008B0E5F /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D896AE71CDE62DA008B0E5F /* RawRepresentable.swift */; };
 		9D896AEB1CDE642F008B0E5F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D896AE91CDE642F008B0E5F /* Nimble.framework */; };
 		9D896AEC1CDE642F008B0E5F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D896AEA1CDE642F008B0E5F /* Quick.framework */; };
@@ -64,6 +64,8 @@
 		B9F63CB41D53D2C200D09C1D /* StringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F63CB31D53D2C200D09C1D /* StringSpec.swift */; };
 		B9F63CC01D5CE7DF00D09C1D /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F63CBF1D5CE7DF00D09C1D /* UIButton.swift */; };
 		B9F63CC21D5CE7FA00D09C1D /* CellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F63CC11D5CE7FA00D09C1D /* CellIdentifiable.swift */; };
+		BE1CE2B71E1C0B1E00A7F7CF /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1CE2B61E1C0B1E00A7F7CF /* ReactiveSwift.framework */; };
+		BE1CE2B81E1C0B4A00A7F7CF /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1CE2B61E1C0B1E00A7F7CF /* ReactiveSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,7 +106,7 @@
 		9D896ADF1CDE6129008B0E5F /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.swift; path = Extensions/Foundation/Array.swift; sourceTree = "<group>"; };
 		9D896AE11CDE6211008B0E5F /* NSURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSURL.swift; path = Extensions/Foundation/NSURL.swift; sourceTree = "<group>"; };
 		9D896AE31CDE624D008B0E5F /* NSTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSTimer.swift; path = Extensions/Foundation/NSTimer.swift; sourceTree = "<group>"; };
-		9D896AE51CDE628E008B0E5F /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDate.swift; path = Extensions/Foundation/NSDate.swift; sourceTree = "<group>"; };
+		9D896AE51CDE628E008B0E5F /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Extensions/Foundation/Date.swift; sourceTree = "<group>"; };
 		9D896AE71CDE62DA008B0E5F /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawRepresentable.swift; path = Extensions/Foundation/RawRepresentable.swift; sourceTree = "<group>"; };
 		9D896AE91CDE642F008B0E5F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		9D896AEA1CDE642F008B0E5F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		B9F63CB31D53D2C200D09C1D /* StringSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringSpec.swift; path = Extensions/Foundation/StringSpec.swift; sourceTree = "<group>"; };
 		B9F63CBF1D5CE7DF00D09C1D /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIButton.swift; path = Extensions/UIKit/UIButton.swift; sourceTree = "<group>"; };
 		B9F63CC11D5CE7FA00D09C1D /* CellIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellIdentifiable.swift; sourceTree = "<group>"; };
+		BE1CE2B61E1C0B1E00A7F7CF /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1CE2B81E1C0B4A00A7F7CF /* ReactiveSwift.framework in Frameworks */,
 				B959481E1D3EA060003A082F /* Foundation.framework in Frameworks */,
 				B959481C1D3EA051003A082F /* UIKit.framework in Frameworks */,
 				B959481A1D3EA039003A082F /* AVFoundation.framework in Frameworks */,
@@ -169,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1CE2B71E1C0B1E00A7F7CF /* ReactiveSwift.framework in Frameworks */,
 				9D896AEB1CDE642F008B0E5F /* Nimble.framework in Frameworks */,
 				9D896AEC1CDE642F008B0E5F /* Quick.framework in Frameworks */,
 				9D896AC31CDE3EC5008B0E5F /* Core.framework in Frameworks */,
@@ -185,6 +190,7 @@
 				9D896AC61CDE3EC5008B0E5F /* CoreTests */,
 				9D896AB91CDE3EC5008B0E5F /* Products */,
 				9D896AF01CDE6504008B0E5F /* Framewokrs */,
+				BE1CE2B51E1C0B1E00A7F7CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,7 +243,7 @@
 				9D896ADF1CDE6129008B0E5F /* Array.swift */,
 				9D896AE11CDE6211008B0E5F /* NSURL.swift */,
 				9D896AE31CDE624D008B0E5F /* NSTimer.swift */,
-				9D896AE51CDE628E008B0E5F /* NSDate.swift */,
+				9D896AE51CDE628E008B0E5F /* Date.swift */,
 				9D896AE71CDE62DA008B0E5F /* RawRepresentable.swift */,
 			);
 			name = Foundation;
@@ -397,6 +403,14 @@
 			path = Extensions/UIKit/UIView;
 			sourceTree = "<group>";
 		};
+		BE1CE2B51E1C0B1E00A7F7CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE1CE2B61E1C0B1E00A7F7CF /* ReactiveSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -457,7 +471,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Wolox;
 				TargetAttributes = {
 					9D896AB71CDE3EC5008B0E5F = {
@@ -570,7 +584,7 @@
 				9D896ADC1CDE5FCB008B0E5F /* UIColor.swift in Sources */,
 				B988B95C1D243D9100824685 /* AVAsset.swift in Sources */,
 				B988B97F1D244D6300824685 /* ProgressHUDDelegate.swift in Sources */,
-				9D896AE61CDE628E008B0E5F /* NSDate.swift in Sources */,
+				9D896AE61CDE628E008B0E5F /* Date.swift in Sources */,
 				B988B96F1D24482200824685 /* ActionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,8 +636,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -671,8 +687,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -692,6 +710,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -703,6 +722,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -713,7 +733,7 @@
 				);
 				INFOPLIST_FILE = Core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.com.wolox.Core;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -726,6 +746,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -736,7 +757,7 @@
 				);
 				INFOPLIST_FILE = Core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.com.wolox.Core;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -752,7 +773,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CoreTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.com.wolox.CoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -767,7 +788,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CoreTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = ar.com.wolox.CoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

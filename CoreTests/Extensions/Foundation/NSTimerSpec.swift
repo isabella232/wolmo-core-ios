@@ -38,7 +38,7 @@ open class NSTimerSpec: QuickSpec {
             it("should repeteadly trigger handler after delay") { waitUntil(timeout: 5) { done in
                 var timesCalled = 0
                 
-                timer = NSTimer.schedule(repeatInterval: 1) { _ in
+                timer = Timer.schedule(repeatInterval: 1) { _ in
                     timesCalled += 1
                     if timesCalled == 2 {
                         done()

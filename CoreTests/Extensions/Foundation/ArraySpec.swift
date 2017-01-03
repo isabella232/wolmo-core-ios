@@ -44,7 +44,7 @@ open class ArraySpec: QuickSpec {
             }
             
             it("should not mutate the base array") {
-                base.appending(5)
+                _ = base.appending(5)
                 expect(base).to(equal([1, 2, 3]))
             }
             

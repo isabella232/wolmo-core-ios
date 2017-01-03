@@ -9,7 +9,7 @@
 import Quick
 import Nimble
 import enum Result.NoError
-import ReactiveCocoa
+import ReactiveSwift
 import Core
 
 open class SignalSpec: QuickSpec {
@@ -34,11 +34,11 @@ open class SignalSpec: QuickSpec {
                     
                     let converted: Signal<(), NoError> = signal.liftError()
                     
-                    converted.collect().observeNext {
+                    converted.collect().observeValues {
                         expect($0).to(beEmpty())
                     }
                     
-                    observer.sendFailed(NSError(domain: "", code: 0, userInfo: [:]))
+                    observer.send(error: NSError(domain: "", code: 0, userInfo: [:]))
                 }
             }
             

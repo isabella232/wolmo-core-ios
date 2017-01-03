@@ -28,23 +28,23 @@ open class RawRepresentableSpec: QuickSpec {
             context("When specifying an existent initial value") {
                 
                 it("should return all values starting at the initial value") {
-                    let values = Array(IntRepresentable.allValues(startingAt: .One))
-                    expect(values).to(equal([.One, .Two, .Three]))
+                    let values = Array(IntRepresentable.allValues(startingAt: .one))
+                    expect(values).to(equal([.one, .two, .three]))
                 }
                 
                 context("When the value is the first one") {
                     
                     it("should return all values") {
-                        let values = Array(IntRepresentable.allValues(startingAt: .Zero))
-                        expect(values).to(equal([.Zero, .One, .Two, .Three]))
+                        let values = Array(IntRepresentable.allValues(startingAt: .zero))
+                        expect(values).to(equal([.zero, .one, .two, .three]))
                     }
                 }
                 
                 context("When the value is the last one") {
                     
                     it("should return the last value") {
-                        let values = Array(IntRepresentable.allValues(startingAt: .Three))
-                        expect(values).to(equal([.Three]))
+                        let values = Array(IntRepresentable.allValues(startingAt: .three))
+                        expect(values).to(equal([.three]))
                     }
                 }
 
@@ -56,20 +56,20 @@ open class RawRepresentableSpec: QuickSpec {
             context("When specifying an initial value") {
                 
                 it("should return the count of all the values starting at the initial value") {
-                    expect(IntRepresentable.count(startingAt: .One)).to(equal(3))
+                    expect(IntRepresentable.count(startingAt: .one)).to(equal(3))
                 }
                 
                 context("When the value is the first one") {
                     
                     it("should return the count of all the values") {
-                        expect(IntRepresentable.count(startingAt: .Zero)).to(equal(4))
+                        expect(IntRepresentable.count(startingAt: .zero)).to(equal(4))
                     }
                 }
                 
                 context("When the value is the last one") {
                     
                     it("should return one") {
-                        expect(IntRepresentable.count(startingAt: .Three)).to(equal(1))
+                        expect(IntRepresentable.count(startingAt: .three)).to(equal(1))
                     }
                 }
             }
@@ -85,7 +85,7 @@ open class RawRepresentableGeneratorSpec: QuickSpec {
         var generator: RawRepresentableGenerator<Int, IntRepresentable>!
         
         beforeEach {
-            generator = RawRepresentableGenerator(startingAt: .Zero) { $0 }
+            generator = RawRepresentableGenerator(startingAt: .zero) { $0 }
         }
         
         describe("#next") {
@@ -93,20 +93,20 @@ open class RawRepresentableGeneratorSpec: QuickSpec {
             context("When using the identity function as generator") {
                 
                 it("should return always the same element") {
-                    expect(generator.next()).to(equal(IntRepresentable.Zero))
-                    expect(generator.next()).to(equal(IntRepresentable.Zero))
+                    expect(generator.next()).to(equal(IntRepresentable.zero))
+                    expect(generator.next()).to(equal(IntRepresentable.zero))
                 }
             }
             
             context("When adding one in the generator") {
                 
                 beforeEach {
-                    generator = RawRepresentableGenerator(startingAt: .Zero) { IntRepresentable(rawValue: $0.rawValue + 1) }
+                    generator = RawRepresentableGenerator(startingAt: .zero) { IntRepresentable(rawValue: $0.rawValue + 1) }
                 }
                 
                 it("should return the following element") {
-                    expect(generator.next()).to(equal(IntRepresentable.Zero))
-                    expect(generator.next()).to(equal(IntRepresentable.One))
+                    expect(generator.next()).to(equal(IntRepresentable.zero))
+                    expect(generator.next()).to(equal(IntRepresentable.one))
                 }
                 
             }
