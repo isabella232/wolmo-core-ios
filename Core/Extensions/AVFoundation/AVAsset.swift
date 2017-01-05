@@ -10,7 +10,6 @@ import AVFoundation
 import ReactiveSwift
 import Result
 
-
 public extension AVAsset {
     
     /**
@@ -22,7 +21,7 @@ public extension AVAsset {
         It can be an AVKeyValueStatus or an Error.
      - seealso: loadValuesAsynchronouslyForKeys(keys, completionHandler)
     */
-    public func loadValuesAsynchronouslyForKeys(_ keys: [String]) -> SignalProducer<[String: Result<AVKeyValueStatus, NSError>], NoError> {
+    public func loadValuesAsynchronously(forKeys keys: [String]) -> SignalProducer<[String: Result<AVKeyValueStatus, NSError>], NoError> {
         return SignalProducer { observer, _ in
             self.loadValuesAsynchronously(forKeys: keys, completionHandler: { 
                 var keysStatus: [String: Result<AVKeyValueStatus, NSError>] = [:]

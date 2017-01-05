@@ -19,9 +19,9 @@ private enum IntRepresentable: Int {
     case three
 }
 
-open class RawRepresentableSpec: QuickSpec {
+public class RawRepresentableSpec: QuickSpec {
     
-    override open func spec() {
+    override public func spec() {
         
         describe("#allValues") {
             
@@ -78,9 +78,9 @@ open class RawRepresentableSpec: QuickSpec {
     
 }
 
-open class RawRepresentableGeneratorSpec: QuickSpec {
+public class RawRepresentableGeneratorSpec: QuickSpec {
     
-    override open func spec() {
+    override public func spec() {
         
         var generator: RawRepresentableGenerator<Int, IntRepresentable>!
         

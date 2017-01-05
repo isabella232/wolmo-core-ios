@@ -12,9 +12,9 @@ import enum Result.NoError
 import ReactiveSwift
 import Core
 
-open class SignalSpec: QuickSpec {
+public class SignalSpec: QuickSpec {
     
-    override open func spec() {
+    override public func spec() {
         
         describe("#liftError") {
             

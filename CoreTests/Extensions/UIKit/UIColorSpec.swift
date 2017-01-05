@@ -10,9 +10,9 @@ import Quick
 import Nimble
 import Core
 
-open class UIColorSpec: QuickSpec {
+public class UIColorSpec: QuickSpec {
     
-    override open func spec() {
+    override public func spec() {
         
         describe("#init") {
             

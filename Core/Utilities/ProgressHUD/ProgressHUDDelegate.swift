@@ -19,7 +19,7 @@ public protocol ProgressHUDDelegate {
      
      - parameter labelText: A label text to be shown under the progress hud.
     */
-    func showProgressHud(_ labelText: String?)
+    func showProgressHud(withText text: String?)
     
     /**
      Hides the progress hud.
@@ -35,11 +35,11 @@ extension UIViewController: ProgressHUDDelegate {
      - parameter labelText: A label text to be shown under the progress hud.
      - Warning: Showing a progress hud freezes the viewController's view.
      */
-    public func showProgressHud(_ labelText: String? = .none) {
-        let progressHUD = MBProgressHUD.showAdded(to: view, animated: true)
+    public func showProgressHud(withText text: String? = .none) {
+        let progressHUD: MBProgressHUD = MBProgressHUD.showAdded(to: view, animated: true)
         
-        if let labelText = labelText {
-            progressHUD?.labelText = labelText
+        if let labelText = text {
+            progressHUD.labelText = labelText
         }
     }
     

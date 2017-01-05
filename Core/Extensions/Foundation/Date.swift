@@ -68,7 +68,7 @@ public extension Date {
      - parameter calendar: the calendar to get the date components from. 
      Default: current user calendar.
      
-     - seealso: NSCalendar().components()
+     - seealso: NSCalendar().dateComponents()
      - note: You could pass an array to units, such as [.Hour, .Second] to 
      retrieve both components at the same time.
      - returns: The requested date components.
@@ -113,7 +113,7 @@ public extension Date {
      
      - parameter dateFormatter: The dateFormatter to use.
      */
-    public func getWeekDay(_ dateFormatter: DateFormatter = DefaultWeekDateFormatter) -> String {
+    public func getWeekDay(withFormat dateFormatter: DateFormatter = DefaultWeekDateFormatter) -> String {
         return dateFormatter.string(from: self)
     }
     

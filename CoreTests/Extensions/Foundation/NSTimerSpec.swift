@@ -12,9 +12,9 @@ import Quick
 import Nimble
 import Core
 
-open class NSTimerSpec: QuickSpec {
+public class NSTimerSpec: QuickSpec {
     
-    override open func spec() {
+    override public func spec() {
         
         var timer: Timer!
         
@@ -25,9 +25,8 @@ open class NSTimerSpec: QuickSpec {
         
         describe("#schedule(delay:)") {
             
-            
             it("should trigger handler after delay") { waitUntil(timeout: 2) { done in
-                timer = Timer.schedule(1) { _ in
+                timer = Timer.schedule(withDelay: 1) { _ in
                     done()
                 }
             }}

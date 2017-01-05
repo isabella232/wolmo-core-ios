@@ -34,7 +34,7 @@ extension UIView {
      
      Note: By default, the border will have the width of the view.
      */
-    public func topBorder(_ border: Border, offset: CGFloat = 0) {
+    public func addTopBorder(_ border: Border, offset: CGFloat = 0) {
         let borderView = UIView(frame: CGRect(x: 0, y: 0, width: bounds.width - offset, height: CGFloat(border.height)))
         borderView.backgroundColor = border.color
         addSubview(borderView)
@@ -49,7 +49,7 @@ extension UIView {
      
      Note: By default, the border will have the width of the view.
      */
-    public func bottomBorder(_ border: Border, offset: CGFloat = 0) {
+    public func addBottomBorder(_ border: Border, offset: CGFloat = 0) {
         let borderView = UIView(frame: CGRect(x: 0, y: bounds.height - CGFloat(border.height), width: bounds.width - offset,
             height: CGFloat(border.height)))
         borderView.backgroundColor = border.color
@@ -65,7 +65,7 @@ extension UIView {
      
      Note: By default, the border will have the height of the view.
      */
-    public func leftBorder(_ border: Border, offset: CGFloat = 0) {
+    public func addLeftBorder(_ border: Border, offset: CGFloat = 0) {
         let borderView = UIView(frame: CGRect(x: 0, y: 0, width: CGFloat(border.height), height: bounds.height - offset))
         borderView.backgroundColor = border.color
         addSubview(borderView)
@@ -80,7 +80,7 @@ extension UIView {
      
      Note: By default, the border will have the height of the view.
      */
-    public func rightBorder(_ border: Border, offset: CGFloat = 0) {
+    public func addRightBorder(_ border: Border, offset: CGFloat = 0) {
         let borderView = UIView(frame: CGRect(x: bounds.width - CGFloat(border.height), y: 0, width: CGFloat(border.height),
             height: bounds.height - offset))
         borderView.backgroundColor = border.color
@@ -95,7 +95,7 @@ extension UIView {
      - parameter containerView: The container view.
      - parameter viewPositioning: Back or Front. Default: Front
      */
-    public func loadInto(_ containerView: UIView, viewPositioning: ViewPositioning = .front) {
+    public func add(into containerView: UIView, viewPositioning: ViewPositioning = .front) {
         containerView.addSubview(self)
         
         containerView.translatesAutoresizingMaskIntoConstraints = false

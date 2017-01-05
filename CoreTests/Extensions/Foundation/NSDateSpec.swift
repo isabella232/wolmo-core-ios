@@ -37,9 +37,9 @@ private let week: [Date] = {
     return week
 }()
 
-open class NSDateSpec: QuickSpec {
+public class NSDateSpec: QuickSpec {
     
-    override open func spec() {
+    override public func spec() {
         
         describe("#init") {
             
@@ -219,7 +219,6 @@ open class NSDateSpec: QuickSpec {
                     expect(date == _date).to(beFalse())
                 }
             }
-            
             
         }
     }

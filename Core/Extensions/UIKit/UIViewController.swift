@@ -15,7 +15,7 @@ public extension UIViewController {
      */
     public var hideBars: Bool {
         set {
-            setHiddenValueFromBarsTo(newValue)
+            setBarsHidden(newValue)
         }
         
         get {
@@ -34,11 +34,11 @@ public extension UIViewController {
      - parameter into: The containerView into which the controller will be loaded.
      - parameter viewPositioning: Back or Front. Default: Front
      */
-    public func loadViewController(_ childViewController: UIViewController, into containerView: UIView, viewPositioning: ViewPositioning = .front) {
+    public func loadChildViewController(_ childViewController: UIViewController, into containerView: UIView, viewPositioning: ViewPositioning = .front) {
         childViewController.willMove(toParentViewController: self)
         addChildViewController(childViewController)
         childViewController.didMove(toParentViewController: self)
-        childViewController.view.loadInto(containerView, viewPositioning: viewPositioning)
+        childViewController.view.add(into: containerView, viewPositioning: viewPositioning)
     }
     
     /**
@@ -52,9 +52,9 @@ public extension UIViewController {
 
 private extension UIViewController {
     
-    func setHiddenValueFromBarsTo(_ value: Bool) {
-        tabBarController?.tabBar.isHidden = value
-        UIApplication.shared.isStatusBarHidden = value
+    func setBarsHidden(_ hidden: Bool) {
+        tabBarController?.tabBar.isHidden = hidden
+        UIApplication.shared.isStatusBarHidden = hidden
     }
     
 }

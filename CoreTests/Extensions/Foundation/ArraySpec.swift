@@ -12,17 +12,18 @@ import Quick
 import Nimble
 import Core
 
-open class ArraySpec: QuickSpec {
+public class ArraySpec: QuickSpec {
     
-    override open func spec() {
-        
+    override public func spec() {
         
         describe("#groupBy") {
             
             it("should group the array based on condition") {
                 
                 let array = [1, 1, 2, 4, 6]
-                let grouped = array.groupBy { String($0) }
+                let grouped = array.group(withCriteria: { (elem) -> String in
+                    String(elem)
+                })
                 
                 expect(grouped.count).to(equal(4))
                 
@@ -80,13 +81,17 @@ open class ArraySpec: QuickSpec {
             context("When an element satisfies the condition") {
                 
                 it("should return that element") {
-                    expect(array.filterFirst { $0 == 1 }).to(equal(1))
+                    expect(array.getFirst(where: { (elem) -> Bool in
+                        elem == 1
+                    })).to(equal(1))
                 }
                 
                 context("When another element satisfies the condition") {
                     
                     it("should return the first one") {
-                        expect(array.filterFirst { $0 % 2 == 1 }).to(equal(1))
+                        expect(array.getFirst(where: { (elem) -> Bool in
+                            elem % 2 == 1
+                        })).to(equal(1))
                     }
                 }
             }
@@ -94,7 +99,9 @@ open class ArraySpec: QuickSpec {
             context("When none of the elements satisfies the condition") {
                 
                 it("should return nil") {
-                    expect([1, 2, 3].filterFirst { $0 == 5 }).to(beNil())
+                    expect([1, 2, 3].getFirst(where: { (elem) -> Bool in
+                        elem == 5
+                    })).to(beNil())
                 }
             }
         }

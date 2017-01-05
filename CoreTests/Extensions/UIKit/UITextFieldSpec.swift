@@ -12,9 +12,9 @@ import Quick
 import Nimble
 import Core
 
-open class UITextFieldSpec: QuickSpec {
+public class UITextFieldSpec: QuickSpec {
     
-    override open func spec() {
+    override public func spec() {
 
         describe("#nextTextField") {
             

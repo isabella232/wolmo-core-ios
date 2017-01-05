@@ -12,11 +12,12 @@ import Quick
 import Nimble
 import Core
 
-open class NSURLSpec: QuickSpec {
+public class NSURLSpec: QuickSpec {
     
-    override open func spec() {
+    override public func spec() {
         
-        let remoteURL = URL(string: "https://www.google.com.ar")!
+        // Ts are in capital letters to make sure the search is case insensitive:
+        let remoteURL = URL(string: "hTTps://www.google.com.ar")!
         
         let localURL: URL = {
             let fileManager = FileManager.default

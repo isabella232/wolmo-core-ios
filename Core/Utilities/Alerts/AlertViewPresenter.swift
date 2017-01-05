@@ -15,7 +15,6 @@ public protocol AlertViewPresenter {
 
     func presentAlert(_ alertViewModel: ErrorAlertViewModel, completion: (() -> Void)?)
     
-
     func presentAlert(_ alertViewModel: ConfirmationAlertViewModel, completion: (() -> Void)?)
     
 }

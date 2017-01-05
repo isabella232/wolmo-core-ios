@@ -13,9 +13,9 @@ import Nimble
 import Core
 
 // TODO: Implement ConfirmationAlertViewModelSpec
-open class ConfirmationAlertViewModelSpec: QuickSpec {
+public class ConfirmationAlertViewModelSpec: QuickSpec {
     
-    override open func spec() {
+    override public func spec() {
         
         var defaultConfirmationAlertViewModel: ConfirmationAlertViewModel!
         

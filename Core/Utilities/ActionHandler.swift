@@ -13,12 +13,9 @@ public protocol ActionHandlerType {
     
     associatedtype SenderType
     
-    func setAction(_ events: UIControlEvents, _ action: @escaping (SenderType, UIEvent) -> Void)
+    func setAction(for events: UIControlEvents, _ action: @escaping (SenderType, UIEvent) -> Void)
     
 }
-
-
-
 
 extension UIControl: ActionHandlerType {
 
@@ -30,7 +27,7 @@ extension UIControl: ActionHandlerType {
      
      - note: It retains any object used in the closure.
      */
-    public func setAction(_ events: UIControlEvents = .touchUpInside, _ action: @escaping (UIControl, UIEvent) -> Void) {
+    public func setAction(for events: UIControlEvents = .touchUpInside, _ action: @escaping (UIControl, UIEvent) -> Void) {
         let handler = ActionHandler(action: action)
         addTarget(handler, action: #selector(handler.action(_:forEvent:)), for: events)
         setAssociatedObject(self, key: actionHandlerTypeAssociatedObjectKey, value: handler, policy: .OBJC_ASSOCIATION_RETAIN)
@@ -41,7 +38,7 @@ extension UIControl: ActionHandlerType {
 private let actionHandlerTypeAssociatedObjectKey = UnsafeMutablePointer<Int8>.allocate(capacity: 1)
 
 private class ActionHandler<T>: NSObject {
-    fileprivate let _action: ((T, UIEvent) -> Void)
+    private let _action: ((T, UIEvent) -> Void)
     
     init(action: @escaping (T, UIEvent) -> Void) {
         _action = action

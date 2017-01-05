@@ -28,7 +28,7 @@ public extension String {
      - parameter bundle: Bundle were to search for localization.
      - parameter arguments: Formatting arguments.
      */
-    public func localized(_ bundle: Bundle = Bundle.main, arguments: CVarArg...) -> String {
+    public func localized(withArguments arguments: CVarArg..., bundle: Bundle = Bundle.main) -> String {
         return String(format: NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: ""), arguments: arguments)
     }
     
@@ -57,7 +57,7 @@ public extension String {
     public var hasSpaces: Bool {
         let whitespace = CharacterSet.whitespaces
         let range = rangeOfCharacter(from: whitespace)
-        return range != nil
+        return range != .none
     }
     
     /**
@@ -71,10 +71,10 @@ public extension String {
     }
     
     /*
-     Removes leading and trailing whitespaces.
+     Returns a copy of the string without its leading and trailing whitespace
      */
     public var trimmed: String {
-        return trimmingCharacters(in: CharacterSet.whitespaces)
+        return trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
     
     /**

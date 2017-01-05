@@ -38,9 +38,8 @@ public extension URL {
      Returns if the URL is of type HTTP protocol.
     */
     public var isHTTPProtocol: Bool {
-        return absoluteString.lowercased()
-                .substring(to: absoluteString.characters.index(absoluteString.startIndex, offsetBy: 5)) // We want HTTP (4) or HTTPS(5)
-                .range(of: "http") != nil
+        let httpRange = absoluteString.startIndex ..< absoluteString.characters.index(absoluteString.startIndex, offsetBy: 4) // "HTTP" length is 4
+        return absoluteString.range(of: "http", options: .caseInsensitive, range: httpRange) != .none
     }
     
     /**

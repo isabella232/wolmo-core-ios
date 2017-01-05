@@ -39,31 +39,7 @@ public func setAssociatedObject<T>(_ object: AnyObject, key: UnsafeRawPointer, v
 public func getAssociatedObject<T>(_ object: AnyObject, key: UnsafeRawPointer) -> T? {
     if let value = objc_getAssociatedObject(object, key) as? T {
         return value
-    } else if let value = objc_getAssociatedObject(object, key) as? AssociatedObjectBox<T> {
-        return value.value
     } else {
         return .none
     }
-}
-
-/**
- Wraps a value type into a class.
- */
-private final class AssociatedObjectBox<T> {
-    let value: T
-    
-    init(_ value: T) {
-        self.value = value
-    }
-}
-
-/**
- Lifts a value of value type into an AssociatedObjectBox.
- 
- - parameter value: The value we want to box (a value type).
- 
- - returns: An AssociatedObjectBox (class) which holds the value.
- */
-private func lift<T>(_ value: T) -> AssociatedObjectBox<T> {
-    return AssociatedObjectBox(value)
 }

@@ -11,10 +11,10 @@ import Nimble
 import Quick
 import Core
 
-final class StringSpec: QuickSpec {
+public class StringSpec: QuickSpec {
     
     // swiftlint:disable function_body_length
-    override func spec() {
+    override public func spec() {
         
         describe("#length") {
             

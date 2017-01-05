@@ -12,10 +12,9 @@ import Quick
 import Nimble
 import Core
 
-open class UIAlertControllerSpec: QuickSpec {
+public class UIAlertControllerSpec: QuickSpec {
     
-    override open func spec() {
-        
+    override public func spec() {
         
         describe("#init") {
             

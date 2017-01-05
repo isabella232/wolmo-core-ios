@@ -19,7 +19,7 @@ public extension AVPlayerItem {
      
      - seealso: seekToTime(time, completionHandler)
      */
-    public func seekTo(_ time: CMTime) -> SignalProducer<Bool, NoError> {
+    public func seek(to time: CMTime) -> SignalProducer<Bool, NoError> {
         return SignalProducer { observer, _ in
             self.seek(to: time) {
                 observer.send(value: $0)

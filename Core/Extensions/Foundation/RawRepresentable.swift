@@ -42,9 +42,8 @@ public extension RawRepresentable where RawValue == Int {
  */
 public struct RawRepresentableGenerator<RawValue, Representable: RawRepresentable>: IteratorProtocol where Representable.RawValue == RawValue {
     
-    fileprivate let _valueSuccessor: (Representable) -> Representable?
-    fileprivate var _nextValue: Representable?
-    
+    private let _valueSuccessor: (Representable) -> Representable?
+    private var _nextValue: Representable?
     
     /**
      Provides a baseRawValue and a function to get a new RawValue.
