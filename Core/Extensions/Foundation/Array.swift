@@ -13,14 +13,14 @@ public extension Array {
     /**
      Groups elements by the criteria provided.
      
-     - parameter buildGroupKey: returns the appropiate key for each element.
+     - parameter keyForElement: returns the appropiate key for each element.
      
      - returns: Dictionary with elements grouped by their corresponding keys.
      */
-    public func groupBy<K>(buildGroupKey: Element -> K) -> [K: [Element]] {
+    public func group<K>(withCriteria keyForElement: (Element) -> K) -> [K: [Element]] {
         var result: [K : [Element]] = [:]
         for element in self {
-            let key = buildGroupKey(element)
+            let key = keyForElement(element)
             if var groupedElements = result[key] {
                 groupedElements.append(element)
                 result[key] = groupedElements
@@ -38,7 +38,7 @@ public extension Array {
      O(count) if self does not wrap a bridged NSArray; otherwise the efficiency is unspecified.
      - seealso: append().
     */
-    public func appending(element: Element) -> [Element] {
+    public func appending(_ element: Element) -> [Element] {
         var result = self
         result.append(element)
         return result
@@ -52,25 +52,25 @@ public extension Array {
      O(count) if self does not wrap a bridged NSArray; otherwise the efficiency is unspecified..
      
      - Note: This function should be used over subscript when we don't want a runtime error when indexth element doesn't exist.
-     - Warning: Returns .None if the index is out of bound.
+     - Warning: Returns .none if the index is out of bound.
      - seealso: subcript()
      - returns: The Element or nil if the array doesn't contain an element in 
         that index
      */
-    public func get(index: Int) -> Element? {
+    public func get(_ index: Int) -> Element? {
         return indices ~= index ? self[index] : nil
     }
     
     /**
-     Returns the first index where predicate returns true for the corresponding value, 
-     or nil if such value is not found.
+     Returns the first element of the array for which the predicate returns true,
+     or .none if there is no such element.
      
      - parameter condition: The condition that will be applied.
-     - returns: The element that satisfies the predicate or .None if none satisfies.
+     - returns: The element that satisfies the predicate or .none if none satisfies.
      - seealso: indexOf()
     */
-    public func filterFirst(condition: Element -> Bool) -> Element? {
-        return indexOf(condition).map { self[$0] }
+    public func getFirst(where condition: (Element) -> Bool) -> Element? {
+        return index(where: condition).map { self[$0] }
     }
     
 }

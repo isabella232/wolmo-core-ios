@@ -16,7 +16,6 @@ public class UIAlertControllerSpec: QuickSpec {
     
     override public func spec() {
         
-        
         describe("#init") {
             
             context("When providing a ConfirmationAlertViewModel") {

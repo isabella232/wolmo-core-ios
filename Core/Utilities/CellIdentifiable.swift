@@ -21,6 +21,14 @@ extension UITableViewCell: IdentifiableCell {
     /**
      Returns the identifier of the class. It is the name of the class.
      */
-    public static var cellIdentifier: String { return String(self) }
+    public static var cellIdentifier: String { return String(describing: self) }
+    
+}
+
+extension UICollectionViewCell: IdentifiableCell {
+    /**
+     Returns the identifier of the class. It is the name of the class.
+     */
+    public static var cellIdentifier: String { return String(describing: self) }
     
 }

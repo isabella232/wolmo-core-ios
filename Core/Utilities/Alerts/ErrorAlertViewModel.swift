@@ -16,7 +16,7 @@ public struct ErrorAlertViewModel {
     public let title: String
     public let message: String
     public let dismissButtonTitle: String
-    public let dismissAction: ErrorAlertViewModel -> ()
+    public let dismissAction: (ErrorAlertViewModel) -> Void
     
     /**
      Initialize a new ErrorAlertViewModel with the provided parameters.
@@ -29,8 +29,8 @@ public struct ErrorAlertViewModel {
     public init(
         title: String,
         message: String,
-        dismissButtonTitle: String = DefaultDismissButtonTitleKey.localized().localizedCapitalizedString,
-        dismissAction: ErrorAlertViewModel -> () = { _ in }) {
+        dismissButtonTitle: String = DefaultDismissButtonTitleKey.localized().localizedCapitalized,
+        dismissAction: @escaping (ErrorAlertViewModel) -> Void = { _ in }) {
         self.title = title
         self.message = message
         self.dismissAction = dismissAction

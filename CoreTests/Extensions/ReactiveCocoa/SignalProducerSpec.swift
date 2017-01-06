@@ -9,7 +9,7 @@
 import Quick
 import Nimble
 import enum Result.NoError
-import ReactiveCocoa
+import ReactiveSwift
 import Core
 
 public class SignalProducerSpec: QuickSpec {
@@ -21,36 +21,39 @@ public class SignalProducerSpec: QuickSpec {
             context("When lifting an error") {
                 
                 var producer: SignalProducer<(), NSError>!
-                
-                var observer: Observer<(), NSError>!
+
+                var property: MutableProperty<String> = MutableProperty("")
                 
                 beforeEach {
-                    let (_producer, _observer) = SignalProducer<(), NSError>.buffer(0)
-                    producer = _producer
-                    observer = _observer
+                    property = MutableProperty("")
+                    producer = property.producer.skip(first: 1).flatMap(.concat) { value -> SignalProducer<(), NSError> in
+                        if (value.isEmpty) {
+                            return SignalProducer(error: NSError(domain: "", code: 0, userInfo: [:]))
+                        } else {
+                            return SignalProducer(value: ())
+                        }
+                    }
                 }
                 
                 it("should ignore the error and complete") {
                     
                     let converted: SignalProducer<(), NoError> = producer.liftError()
                     
-                    converted.collect().startWithNext {
+                    converted.collect().startWithValues {
                         expect($0).to(beEmpty())
                     }
-                    
-                    observer.sendFailed(NSError(domain: "", code: 0, userInfo: [:]))
+                    property.value = ""
                 }
                 
                 it("should not ignore a value") { waitUntil { done in
                     
                     let converted: SignalProducer<(), NoError> = producer.liftError()
                     
-                    converted.startWithNext {
+                    converted.startWithValues {
                         done()
                     }
-                    
-                    observer.sendNext(())
-                    observer.sendFailed(NSError(domain: "", code: 0, userInfo: [:]))
+                    property.value = "value"
+                    property.value = ""
                 }}
             }
             

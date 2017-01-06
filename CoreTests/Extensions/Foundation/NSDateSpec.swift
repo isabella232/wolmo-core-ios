@@ -12,23 +12,23 @@ import Quick
 import Nimble
 import Core
 
-private let DefaultDateFormatter: NSDateFormatter = {
-    $0.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+private let DefaultDateFormatter: DateFormatter = {
+    $0.calendar = Calendar(identifier: Calendar.Identifier.gregorian)
     $0.dateFormat = "yyyy-MM-dd"
-    $0.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+    $0.locale = Locale(identifier: "en_US_POSIX")
     return $0
-}(NSDateFormatter())
+}(DateFormatter())
 
-private let week: [NSDate] = {
-    var week: [NSDate] = []
-    let monday = DefaultDateFormatter.dateFromString("2016-07-25")!
+private let week: [Date] = {
+    var week: [Date] = []
+    let monday = DefaultDateFormatter.date(from: "2016-07-25")!
     
     for dateIterator in 0...6 {
-        let date = NSCalendar.currentCalendar()
-            .dateByAddingUnit(
-                .Day,
+        let date = (Calendar.current as NSCalendar)
+            .date(
+                byAdding: .day,
                 value: dateIterator,
-                toDate: monday,
+                to: monday,
                 options: [])
         
         week.append(date!)
@@ -50,17 +50,17 @@ public class NSDateSpec: QuickSpec {
                     context("When the format is correct") {
                         
                         it("should be a Date") {
-                            let date = NSDate(dateString: "1992-12-18")
+                            let date = Date(dateString: "1992-12-18")
                             expect(date).toNot(beNil())
                         }
                         
                         it("should have hours in 00") {
-                            let date = NSDate(dateString: "1992-12-18")
+                            let date = Date(dateString: "1992-12-18")
                             expect(date!.hours()).to(equal(0))
                         }
                         
                         it("should have seconds in 00") {
-                            let date = NSDate(dateString: "1992-12-18")
+                            let date = Date(dateString: "1992-12-18")
                             expect(date!.seconds()).to(equal(0))
                         }
                     }
@@ -68,7 +68,7 @@ public class NSDateSpec: QuickSpec {
                     context("When the format is incorrect") {
                         
                         it("should be nil") {
-                            let date = NSDate(dateString: "18/12/1992")
+                            let date = Date(dateString: "18/12/1992")
                             expect(date).to(beNil())
                         }
                     }
@@ -203,8 +203,8 @@ public class NSDateSpec: QuickSpec {
             context("When comparing equal dates") {
                 
                 it("should return true") {
-                    let date = NSDate(dateString: "1992-12-18")
-                    let _date = NSDate(day: 18, month: 12, year: 1992)
+                    let date = Date(dateString: "1992-12-18")
+                    let _date = Date(day: 18, month: 12, year: 1992)
                     
                     expect(date == _date).to(beTrue())
                 }
@@ -213,13 +213,12 @@ public class NSDateSpec: QuickSpec {
             context("When comparing different dates") {
                 
                 it("should return false") {
-                    let date = NSDate(dateString: "1992-12-17")
-                    let _date = NSDate(day: 18, month: 12, year: 1992)
+                    let date = Date(dateString: "1992-12-17")
+                    let _date = Date(day: 18, month: 12, year: 1992)
                     
                     expect(date == _date).to(beFalse())
                 }
             }
-            
             
         }
     }

@@ -12,7 +12,9 @@ import Quick
 import Nimble
 import Core
 
-class IdentifiableCellMock: UITableViewCell {}
+class IdentifiableTableViewCellMock: UITableViewCell {}
+
+class IdentifiableCollectionViewCellMock: UICollectionViewCell {}
 
 public class CellIdentifiableSpec: QuickSpec {
     
@@ -21,7 +23,8 @@ public class CellIdentifiableSpec: QuickSpec {
         describe("#cellIdentifier") {
             
             it("should match with the class name") {
-                expect(IdentifiableCellMock.cellIdentifier).to(equal("IdentifiableCellMock"))
+                expect(IdentifiableTableViewCellMock.cellIdentifier).to(equal("IdentifiableTableViewCellMock"))
+                expect(IdentifiableCollectionViewCellMock.cellIdentifier).to(equal("IdentifiableCollectionViewCellMock"))
             }
         }
     }

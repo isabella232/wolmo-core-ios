@@ -6,9 +6,9 @@
 //  Copyright © 2016 Wolox. All rights reserved.
 //
 
-import ReactiveCocoa
+import ReactiveSwift
 
-public extension SignalProducer {
+public extension SignalProducerProtocol {
     
     /**
      Transforms a `SignalProducer<Value, Error>` to `SignalProducer<Value, NewError>`
@@ -17,7 +17,7 @@ public extension SignalProducer {
      
      - returns: A signal producer with the same value type but with `NewError` as the error type
      */
-    func liftError<NewError: ErrorType>() -> SignalProducer<Value, NewError> {
+    func liftError<NewError>() -> SignalProducer<Value, NewError> {
         return flatMapError { _ in SignalProducer<Value, NewError>.empty }
     }
     

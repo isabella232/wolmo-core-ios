@@ -8,17 +8,17 @@
 
 import Foundation
 
-public extension NSBundle {
+public extension Bundle {
     
     /**
      Loads a nib from the bundle.
      
      - parameter nibName: Contains a StringRepresentable nib.
-     - returns: The loaded NibType or .None if it don't exists.
+     - returns: The loaded NibType or .none if it don't exists.
      - seealso: loadNibNamed()
      */
-    public func loadNib<NibType, T: RawRepresentable where T.RawValue == String>(nibName: T) -> NibType? {
-        return loadNibNamed(nibName.rawValue, owner: self, options: nil)[0] as? NibType
+    public func loadNib<NibType, T: RawRepresentable>(named nibName: T) -> NibType? where T.RawValue == String {
+        return loadNibNamed(nibName.rawValue, owner: self, options: nil)?[0] as? NibType
     }
     
     /**
@@ -28,12 +28,12 @@ public extension NSBundle {
      The localized value of a key is returned when one is available.
      
      - parameter key: A key in the receiver's property list.
-     - returns: The value associated with key in the receiver's property list (Info.plist) or .None if it don't exists.
+     - returns: The value associated with key in the receiver's property list (Info.plist) or .none if it don't exists.
      - seealso: objectForInfoDictionaryKey()
     */
     public subscript(key: String) -> String? {
-        guard let value = objectForInfoDictionaryKey(key) as? String where !value.isEmpty else {
-            return .None
+        guard let value = object(forInfoDictionaryKey: key) as? String, !value.isEmpty else {
+            return .none
         }
         return value
     }

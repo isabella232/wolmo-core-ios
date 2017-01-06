@@ -15,8 +15,8 @@ public extension UITableView {
      
      - parameter cellType: An identifiable cell to take the identifier from.
      */
-    func registerCell(cellType: IdentifiableCell.Type) {
-        registerNib(UINib(nibName: cellType.cellIdentifier, bundle: nil), forCellReuseIdentifier: cellType.cellIdentifier)
+    func register(cellType: IdentifiableCell.Type, bundle: Bundle? = .none) {
+        register(UINib(nibName: cellType.cellIdentifier, bundle: bundle), forCellReuseIdentifier: cellType.cellIdentifier)
     }
     
 }

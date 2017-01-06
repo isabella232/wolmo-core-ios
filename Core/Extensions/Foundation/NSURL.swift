@@ -16,8 +16,8 @@ import Foundation
  
  - returns: The new NSURL, with pathComponent appended to baseURL
  */
-public func / (baseURL: NSURL, pathComponent: String) -> NSURL {
-    return baseURL.URLByAppendingPathComponent(pathComponent)
+public func / (baseURL: URL, pathComponent: String) -> URL {
+    return baseURL.appendingPathComponent(pathComponent)
 }
 
 /**
@@ -28,20 +28,18 @@ public func / (baseURL: NSURL, pathComponent: String) -> NSURL {
  
  - returns: The new NSURL, with pathComponent appended to baseURL
  */
-public func / (baseURL: NSURL, pathComponent: Int) -> NSURL {
+public func / (baseURL: URL, pathComponent: Int) -> URL {
     return baseURL / String(pathComponent)
 }
 
-public extension NSURL {
+public extension URL {
     
     /**
      Returns if the URL is of type HTTP protocol.
     */
     public var isHTTPProtocol: Bool {
-        return absoluteString
-                .lowercaseString
-                .substringToIndex(absoluteString.startIndex.advancedBy(5)) // We want HTTP (4) or HTTPS(5)
-                .rangeOfString("http") != nil
+        let httpRange = absoluteString.startIndex ..< absoluteString.characters.index(absoluteString.startIndex, offsetBy: 4) // "HTTP" length is 4
+        return absoluteString.range(of: "http", options: .caseInsensitive, range: httpRange) != .none
     }
     
     /**
@@ -49,8 +47,8 @@ public extension NSURL {
      
      - parameter subDirectory: The subDirectory to look for.
     */
-    public func contains(subDirectory subDirectory: String) -> Bool {
-        return pathComponents?.contains(subDirectory) ?? false
+    public func contains(subDirectory: String) -> Bool {
+        return pathComponents.contains(subDirectory) 
     }
     
 }
