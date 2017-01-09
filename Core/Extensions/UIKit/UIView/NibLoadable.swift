@@ -13,7 +13,7 @@ import Foundation
  */
 public protocol NibLoadable: class {
     
-    static func loadFromNib(_ bundle: Bundle) -> Self?
+    static func loadFromNib(inBundle bundle: Bundle) -> Self?
     
 }
 
