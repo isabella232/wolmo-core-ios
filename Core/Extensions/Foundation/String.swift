@@ -29,7 +29,11 @@ public extension String {
      - parameter arguments: Formatting arguments.
      */
     public func localized(withArguments arguments: CVarArg..., bundle: Bundle = Bundle.main) -> String {
-        return String(format: NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: ""), arguments: arguments)
+        let localized = NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
+        if arguments.count > 0 {
+            return String(format: localized, arguments: arguments)
+        }
+        return localized
     }
     
     /**
