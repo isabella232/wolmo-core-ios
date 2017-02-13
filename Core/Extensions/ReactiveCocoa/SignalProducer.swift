@@ -49,7 +49,7 @@ public extension SignalProducerProtocol {
     
 }
 
-extension SignalProducerProtocol where Value: ResultProtocol {
+public extension SignalProducerProtocol where Value: ResultProtocol {
     
     /**
          Transforms a `SignalProducer<ResultProtocol<Value2, Error2>, Error>`

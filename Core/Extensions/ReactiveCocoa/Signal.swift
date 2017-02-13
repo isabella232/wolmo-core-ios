@@ -48,7 +48,7 @@ public extension SignalProtocol {
     
 }
 
-extension SignalProtocol where Value: ResultProtocol {
+public extension SignalProtocol where Value: ResultProtocol {
     
     /**
         Transforms a `Signal<ResultProtocol<Value2, Error2>, Error>` to `Signal<Value2, Error>`,

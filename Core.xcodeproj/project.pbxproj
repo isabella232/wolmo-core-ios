@@ -315,8 +315,8 @@
 		B95948331D4FDCD6003A082F /* ReactiveCocoa */ = {
 			isa = PBXGroup;
 			children = (
-				B95948341D4FDCD6003A082F /* SignalProducerSpec.swift */,
 				B95948351D4FDCD6003A082F /* SignalSpec.swift */,
+				B95948341D4FDCD6003A082F /* SignalProducerSpec.swift */,
 			);
 			name = ReactiveCocoa;
 			path = Extensions/ReactiveCocoa;
