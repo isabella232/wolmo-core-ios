@@ -39,7 +39,7 @@ extension UIViewController: ProgressHUDDelegate {
         let progressHUD: MBProgressHUD = MBProgressHUD.showAdded(to: view, animated: true)
         
         if let labelText = text {
-            progressHUD.labelText = labelText
+            progressHUD.label.text = labelText
         }
     }
     
