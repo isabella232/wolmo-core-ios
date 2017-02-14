@@ -39,20 +39,18 @@ public class SignalProducerSpec: QuickSpec {
                     
                     converted.collect().startWithValues {
                         expect($0).to(beEmpty())
+                        done()
                     }
                     property.value = ""
                 }}
                 
                 it("should not ignore a value") { waitUntil { done in
-                    
                     let converted: SignalProducer<(), NoError> = producer.liftError()
                     
-                    converted.collect().startWithValues {
-                        expect($0.count).to(equal(2))
+                    converted.startWithValues {
                         done()
                     }
                     property.value = "value"
-                    property.value = ""
                 }}
                 
             }
@@ -120,7 +118,7 @@ public class SignalProducerSpec: QuickSpec {
                         observer.send(value: .success())
                         observer.sendCompleted()
                     }
-                    let converted = producer.toResultSignalProducer()
+                    let converted = producer.filterValues()
                     converted.collect().startWithValues {
                         expect($0.count).to(equal(1))
                         done()
@@ -136,7 +134,7 @@ public class SignalProducerSpec: QuickSpec {
                         observer.send(value: .failure(NSError(domain: "", code: 0, userInfo: [:])))
                         observer.sendCompleted()
                     }
-                    let converted = producer.toResultSignalProducer()
+                    let converted = producer.filterValues()
                     converted.collect().startWithValues {
                         expect($0.count).to(equal(0))
                         done()
@@ -156,7 +154,7 @@ public class SignalProducerSpec: QuickSpec {
                         observer.send(value: .success())
                         observer.sendCompleted()
                     }
-                    let converted = producer.toResultSignalProducer()
+                    let converted = producer.filterErrors()
                     converted.collect().startWithValues {
                         expect($0.count).to(equal(0))
                         done()
@@ -172,7 +170,7 @@ public class SignalProducerSpec: QuickSpec {
                         observer.send(value: .failure(NSError(domain: "", code: 0, userInfo: [:])))
                         observer.sendCompleted()
                     }
-                    let converted = producer.toResultSignalProducer()
+                    let converted = producer.filterErrors()
                     converted.collect().startWithValues {
                         expect($0.count).to(equal(1))
                         done()
