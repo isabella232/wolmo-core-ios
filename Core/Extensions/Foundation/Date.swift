@@ -81,9 +81,10 @@ public extension Date {
      Creates a Date from a string.
      
      - parameter dateString: The date string representation.
-     - parameter dateFormatter: The used for initializing the date.
+     - parameter dateFormatter: The formatter used for initializing the date.
+            By default, formatter which uses format "yyyy-MM-dd" and US locale.
      */
-    init?(dateString: String, dateFormatter: DateFormatter = DefaultDateFormatter) {
+    public init?(dateString: String, dateFormatter: DateFormatter = DefaultDateFormatter) {
         guard let date = dateFormatter.date(from: dateString) else {
             return nil
         }
@@ -92,11 +93,23 @@ public extension Date {
     }
     
     /**
+     Creates a Date from a string and a string format.
+     
+     - parameter dateString: The date string representation.
+     - parameter formatString: The format string used for initializing the date.
+     */
+    public init?(dateString: String, formatString: String) {
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate(formatString)
+        self.init(dateString: dateString, dateFormatter: formatter)
+    }
+    
+    /**
      Creates a Date from a day, month and year.
      
      - seealso: init(dateString: String)
      */
-    init?(day: Int, month: Int, year: Int) {
+    public init?(day: Int, month: Int, year: Int) {
         var monthString: String = "\(month)"
         var dayString: String = "\(day)"
         if month < 10 {
@@ -136,4 +149,22 @@ public extension Date {
         let secondsInHours: TimeInterval = Double(hours) * 60 * 60
         return addingTimeInterval(secondsInHours)
     }
+    
+    /**
+     Returns a the string representation of self with the format specified in the dateFormatter.
+     By default, uses a formatter with format "yyyy-MM-dd" and US locale.
+     */
+    public func toString(accordingTo dateFormatter: DateFormatter = DefaultDateFormatter) -> String {
+        return dateFormatter.string(from: self)
+    }
+    
+    /**
+     Returns a the string representation of self with the format specified.
+     */
+    public func toString(with format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate(format)
+        return toString(accordingTo: formatter)
+    }
+    
 }
