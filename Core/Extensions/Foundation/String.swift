@@ -8,18 +8,6 @@
 
 import Foundation
 
-/**
-    Appends two string, similar to web resource addressing.
-    
-    - parameter basePath: base string.
-    - parameter pathComponent: string that will be appended.
- 
-    - returns: The new NSURL, with pathComponent appended to baseURL.
- */
-public func / (basePath: String, pathComponent: String) -> String {
-    return (basePath as NSString).appendingPathComponent(pathComponent)
-}
-
 public extension String {
     
     /**
