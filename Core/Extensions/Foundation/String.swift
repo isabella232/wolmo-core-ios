@@ -15,13 +15,26 @@ public extension String {
      
      - parameter bundle: Bundle were to search for localization.
      - parameter arguments: Formatting arguments.
+     
+     -seealso: NSLocalizedString.
      */
     public func localized(withArguments arguments: CVarArg..., bundle: Bundle = Bundle.main) -> String {
-        let localized = NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
+        let localized = NSLocalizedString(self, tableName: .none, bundle: bundle, value: "", comment: "")
         if arguments.count > 0 {
-            return String(format: localized, arguments: arguments)
+            return localized.format(with: arguments)
         }
         return localized
+    }
+    
+    /**
+     Returns a the formatted string.
+     
+     - parameter arguments: Formatting arguments.
+     
+     -seealso: String.init(format:arguments:)
+     */
+    public func format(with arguments: CVarArg...) -> String {
+        return String(format: self, arguments: arguments)
     }
     
     /**
@@ -97,18 +110,14 @@ public extension String {
     }
     
     /**
-     Returns true if self contains the given `searchString`, false if not.
-    */
-    public func contains(searchString: String) -> Bool {
-        return range(of: searchString) != .none
-    }
-    
-    /**
      Returns a new string that contains the same as self except
      for the given `suffix`.
      If it doesn't have the suffix, it returns the same as self.
      If it has the suffix more than one time, it just removes the
      last occurence of it.
+     
+     The comparison is both case sensitive and Unicode safe.
+     - seealso: hasSuffix.
     */
     public func remove(suffix: String) -> String {
         if hasSuffix(suffix) {
@@ -123,6 +132,9 @@ public extension String {
      If it doesn't have the prefix, it returns the same as self.
      If it has the prefix more than one time, it just removes the
      first occurence of it.
+     
+     The comparison is both case sensitive and Unicode safe.
+     - seealso: hasPrefix.
      */
     public func remove(prefix: String) -> String {
         if hasPrefix(prefix) {

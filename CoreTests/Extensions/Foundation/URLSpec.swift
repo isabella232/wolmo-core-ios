@@ -1,5 +1,5 @@
 //
-//  NSURLSpec.swift
+//  URLSpec.swift
 //  Core
 //
 //  Created by Francisco Depascuali on 7/18/16.
@@ -12,7 +12,7 @@ import Quick
 import Nimble
 import Core
 
-public class NSURLSpec: QuickSpec {
+public class URLSpec: QuickSpec {
     
     override public func spec() {
         
@@ -23,26 +23,6 @@ public class NSURLSpec: QuickSpec {
             let fileManager = FileManager.default
             return fileManager.urls(for: .documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).last!
         }()
-            
-        describe("#/") {
-            
-            context("when the path to append is a string") {
-                
-                it("should append the path component to the base URL") {
-                    let rawURL = remoteURL / "Hello"
-                    expect(rawURL.absoluteString).to(equal(remoteURL.absoluteString + "/Hello"))
-                }
-            }
-            
-            context("When the path to append is an int") {
-                
-                it("should append the path component to the base URL") {
-                    let rawURL = remoteURL / 1
-                    expect(rawURL.absoluteString).to(equal(remoteURL.absoluteString + "/1"))
-                }
-            }
-            
-        }
         
         describe("#isHTTPProtocol") {
             
@@ -54,6 +34,23 @@ public class NSURLSpec: QuickSpec {
             }
             
             context("When the URL isn't of type HTTP") {
+                
+                it("should return false") {
+                    expect(localURL.isHTTPProtocol).to(beFalse())
+                }
+            }
+        }
+        
+        describe("#isHTTPSProtocol") {
+            
+            context("When the URL is of type HTTPS") {
+                
+                it("should return true") {
+                    expect(remoteURL.isHTTPProtocol).to(beTrue())
+                }
+            }
+            
+            context("When the URL isn't of type HTTPS") {
                 
                 it("should return false") {
                     expect(localURL.isHTTPProtocol).to(beFalse())

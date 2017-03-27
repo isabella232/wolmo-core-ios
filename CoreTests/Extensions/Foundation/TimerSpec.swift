@@ -1,5 +1,5 @@
 //
-//  NSTimerSpec.swift
+//  TimerSpec.swift
 //  Core
 //
 //  Created by Francisco Depascuali on 7/18/16.
@@ -12,7 +12,7 @@ import Quick
 import Nimble
 import Core
 
-public class NSTimerSpec: QuickSpec {
+public class TimerSpec: QuickSpec {
     
     override public func spec() {
         
@@ -20,10 +20,10 @@ public class NSTimerSpec: QuickSpec {
         
         afterEach {
             timer!.invalidate()
-            timer = nil
+            timer = .none
         }
         
-        describe("#schedule(delay:)") {
+        describe("#schedule(withDelay:)") {
             
             it("should trigger handler after delay") { waitUntil(timeout: 2) { done in
                 timer = Timer.schedule(withDelay: 1) { _ in
@@ -32,7 +32,7 @@ public class NSTimerSpec: QuickSpec {
             }}
         }
         
-        describe("#schedule(repeat:)") {
+        describe("#schedule(repeatInterval:)") {
             
             it("should repeteadly trigger handler after delay") { waitUntil(timeout: 5) { done in
                 var timesCalled = 0
