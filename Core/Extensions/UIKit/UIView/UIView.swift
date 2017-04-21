@@ -25,6 +25,16 @@ public enum ViewPositioning {
 
 extension UIView {
     
+    private func addBorderView(from border: ViewBorder, horizontal: Bool) -> UIView {
+        let borderView = UIView(frame: .zero)
+        borderView.backgroundColor = border.color
+        addSubview(borderView)
+        borderView.translatesAutoresizingMaskIntoConstraints = false
+        let anchor = horizontal ? borderView.heightAnchor : borderView.widthAnchor
+        anchor.constraint(equalToConstant: CGFloat(border.thickness)).isActive = true
+        return borderView
+    }
+    
     /**
      Adds a border to the top of the view, inside the view's bounds.
      
@@ -42,11 +52,7 @@ extension UIView {
                     withLeftOffset left: CGFloat = 0, rightOffset right: CGFloat = 0,
                     useConstraints: Bool = true) {
         if useConstraints {
-            let borderView = UIView(frame: .zero)
-            borderView.backgroundColor = border.color
-            addSubview(borderView)
-            borderView.translatesAutoresizingMaskIntoConstraints = false
-            borderView.heightAnchor.constraint(equalToConstant: CGFloat(border.thickness)).isActive = true
+            let borderView = addBorderView(from: border, horizontal: true)
             borderView.topAnchor.constraint(equalTo: topAnchor).isActive = true
             borderView.leftAnchor.constraint(equalTo: leftAnchor, constant: left).isActive = true
             rightAnchor.constraint(equalTo: borderView.rightAnchor, constant: right).isActive = true
@@ -77,11 +83,7 @@ extension UIView {
                     withLeftOffset left: CGFloat = 0, rightOffset right: CGFloat = 0,
                     useConstraints: Bool = true) {
         if useConstraints {
-            let borderView = UIView(frame: .zero)
-            borderView.backgroundColor = border.color
-            addSubview(borderView)
-            borderView.translatesAutoresizingMaskIntoConstraints = false
-            borderView.heightAnchor.constraint(equalToConstant: CGFloat(border.thickness)).isActive = true
+            let borderView = addBorderView(from: border, horizontal: true)
             borderView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
             borderView.leftAnchor.constraint(equalTo: leftAnchor, constant: left).isActive = true
             rightAnchor.constraint(equalTo: borderView.rightAnchor, constant: right).isActive = true
@@ -112,11 +114,7 @@ extension UIView {
                     withTopOffset top: CGFloat = 0, bottomOffset bottom: CGFloat = 0,
                     useConstraints: Bool = true) {
         if useConstraints {
-            let borderView = UIView(frame: .zero)
-            borderView.backgroundColor = border.color
-            addSubview(borderView)
-            borderView.translatesAutoresizingMaskIntoConstraints = false
-            borderView.widthAnchor.constraint(equalToConstant: CGFloat(border.thickness)).isActive = true
+            let borderView = addBorderView(from: border, horizontal: false)
             borderView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
             borderView.topAnchor.constraint(equalTo: topAnchor, constant: top).isActive = true
             bottomAnchor.constraint(equalTo: borderView.bottomAnchor, constant: bottom).isActive = true
@@ -147,11 +145,7 @@ extension UIView {
                     withTopOffset top: CGFloat = 0, bottomOffset bottom: CGFloat = 0,
                     useConstraints: Bool = true) {
         if useConstraints {
-            let borderView = UIView(frame: .zero)
-            borderView.backgroundColor = border.color
-            addSubview(borderView)
-            borderView.translatesAutoresizingMaskIntoConstraints = false
-            borderView.widthAnchor.constraint(equalToConstant: CGFloat(border.thickness)).isActive = true
+            let borderView = addBorderView(from: border, horizontal: false)
             borderView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
             borderView.topAnchor.constraint(equalTo: topAnchor, constant: top).isActive = true
             bottomAnchor.constraint(equalTo: borderView.bottomAnchor, constant: bottom).isActive = true
