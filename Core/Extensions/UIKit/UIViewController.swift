@@ -38,7 +38,7 @@ public extension UIViewController {
         childViewController.willMove(toParentViewController: self)
         addChildViewController(childViewController)
         childViewController.didMove(toParentViewController: self)
-        childViewController.view.add(into: containerView, viewPositioning: viewPositioning)
+        childViewController.view.add(into: containerView, in: viewPositioning)
     }
     
     /**
