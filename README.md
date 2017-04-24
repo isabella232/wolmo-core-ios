@@ -1,5 +1,5 @@
 ## WolMo - Core iOS
-[![Build Status](https://travis-ci.org/Wolox/wolmo-core-ios.svg?branch=master)](https://travis-ci.org/Wolox/wolmo-core-ios)
+[![Build Status](https://www.bitrise.io/app/d026a7fe0c9dc2f4.svg?token=9MLbGXfHBhZKaL4KXXmpHQ)](https://www.bitrise.io/app/d026a7fe0c9dc2f4#/builds)
 [![Coverage Status](https://coveralls.io/repos/github/Wolox/wolmo-core-ios/badge.svg?branch=master)](https://coveralls.io/github/Wolox/wolmo-core-ios?branch=master)
 [![GitHub release](https://img.shields.io/github/release/Wolox/wolmo-core-ios.svg)](https://github.com/Wolox/wolmo-core-ios/releases)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
