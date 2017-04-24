@@ -183,6 +183,7 @@ DEPENDENCIES
   linterbot
   slather
   synx
+  xcpretty
 
 BUNDLED WITH
    1.14.6

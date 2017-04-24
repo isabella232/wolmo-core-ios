@@ -27,8 +27,7 @@ workflows:
     - script@1.1.3:
         title: Testing...
         inputs:
-        - content: CI_BUILD=true bundle exec fastlane test ALPHA_BRANCH:master TRAVIS_BRANCH:"$BITRISE_GIT_BRANCH"
-            COMMIT_MESSAGE:"$BITRISE_GIT_MESSAGE" REPO_ACCESS_TOKEN:"$REPO_ACCESS_TOKEN"
+        - content: CI_BUILD=true bundle exec fastlane test
     - script@1.1.3:
         title: Calculating coverage...
         inputs:
