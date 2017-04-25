@@ -52,6 +52,7 @@ extension UIView {
      
      - note: If you decide to use constraints to determine the size, self's frame doesn't need to be final.
              Because of this, it can be used in `loadView()`, `viewDidLoad()` or `viewWillAppear(animated:)`.
+             We strongly recommend to work with constraints as a better practice than frames.
      */
     public func add(top border: ViewBorder,
                     withLeftOffset left: CGFloat = 0, rightOffset right: CGFloat = 0,
@@ -83,6 +84,7 @@ extension UIView {
      
      - note: If you decide to use constraints to determine the size, self's frame doesn't need to be final.
              Because of this, it can be used in `loadView()`, `viewDidLoad()` or `viewWillAppear(animated:)`.
+             We strongly recommend to work with constraints as a better practice than frames.
      */
     public func add(bottom border: ViewBorder,
                     withLeftOffset left: CGFloat = 0, rightOffset right: CGFloat = 0,
@@ -114,6 +116,7 @@ extension UIView {
      
      - note: If you decide to use constraints to determine the size, self's frame doesn't need to be final.
              Because of this, it can be used in `loadView()`, `viewDidLoad()` or `viewWillAppear(animated:)`.
+             We strongly recommend to work with constraints as a better practice than frames.
      */
     public func add(left border: ViewBorder,
                     withTopOffset top: CGFloat = 0, bottomOffset bottom: CGFloat = 0,
@@ -145,6 +148,7 @@ extension UIView {
      
      - note: If you decide to use constraints to determine the size, self's frame doesn't need to be final.
              Because of this, it can be used in `loadView()`, `viewDidLoad()` or `viewWillAppear(animated:)`.
+             We strongly recommend to work with constraints as a better practice than frames.
      */
     public func add(right border: ViewBorder,
                     withTopOffset top: CGFloat = 0, bottomOffset bottom: CGFloat = 0,
@@ -169,24 +173,38 @@ extension UIView {
      
      - parameter containerView: The container view.
      - parameter insets: Insets that separate self from the container view. By default, .zero.
-     - parameter viewPositioning: Back or Front. By default, .front
+     - parameter viewPositioning: Back or Front. By default, .front.
+     - parameter useConstraints: Boolean indicating whether to use constraints or frames. By default, true.
      
-     - note: It uses constraints to determine the size, so the frame isn't needed.
-             Because of this, it can be used in `loadView()` or `viewDidLoad()`.
+     - note: If you decide to use constraints to determine the size, the container's frame doesn't need to be final.
+             Because of this, it can be used in `loadView()`, `viewDidLoad()` or `viewWillAppear(animated:)`.
+             We strongly recommend to work with constraints as a better practice than frames.
              Also, this function matches left inset to leading and right to trailing of the view.
      */
     public func add(into containerView: UIView,
                     with insets: UIEdgeInsets = .zero,
-                    in viewPositioning: ViewPositioning = .front) {
-        containerView.addSubview(self)
-        
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        topAnchor.constraint(equalTo: containerView.topAnchor, constant: insets.top).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: insets.bottom).isActive = true
-        leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: insets.left).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: insets.right).isActive = true
+                    in viewPositioning: ViewPositioning = .front,
+                    useConstraints: Bool = true) {
+        if useConstraints {
+            containerView.addSubview(self)
+            
+            containerView.translatesAutoresizingMaskIntoConstraints = false
+            translatesAutoresizingMaskIntoConstraints = false
+            
+            topAnchor.constraint(equalTo: containerView.topAnchor, constant: insets.top).isActive = true
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: insets.bottom).isActive = true
+            leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: insets.left).isActive = true
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: insets.right).isActive = true
+        } else {
+            let bounds = containerView.bounds
+            let x = insets.left
+            let y = insets.top
+            let width = bounds.width - x - insets.right
+            let  height = bounds.height - y - insets.bottom
+            frame = CGRect(x: x, y: y, width: width, height: height)
+            
+            containerView.addSubview(self)
+        }
         
         if case viewPositioning = ViewPositioning.back {
             containerView.sendSubview(toBack: self)
