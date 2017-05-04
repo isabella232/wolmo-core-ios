@@ -1,6 +1,5 @@
-coverage_service: coveralls
 xcodeproj: ./Core.xcodeproj
-repo_token: WjbsHpVNzwWdZaa6bbkaFQK1nPJHoXshx
 scheme: Core
 ignore:
   - CoreTests/*
+  - Carthage/*
