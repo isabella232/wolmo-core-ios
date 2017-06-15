@@ -79,7 +79,7 @@ For example, [Collapsable](Core/Extensions/UIKit/UIView/Collapsable.swift) repre
 1. [ReactiveCocoa](Core/Extensions/ReactiveCocoa): Extensions for [Signal](Core/Extensions/ReactiveCocoa/Signal.swift) and [SignalProducer](Core/Extensions/ReactiveCocoa/SignalProducer.swift).
 2. [AVFoundation](Core/Extensions/AVFoundation): Extensions used for AVFoundation elements, such as [AVAsset](Core/Extensions/AVFoundation/AVAsset.swift) and [AVPlayerItem](Core/Extensions/AVFoundation/AVPlayerItem.swift).
 3. [UIKit](Core/Extensions/UIKit): Extensions for UIKit elements, such as [UIView](Core/Extensions/UIKit/UIView/UIView.swift) and [UIViewController](Core/Extensions/UIKit/UIViewController.swift).
-4. [Foundation](Core/Extensions/Foundation): Extensions for Foundation elements, such as [String](Core/Extensions/Foundation/String.swift), [Array](Core/Extensions/Foundation/Array.swift) and [NSDate](Core/Extensions/Foundation/NSDate.swift).
+4. [Foundation](Core/Extensions/Foundation): Extensions for Foundation elements, such as [String](Core/Extensions/Foundation/String.swift), [Array](Core/Extensions/Foundation/Array.swift) and [Date](Core/Extensions/Foundation/Date.swift).
 
 ## Bootstrap
 ```
