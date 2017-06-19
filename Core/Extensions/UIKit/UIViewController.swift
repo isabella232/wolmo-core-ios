@@ -55,22 +55,26 @@ public extension UIViewController {
      Configures the navigation bar to have a particular image as back button.
      - parameter image: The image of the back button.
      - warning: This function must be called when self is inside a navigation controller. 
-            If not it will arise a runtime nil-force-unwrapping error.
+            If not it will arise a runtime fatal error.
      */
     public func setNavigationBarBackButton(image: UIImage) {
-        navigationController!.navigationBar.topItem?.title = ""
-        navigationController!.navigationBar.backIndicatorImage = image
-        navigationController!.navigationBar.backIndicatorTransitionMaskImage = image
+        guard let navigationController = navigationController else { fatalError("There is no navigation controller.") }
+        
+        navigationController.navigationBar.topItem?.title = ""
+        navigationController.navigationBar.backIndicatorImage = image
+        navigationController.navigationBar.backIndicatorTransitionMaskImage = image
     }
     
     /**
      Configures the navigation bar color.
      - parameter color: The new color of the navigation bar.
      - warning: This function must be called when self is inside a navigation controller. 
-            If not it will arise a runtime nil-force-unwrapping error.
+            If not it will arise a runtime fatal error.
      */
     public func setNavigationBarColor(_ color: UIColor) {
-        navigationController!.navigationBar.barTintColor = color
+        guard let navigationController = navigationController else { fatalError("There is no navigation controller.") }
+        
+        navigationController.navigationBar.barTintColor = color
     }
     
     /**
