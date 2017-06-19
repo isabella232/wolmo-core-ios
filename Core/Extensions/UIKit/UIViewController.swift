@@ -54,7 +54,8 @@ public extension UIViewController {
     /**
      Configures the navigation bar to have a particular image as back button.
      - parameter image: The image of the back button.
-     - warning: This function must be called when self is inside a navigation controller. If not it will arise a runtime nil-force-unwrapping error.
+     - warning: This function must be called when self is inside a navigation controller. 
+            If not it will arise a runtime nil-force-unwrapping error.
      */
     public func setNavigationBarBackButton(image: UIImage) {
         navigationController!.navigationBar.topItem?.title = ""
@@ -65,7 +66,8 @@ public extension UIViewController {
     /**
      Configures the navigation bar color.
      - parameter color: The new color of the navigation bar.
-     - warning: This function must be called when self is inside a navigation controller. If not it will arise a runtime nil-force-unwrapping error.
+     - warning: This function must be called when self is inside a navigation controller. 
+            If not it will arise a runtime nil-force-unwrapping error.
      */
     public func setNavigationBarColor(_ color: UIColor) {
         navigationController!.navigationBar.barTintColor = color
