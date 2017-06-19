@@ -110,4 +110,12 @@ public extension UIViewController {
         navigationItem.titleView = label
     }
     
+    /**
+     Adds an ImageView with the image passed as the titleView of the navigation bar.
+     - parameter image: The image to set as title.
+     */
+    public func setNavigationBarTitleImage(_ image: UIImage) {
+        navigationItem.titleView = UIImageView(image: image)
+    }
+    
 }
