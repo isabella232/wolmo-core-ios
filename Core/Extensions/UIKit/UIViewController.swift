@@ -57,7 +57,7 @@ public extension UIViewController {
      - warning: This function must be called when self is inside a navigation controller. 
             If not it will arise a runtime fatal error.
      */
-    public func setNavigationBarBackButton(image: UIImage) {
+    public func setNavigationBarBackButton(_ image: UIImage) {
         guard let navigationController = navigationController else { fatalError("There is no navigation controller.") }
         
         navigationController.navigationBar.topItem?.title = ""
@@ -67,7 +67,8 @@ public extension UIViewController {
     
     /**
      Configures the navigation bar color.
-     - parameter color: The new color of the navigation bar.
+     - parameter color: The new color of the navigation bar. 
+            This represents the navigation bar background color.
      - warning: This function must be called when self is inside a navigation controller. 
             If not it will arise a runtime fatal error.
      */
@@ -75,6 +76,31 @@ public extension UIViewController {
         guard let navigationController = navigationController else { fatalError("There is no navigation controller.") }
         
         navigationController.navigationBar.barTintColor = color
+    }
+    
+    /**
+     Configures the navigation bar tint color.
+     - parameter color: The new tint color of the navigation bar. 
+            This represents the color of the left and right button items.
+     - warning: This function must be called when self is inside a navigation controller.
+            If not it will arise a runtime fatal error.
+     */
+    public func setNavigationBarTintColor(_ color: UIColor) {
+        guard let navigationController = navigationController else { fatalError("There is no navigation controller.") }
+        
+        navigationController.navigationBar.tintColor = color
+    }
+    
+    /**
+     Configures the navigation bar style.
+     - parameter style: The new style of the navigation bar.
+     - warning: This function must be called when self is inside a navigation controller.
+            If not it will arise a runtime fatal error.
+     */
+    public func setNavigationBarStyle(_ style: UIBarStyle) {
+        guard let navigationController = navigationController else { fatalError("There is no navigation controller.") }
+        
+        navigationController.navigationBar.barStyle = style
     }
     
     /**
