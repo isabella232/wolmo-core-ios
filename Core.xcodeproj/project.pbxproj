@@ -19,7 +19,6 @@
 		B959481E1D3EA060003A082F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B959481D1D3EA060003A082F /* Foundation.framework */; };
 		B988B9681D24457D00824685 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B988B9661D24457D00824685 /* ReactiveCocoa.framework */; };
 		B988B9691D24457D00824685 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B988B9671D24457D00824685 /* Result.framework */; };
-		B988B96F1D24482200824685 /* ActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B96E1D24482200824685 /* ActionHandler.swift */; };
 		B988B9731D244BAE00824685 /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9721D244BAE00824685 /* AssociatedObject.swift */; };
 		B988B97C1D244D6300824685 /* AlertViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9771D244D6300824685 /* AlertViewPresenter.swift */; };
 		B988B97D1D244D6300824685 /* ConfirmationAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B988B9781D244D6300824685 /* ConfirmationAlertViewModel.swift */; };
@@ -131,7 +130,6 @@
 		B959481D1D3EA060003A082F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B988B9661D24457D00824685 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		B988B9671D24457D00824685 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		B988B96E1D24482200824685 /* ActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionHandler.swift; sourceTree = "<group>"; };
 		B988B9721D244BAE00824685 /* AssociatedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedObject.swift; sourceTree = "<group>"; };
 		B988B9771D244D6300824685 /* AlertViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewPresenter.swift; sourceTree = "<group>"; };
 		B988B9781D244D6300824685 /* ConfirmationAlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationAlertViewModel.swift; sourceTree = "<group>"; };
@@ -304,7 +302,6 @@
 			children = (
 				B988B9761D244D6300824685 /* Alerts */,
 				B988B97A1D244D6300824685 /* ProgressHUD */,
-				B988B96E1D24482200824685 /* ActionHandler.swift */,
 				B988B9721D244BAE00824685 /* AssociatedObject.swift */,
 				B988B9801D24621000824685 /* DeviceType.swift */,
 				B9F63CC11D5CE7FA00D09C1D /* Identifiable.swift */,
@@ -649,7 +646,6 @@
 				CE3A9BA11E607B28005D7E8F /* UIView.swift in Sources */,
 				CE3A9B9B1E607B28005D7E8F /* UIButton.swift in Sources */,
 				B988B97F1D244D6300824685 /* ProgressHUDDelegate.swift in Sources */,
-				B988B96F1D24482200824685 /* ActionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
