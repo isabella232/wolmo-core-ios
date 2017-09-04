@@ -28,7 +28,7 @@ public class UIImageSpec: QuickSpec {
             
             beforeEach {
                 let bundle = Bundle(for: type(of: self))
-                originalImage = UIImage(named: "50by50", in: bundle, compatibleWith: nil)
+                originalImage = UIImage(named: "50by50", in: bundle, compatibleWith: .none)
                 // The original size of the image is 50x50, so it's aspect ratio is 1:1
             }
             

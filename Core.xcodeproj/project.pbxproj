@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D9229821F5D9BF5004F9A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82058CE1EEF39230002D7D4 /* Assets.xcassets */; };
 		9D896ABC1CDE3EC5008B0E5F /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D896ABB1CDE3EC5008B0E5F /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D896AC31CDE3EC5008B0E5F /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D896AB81CDE3EC5008B0E5F /* Core.framework */; };
 		9D896AEB1CDE642F008B0E5F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D896AE91CDE642F008B0E5F /* Nimble.framework */; };
@@ -593,6 +594,7 @@
 				CE11869C1EA7C9C600105D6F /* NibLoadableTableViewCustom.xib in Resources */,
 				CE1186961EA7C70700105D6F /* NibLoadableCollectionView.xib in Resources */,
 				CE1186A81EA7EF2E00105D6F /* NibLoadableUITableView.xib in Resources */,
+				2D9229821F5D9BF5004F9A80 /* Assets.xcassets in Resources */,
 				CE1186A61EA7E2A200105D6F /* NibLoadableUICollectionView.xib in Resources */,
 				CE1186981EA7C7F800105D6F /* NibLoadableCollectionCell.xib in Resources */,
 			);
