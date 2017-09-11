@@ -34,3 +34,19 @@ public extension URL {
     }
     
 }
+
+extension URL: ExpressibleByStringLiteral {
+    
+    public init(unicodeScalarLiteral value: String) {
+        self.init(stringLiteral: value)
+    }
+    
+    public init(extendedGraphemeClusterLiteral value: String) {
+        self.init(stringLiteral: value)
+    }
+    
+    public init(stringLiteral value: StringLiteralType) {
+        self = URL(string: "\(value)")!
+    }
+    
+}

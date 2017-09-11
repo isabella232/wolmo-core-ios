@@ -74,5 +74,18 @@ public class URLSpec: QuickSpec {
                 }
             }
         }
+        
+        describe("#stringLiteral") {
+            
+            context("When passing a string literal") {
+                
+                it("should return a URL") {
+                    let url: URL = "http://www.aURL.com"
+                    expect(url).to(equal((URL(string:"http://www.aURL.com"))))
+                }
+                
+            }
+            
+        }
     }
 }
