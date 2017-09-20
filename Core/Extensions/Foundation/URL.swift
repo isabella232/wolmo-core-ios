@@ -46,7 +46,10 @@ extension URL: ExpressibleByStringLiteral {
     }
     
     public init(stringLiteral value: StringLiteralType) {
-        self = URL(string: "\(value)")!
+        guard let url = URL(string: "\(value)") else {
+            fatalError("The URL \(value) is invalid")
+        }
+        self = url
     }
     
 }

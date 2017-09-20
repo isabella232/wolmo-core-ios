@@ -86,6 +86,14 @@ public class URLSpec: QuickSpec {
                 
             }
             
+            context("When passing an invalid URL") {
+                
+                it("should return a URL") {
+                    expect { () -> Void in let _: URL = "invalid url" }.to(throwAssertion())
+                }
+                
+            }
+            
         }
     }
 }
