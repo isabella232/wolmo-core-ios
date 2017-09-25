@@ -34,3 +34,22 @@ public extension URL {
     }
     
 }
+
+extension URL: ExpressibleByStringLiteral {
+    
+    public init(unicodeScalarLiteral value: String) {
+        self.init(stringLiteral: value)
+    }
+    
+    public init(extendedGraphemeClusterLiteral value: String) {
+        self.init(stringLiteral: value)
+    }
+    
+    public init(stringLiteral value: StringLiteralType) {
+        guard let url = URL(string: "\(value)") else {
+            fatalError("The URL \(value) is invalid")
+        }
+        self = url
+    }
+    
+}
