@@ -24,8 +24,6 @@
 	<string>My key&apos;s value</string>
 	<key>My Personal Number Key</key>
 	<integer>5</integer>
-	<key>My Personal Float Key</key>
-	<real>7.1</real>
 	<key>My Personal Boolean Key</key>
 	<true/>
 	<key>My Personal Date Key</key>
