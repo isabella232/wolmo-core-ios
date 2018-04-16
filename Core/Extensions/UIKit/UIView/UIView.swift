@@ -41,7 +41,7 @@ public enum BorderPosition {
 }
 
 /**
- Indicates if a view will use constrains or frame.
+ Indicates the way in which the layout is set.
  */
 
 public enum LayoutMode {
@@ -110,7 +110,7 @@ public extension UIView {
             By default, 0.
      - parameter rightOffset: Offset from the view's right border to where the border should start.
             By default, 0.
-     - parameter layout: Enum indicating whether to use constraints or frames. By default, constraints.
+     - parameter layout: Enum indicating the layout mode. By default, .constraints.
      
      - note: If you decide to use constraints to determine the size, self's frame doesn't need to be final.
              Because of this, it can be used in `loadView()`, `viewDidLoad()` or `viewWillAppear(animated:)`.
@@ -118,7 +118,7 @@ public extension UIView {
      */
     public func add(top border: BorderViewProperties,
                     withLeftOffset left: CGFloat = 0, rightOffset right: CGFloat = 0,
-                    layout: LayoutMode = LayoutMode.constraints) -> BorderView {
+                    layout: LayoutMode = .constraints) -> BorderView {
         let borderView: BorderView
         
         switch layout {
@@ -148,7 +148,7 @@ public extension UIView {
             By default, 0.
      - parameter rightOffset: Offset from the view's right border to where the border should start.
             By default, 0.
-     - parameter layout: Enum indicating whether to use constraints or frames. By default, constraints.
+     - parameter layout: Enum indicating the layout mode. By default, .constraints.
      
      - note: If you decide to use constraints to determine the size, self's frame doesn't need to be final.
              Because of this, it can be used in `loadView()`, `viewDidLoad()` or `viewWillAppear(animated:)`.
@@ -156,7 +156,7 @@ public extension UIView {
      */
     public func add(bottom border: BorderViewProperties,
                     withLeftOffset left: CGFloat = 0, rightOffset right: CGFloat = 0,
-                    layout: LayoutMode = LayoutMode.constraints) -> BorderView {
+                    layout: LayoutMode = .constraints) -> BorderView {
         let borderView: BorderView
         
         switch layout {
@@ -186,7 +186,7 @@ public extension UIView {
             By default, 0.
      - parameter rightOffset: Offset from the view's right border to where the border should start.
             By default, 0.
-     - parameter layout: Enum indicating whether to use constraints or frames. By default, constraints.
+     - parameter layout: Enum indicating the layout mode. By default, .constraints.
      
      - note: If you decide to use constraints to determine the size, self's frame doesn't need to be final.
              Because of this, it can be used in `loadView()`, `viewDidLoad()` or `viewWillAppear(animated:)`.
@@ -194,7 +194,7 @@ public extension UIView {
      */
     public func add(left border: BorderViewProperties,
                     withTopOffset top: CGFloat = 0, bottomOffset bottom: CGFloat = 0,
-                    layout: LayoutMode = LayoutMode.constraints) -> BorderView {
+                    layout: LayoutMode = .constraints) -> BorderView {
         let borderView: BorderView
         
         switch layout {
@@ -203,7 +203,7 @@ public extension UIView {
             borderView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
             borderView.topAnchor.constraint(equalTo: topAnchor, constant: top).isActive = true
             bottomAnchor.constraint(equalTo: borderView.bottomAnchor, constant: bottom).isActive = true
-       case .frame:
+        case .frame:
             let frame = CGRect(x: 0,
                                y: top,
                                width: CGFloat(border.thickness),
@@ -223,7 +223,7 @@ public extension UIView {
             By default, 0.
      - parameter rightOffset: Offset from the view's right border to where the border should start.
             By default, 0.
-     - parameter layout: Enum indicating whether to use constraints or frames. By default, constraints.
+     - parameter layout: Enum indicating the layout mode. By default, .constraints.
      
      - note: If you decide to use constraints to determine the size, self's frame doesn't need to be final.
              Because of this, it can be used in `loadView()`, `viewDidLoad()` or `viewWillAppear(animated:)`.
@@ -231,7 +231,7 @@ public extension UIView {
      */
     public func add(right border: BorderViewProperties,
                     withTopOffset top: CGFloat = 0, bottomOffset bottom: CGFloat = 0,
-                    layout: LayoutMode = LayoutMode.constraints) -> BorderView {
+                    layout: LayoutMode = .constraints) -> BorderView {
         let borderView: BorderView
         
         switch layout {
@@ -281,7 +281,7 @@ public extension UIView {
      - parameter containerView: The container view.
      - parameter insets: Insets that separate self from the container view. By default, .zero.
      - parameter viewPositioning: Back or Front. By default, .front.
-     - parameter layout: Enum indicating whether to use constraints or frames. By default, constraints.
+     - parameter layout: Enum indicating the layout mode. By default, .constraints.
      
      - note: If you decide to use constraints to determine the size, the container's frame doesn't need to be final.
              Because of this, it can be used in `loadView()`, `viewDidLoad()` or `viewWillAppear(animated:)`.
@@ -291,7 +291,7 @@ public extension UIView {
     public func add(into containerView: UIView,
                     with insets: UIEdgeInsets = .zero,
                     in viewPositioning: ViewPositioning = .front,
-                    layout: LayoutMode = LayoutMode.constraints) {
+                    layout: LayoutMode = .constraints) {
         
         switch layout {
         case .constraints:
