@@ -186,7 +186,7 @@ class ViewController: UIViewController {
         
     }
     
-    @objc
+    @objc // swiftlint:disable:next function_body_length
     func dragView(gesture: UIPanGestureRecognizer) {
         let target = gesture.view!
         let halfWidthScreen = UIScreen.main.bounds.width / 2.0
@@ -226,7 +226,7 @@ class ViewController: UIViewController {
             break
         }
     }
-    
+
     @objc
     func tapView(gesture: UITapGestureRecognizer) {
         let target = gesture.view!

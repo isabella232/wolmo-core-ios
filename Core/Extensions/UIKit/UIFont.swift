@@ -31,7 +31,7 @@ public extension UIFontProvider {
 
 }
 
-fileprivate class DefaultFontProvider: UIFontProvider {}
+private class DefaultFontProvider: UIFontProvider { }
 
 public extension UIFont {
 
