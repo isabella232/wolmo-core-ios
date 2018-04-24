@@ -12,6 +12,7 @@ ignore:
   - Core/Extensions/UIKit/UIView/UIView.swift
   - Core/Extensions/UIKit/UIView/Gradient.swift
   - Core/Extensions/UIKit/UIViewController.swift
+  - Core/Extensions/Animations/*
 # UIControl can't be sent events programatically.
   - Core/Utilities/ActionHandler.swift
 # AV objects can't be tested.
