@@ -4,6 +4,7 @@ ignore:
   - CoreTests/*
   - Carthage/*
   - CoreDemo/*
+  - AnimationDemo/*
 # UI can't be tested
   - Core/Utilities/Alerts/AlertViewPresenter.swift
   - Core/Utilities/ProgressHUD/ProgressHUDDelegate.swift
