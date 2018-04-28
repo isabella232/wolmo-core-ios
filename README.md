@@ -3,13 +3,9 @@
 [![Codestats](http://codestats.wolox.com.ar/organizations/wolox/projects/wolmo-core-ios/badge)](http://codestats.wolox.com.ar/organizations/wolox/projects/wolmo-core-ios/badge)
 [![GitHub release](https://img.shields.io/github/release/Wolox/wolmo-core-ios.svg)](https://github.com/Wolox/wolmo-core-ios/releases)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![Swift 3](https://img.shields.io/badge/Swift-3-orange.svg)
-![Swift 2.3](https://img.shields.io/badge/Swift-2.3-orange.svg)
+![Swift 4.1](https://img.shields.io/badge/Swift-4.1-orange.svg)
 
 WolMo - Core iOS is a framework which provides extensions and utilities for iOS commonly used at [Wolox](http://www.wolox.com.ar/).
-
-
-_Note: Swift 2.3 version (in swift-2.3 branch) won't be updated and maintained._
 
 ## Table of Contents
 
@@ -38,7 +34,7 @@ brew install carthage
 ```
 To download wolmo-core-iOS, add this to your Cartfile:
 ```
-github "Wolox/wolmo-core-ios" ~> 0.1.0
+github "Wolox/wolmo-core-ios" ~> 4.1.0
 ```
 
 ### Manually
