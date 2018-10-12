@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C02AB5221682BD2007DB327 /* StringToImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C02AB4E21682BD2007DB327 /* StringToImageController.swift */; };
+		0C02AB5321682BD2007DB327 /* StringToImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C02AB4F21682BD2007DB327 /* StringToImageView.swift */; };
+		0C02AB5521682BD2007DB327 /* StringToImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C02AB5121682BD2007DB327 /* StringToImageView.xib */; };
+		0CB88322216455D90073459D /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB88321216455D90073459D /* UIImageView.swift */; };
 		2D9229821F5D9BF5004F9A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82058CE1EEF39230002D7D4 /* Assets.xcassets */; };
 		9D896ABC1CDE3EC5008B0E5F /* WolmoCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D896ABB1CDE3EC5008B0E5F /* WolmoCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D896AC31CDE3EC5008B0E5F /* WolmoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D896AB81CDE3EC5008B0E5F /* WolmoCore.framework */; };
@@ -178,6 +182,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C02AB4E21682BD2007DB327 /* StringToImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToImageController.swift; sourceTree = "<group>"; };
+		0C02AB4F21682BD2007DB327 /* StringToImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToImageView.swift; sourceTree = "<group>"; };
+		0C02AB5121682BD2007DB327 /* StringToImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StringToImageView.xib; sourceTree = "<group>"; };
+		0CB88321216455D90073459D /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		9D896AB81CDE3EC5008B0E5F /* WolmoCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolmoCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D896ABB1CDE3EC5008B0E5F /* WolmoCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolmoCore.h; sourceTree = "<group>"; };
 		9D896ABD1CDE3EC5008B0E5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -325,6 +333,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C02AB4D21682B8A007DB327 /* StringToImage */ = {
+			isa = PBXGroup;
+			children = (
+				0C02AB4E21682BD2007DB327 /* StringToImageController.swift */,
+				0C02AB4F21682BD2007DB327 /* StringToImageView.swift */,
+				0C02AB5121682BD2007DB327 /* StringToImageView.xib */,
+			);
+			path = StringToImage;
+			sourceTree = "<group>";
+		};
 		46DB73722061412400D70FDD /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +506,7 @@
 				CE3A9B891E607B28005D7E8F /* UIView */,
 				CE3A9B8D1E607B28005D7E8F /* UIViewController.swift */,
 				CE228ADF1EF2FE1E00097B19 /* UIFont.swift */,
+				0CB88321216455D90073459D /* UIImageView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -505,6 +524,7 @@
 		CEB8ED241FE968410037ED3D /* WolmoCoreDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0C02AB4D21682B8A007DB327 /* StringToImage */,
 				CEB8ED251FE968410037ED3D /* AppDelegate.swift */,
 				CE6E9A1B20C59FB60068CC7A /* CustomFontProvider.swift */,
 				CEB8ED271FE968410037ED3D /* ViewController.swift */,
@@ -767,6 +787,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C02AB5521682BD2007DB327 /* StringToImageView.xib in Resources */,
 				CEB8ED521FE9688E0037ED3D /* View.xib in Resources */,
 				CEB8ED301FE968410037ED3D /* LaunchScreen.storyboard in Resources */,
 				CEB8ED2D1FE968410037ED3D /* Assets.xcassets in Resources */,
@@ -824,6 +845,7 @@
 				CE3A9B931E607B28005D7E8F /* Bundle.swift in Sources */,
 				CE3A9B951E607B28005D7E8F /* URL.swift in Sources */,
 				CE3A9B971E607B28005D7E8F /* String.swift in Sources */,
+				0CB88322216455D90073459D /* UIImageView.swift in Sources */,
 				B8CF9A8C1EE9EF6E0063F951 /* UIImage.swift in Sources */,
 				CEE9BFCE1E8986F700D0E65D /* Collection.swift in Sources */,
 				CE3A9B911E607B28005D7E8F /* Date.swift in Sources */,
@@ -884,10 +906,12 @@
 			files = (
 				CEB8ED581FE96ABC0037ED3D /* View.swift in Sources */,
 				CEB8ED281FE968410037ED3D /* ViewController.swift in Sources */,
+				0C02AB5321682BD2007DB327 /* StringToImageView.swift in Sources */,
 				CEB8ED541FE968A30037ED3D /* ChildController.swift in Sources */,
 				CEB8ED261FE968410037ED3D /* AppDelegate.swift in Sources */,
 				CE6E9A1C20C59FB60068CC7A /* CustomFontProvider.swift in Sources */,
 				CEB8ED5A1FE96ACA0037ED3D /* ChildView.swift in Sources */,
+				0C02AB5221682BD2007DB327 /* StringToImageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
