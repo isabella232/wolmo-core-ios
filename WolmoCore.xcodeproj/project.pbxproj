@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CB8BAB4216F82FF00C8D6C1 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8BAB3216F82FF00C8D6C1 /* Comparable.swift */; };
+		0CB8BAB6216F835E00C8D6C1 /* ComparableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8BAB5216F835E00C8D6C1 /* ComparableSpec.swift */; };
 		0C02AB5221682BD2007DB327 /* StringToImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C02AB4E21682BD2007DB327 /* StringToImageController.swift */; };
 		0C02AB5321682BD2007DB327 /* StringToImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C02AB4F21682BD2007DB327 /* StringToImageView.swift */; };
 		0C02AB5521682BD2007DB327 /* StringToImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C02AB5121682BD2007DB327 /* StringToImageView.xib */; };
@@ -182,6 +184,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0CB8BAB3216F82FF00C8D6C1 /* Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comparable.swift; sourceTree = "<group>"; };
+		0CB8BAB5216F835E00C8D6C1 /* ComparableSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableSpec.swift; sourceTree = "<group>"; };
 		0C02AB4E21682BD2007DB327 /* StringToImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToImageController.swift; sourceTree = "<group>"; };
 		0C02AB4F21682BD2007DB327 /* StringToImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToImageView.swift; sourceTree = "<group>"; };
 		0C02AB5121682BD2007DB327 /* StringToImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StringToImageView.xib; sourceTree = "<group>"; };
@@ -488,6 +492,7 @@
 				CE3A9B7F1E607B28005D7E8F /* String.swift */,
 				CE3A9B7C1E607B28005D7E8F /* Timer.swift */,
 				CE3A9B7D1E607B28005D7E8F /* URL.swift */,
+				0CB8BAB3216F82FF00C8D6C1 /* Comparable.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -561,6 +566,7 @@
 				CEE9BFAA1E8986D400D0E65D /* StringSpec.swift */,
 				CEE9BFAB1E8986D400D0E65D /* TimerSpec.swift */,
 				CEE9BFAC1E8986D400D0E65D /* URLSpec.swift */,
+				0CB8BAB5216F835E00C8D6C1 /* ComparableSpec.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -821,6 +827,7 @@
 			files = (
 				CEEC517E1EE5ECD300BC41FE /* UILabel.swift in Sources */,
 				CE80E0F11E82D1F9005C300E /* PathAppendable.swift in Sources */,
+				0CB8BAB4216F82FF00C8D6C1 /* Comparable.swift in Sources */,
 				CE3A9BA21E607B28005D7E8F /* UIViewController.swift in Sources */,
 				CE228AE01EF2FE1E00097B19 /* UIFont.swift in Sources */,
 				B9F63CC21D5CE7FA00D09C1D /* Identifiable.swift in Sources */,
@@ -867,6 +874,7 @@
 				CEE9BFC01E8986D400D0E65D /* UITextFieldSpec.swift in Sources */,
 				CE11868B1EA7A0CD00105D6F /* UITableViewSpec.swift in Sources */,
 				CEE9BFB61E8986D400D0E65D /* DateSpec.swift in Sources */,
+				0CB8BAB6216F835E00C8D6C1 /* ComparableSpec.swift in Sources */,
 				CEE9BFC81E8986DC00D0E65D /* ConfirmationAlertViewModelSpec.swift in Sources */,
 				CEE9BFCB1E8986DC00D0E65D /* IdentifiableSpec.swift in Sources */,
 				CEE9BFB71E8986D400D0E65D /* DictionarySpec.swift in Sources */,
