@@ -30,6 +30,9 @@ final internal class ViewController: UIViewController {
         _view.gestureLabel.addTapGestureRecognizer {
             print("Label tapped!")
         }
+        _view.gestureLabel.addLongPressGestureRecognizer(minimumPressDuration: 1.0) { recognizer in
+            print("Label long pressed!")
+        }
         _view.gestureLabel.addPinchGestureRecognizer {
             print("Label pinched!")
         }
