@@ -16,7 +16,7 @@ public extension UIView {
         static var tapGestureRecognizer = "MediaViewerAssociatedObjectKey_mediaViewer"
     }
     
-    fileprivate typealias Action = (() -> Void)?
+    fileprivate typealias Action = ((UITapGestureRecognizer) -> Void)?
     
     // Set our computed property type to a closure
     fileprivate var tapGestureRecognizerAction: Action? {
@@ -35,12 +35,18 @@ public extension UIView {
     /**
      Adds a tap gesture recognizer that executes the closure when tapped
      
-     - Parameter action: The closure that will execute when the view is tapped
+     - Parameter numberOfTapsRequired: The number of taps required to match. Default is 1
+     - Parameter numberOfTouchesRequired: The number of fingers required to match. Default is 1
+     - Parameter action: The number of fingers required to match. Default is 1
      */
-    public func addTapGestureRecognizer(action: (() -> Void)?) {
+    public func addTapGestureRecognizer(numberOfTapsRequired: Int = 1,
+                                        numberOfTouchesRequired: Int = 1,
+                                        action: ((UITapGestureRecognizer) -> Void)?) {
         isUserInteractionEnabled = true
         tapGestureRecognizerAction = action
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
+        tapGestureRecognizer.numberOfTapsRequired = numberOfTapsRequired
+        tapGestureRecognizer.numberOfTouchesRequired = numberOfTouchesRequired
         addGestureRecognizer(tapGestureRecognizer)
     }
     
@@ -48,7 +54,7 @@ public extension UIView {
     // which triggers the closure we stored
     @objc fileprivate func handleTapGesture(sender: UITapGestureRecognizer) {
         if let action = tapGestureRecognizerAction {
-            action?()
+            action?(sender)
         } else {
             print("No action for the tap gesture")
         }
