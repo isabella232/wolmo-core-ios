@@ -10,12 +10,8 @@ import UIKit
 import WolmoCore
 
 class AnimationsViewController: UIViewController {
-    // MARK: - Properties
-    @IBOutlet weak var draggableView: UIView!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
-    var animationViews: [UIView] = []
+    private let animationsView = AnimationsView()
+    private var animationViews: [UIView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,30 +19,40 @@ class AnimationsViewController: UIViewController {
         UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 0
         
         setupSimpleAnimations()
-        configureDraggableView()
+        setupDraggableView()
     }
-}
+    
+    override func loadView() {
+        super.loadView()
+        view = animationsView
+    }
 
 // MARK: - Configuration methods
-private extension AnimationsViewController {
     func setupSimpleAnimations() {
+        
         for each in SimpleExample.all {
             let view = createNewRedView()
             animationViews.append(view)
 
-            if each.rawValue < segmentedControl.numberOfSegments {
-                segmentedControl.setTitle(each.name, forSegmentAt: each.rawValue)
+            if each.rawValue < animationsView.segmentedControl.numberOfSegments {
+                animationsView.segmentedControl.setTitle(each.name, forSegmentAt: each.rawValue)
             } else {
-                segmentedControl.insertSegment(withTitle: each.name, at: each.rawValue, animated: false)
+                animationsView.segmentedControl.insertSegment(withTitle: each.name, at: each.rawValue, animated: false)
             }
         }
-        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
-        segmentedControl.addShadow(opacity: 0.2)
+        
+        animationsView.segmentedControl.addTarget(self,
+                                                  action: #selector(segmentedControlValueChanged),
+                                                  for: .valueChanged)
+        
+        animationsView.segmentedControl.addShadow(opacity: 0.2)
     }
     
-    func configureDraggableView() {
+    func setupDraggableView() {
+        guard let draggableView = animationsView.draggableView else { return }
+        
         draggableView.isDraggable(returnToPosition: true) { view in
-            view.backgroundColor = .init(named: "EerieBlack")
+            view.backgroundColor = .init(named: "eerieBlack")
         } onDragFinished: { view in
             view.backgroundColor = .init(named: "deepSaffron")
         }
@@ -62,7 +68,7 @@ private extension AnimationsViewController {
      - normalAnimation are example of animations without using WolmoCore Animations
      */
     @objc func segmentedControlValueChanged() {
-        let newAnimationIndex = segmentedControl.selectedSegmentIndex
+        let newAnimationIndex = animationsView.segmentedControl.selectedSegmentIndex
         for animation in SimpleExample.all {
             animationViews[animation.rawValue].isHidden = true
         }
@@ -92,13 +98,15 @@ private extension AnimationsViewController {
         view.backgroundColor = .init(named: "deepSaffron")
         view.alpha = 1
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.center = containerView.center
+        view.center = animationsView.containerView.center
         view.bounds.size.width = 50
         view.bounds.size.height = 50
         view.transform = .identity
     }
     
     func createNewRedView() -> UIView {
+        guard let containerView = animationsView.containerView else { return UIView() }
+        
         let view = UIView()
         view.backgroundColor = .init(named: "deepSaffron")
         view.translatesAutoresizingMaskIntoConstraints = false

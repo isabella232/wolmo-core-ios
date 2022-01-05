@@ -30,8 +30,8 @@ final internal class PrincipalView: NibView {
     
     @IBOutlet weak var stringsButton: UIButton!
     @IBOutlet weak var bordersGradientButton: UIButton!
-    
-    @IBOutlet weak var childContainerView: UIView!
+    @IBOutlet weak var animationsButton: UIButton!
+    @IBOutlet weak var gesturesButton: UIButton!
     
     @IBOutlet weak var gestureLabel: UILabel!
 }
